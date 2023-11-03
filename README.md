@@ -25,7 +25,7 @@ Here's a visual representation of the folder structure:
 │   │   ├── [General Component].js
 │   ├── pages/ (2)
 │   │   ├── [Page]/
-│   │   │   ├── [Page].js
+│   │   │   ├── [Page].js (Write behind the name the postfix "Page", e.g. "ErrorPage")
 │   │   │   ├── components/ (3)
 │   │   │   │   ├── [Exclusive Page Component].js
 ```
