@@ -1,26 +1,31 @@
-# React + Vite
+# Webdev Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## How setup the project up?
 
-Currently, two official plugins are available:
+1. Clone the repository
+2. Run `npm install` to install all dependencies
+3. Run `npm run dev` to start the development server`
+4. Open `http://localhost:5173` in your browser
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Folder Structure
 
-## Folderstructure
+In this template, the folder structure is organized as follows:
 
-In this template, the folderstructure is as follows:
+- The `src` folder houses all the source files.
+- The `components` (1) folder contains components that are not exclusively tied to a single page.
+- The `pages` (2) folder, on the other hand, is dedicated to page-specific files, with each page having its own dedicated subfolder. Inside each page folder, you'll find the definition of the page itself, as well as any components that are exclusively used within that page, stored in the `components` (3) subfolder.
 
-The `src` folder contains all the code. The `components`(1) folder contains all the components that are used in multiple pages. The `pages` (2) folder contains all the pages. Each page has its own folder. In this folder, the page itself is defined and all the components that are only used in this page are defined in the `components` (3) folder in the page folder.
+Here's a visual representation of the folder structure:
 
+```
 ├── src/
-│ ├── components/ (1)
-│ │ ├── Header.js
-│ │ ├── Footer.js
-│ │ ├── ...general components
-│ ├── pages/ (2)
-│ │ ├── Home/
-│ │ │ ├── Home.js
-| | | ├── components/ (3)
-│ │ │ │ ├── HomeHeader.js
-│ │ │ │ ├── ... components for the "Home"-Page
+│   ├── components/ (1)
+│   │   ├── [General Component].js
+│   ├── pages/ (2)
+│   │   ├── [Page]/
+│   │   │   ├── [Page].js
+│   │   │   ├── components/ (3)
+│   │   │   │   ├── [Exclusive Page Component].js
+```
+
+This hierarchy keeps the project well-organized and makes it easy to locate and manage specific components and page-related resources.
