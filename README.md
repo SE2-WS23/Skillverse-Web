@@ -15,6 +15,8 @@ In this template, the folder structure is organized as follows:
 - The `components` (1) folder contains components that are not exclusively tied to a single page.
 - The `pages` (2) folder, on the other hand, is dedicated to page-specific files, with each page having its own dedicated subfolder. Inside each page folder, you'll find the definition of the page itself, as well as any components that are exclusively used within that page, stored in the `components` (3) subfolder.
 
+### Visual Representation
+
 Here's a visual representation of the folder structure:
 
 ```
