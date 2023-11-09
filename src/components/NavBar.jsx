@@ -17,6 +17,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
+/**
+ * A navigation bar component that includes a drawer menu.
+ * @param {Object} props - The props object.
+ * @param {string} [props.title="Page Title"] - The title of the page.
+ * @param {Array} [props.barItems=[]] - An array of React components to be rendered in the navbar.
+ * @param {Array} [props.drawerItems=[]] - An array of maps (link, icon, text) representing items to be rendered in the drawer menu.
+ * @returns {JSX.Element} - A JSX element representing the navigation bar.
+ */
 function NavBar(props) {
   const [drawerState, setDrawerState] = useState(false);
 
@@ -58,6 +66,7 @@ function NavBar(props) {
           ))}
         </Toolbar>
       </AppBar>
+
       <Drawer open={drawerState} onClose={toggleDrawer()}>
         <Box
           sx={{ width: 250, overflow: "auto" }}
@@ -87,7 +96,7 @@ function NavBar(props) {
 
 NavBar.propTypes = {
   title: PropTypes.string,
-  barItems: PropTypes.arrayOf(PropTypes.element),
+  barItems: PropTypes.arrayOf(PropTypes.node),
   drawerItems: PropTypes.arrayOf(
     PropTypes.shape({
       text: PropTypes.string,
