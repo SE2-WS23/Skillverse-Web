@@ -1,5 +1,6 @@
 import HomeIcon from "@mui/icons-material/Home";
 import { Avatar } from "@mui/material";
+import Toolbar from "@mui/material/Toolbar";
 import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
 import NavBar from "./NavBar";
@@ -31,6 +32,7 @@ function PageLayout(props) {
           drawerItems={props.navDrawerItems || STANDARD_DRAWER_ITEMS}
         />
       </header>
+      <Toolbar />
       <body>{props.children}</body>
     </>
   );
