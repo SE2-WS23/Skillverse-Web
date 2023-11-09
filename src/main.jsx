@@ -8,6 +8,18 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./pages/App/App";
 import ErrorPage from "./pages/Error/ErrorPage";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#1565C0",
+      light: "#1975D2",
+      dark: "#0D46A1",
+      contrastText: "#fff",
+    },
+  },
+});
 
 const router = createBrowserRouter([
   {
@@ -18,7 +30,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <ThemeProvider theme={theme}>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+  </ThemeProvider>
 );
