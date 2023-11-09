@@ -6,6 +6,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import * as React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function NavBar(props) {
   return (
@@ -21,11 +22,13 @@ function NavBar(props) {
           >
             <MenuIcon />
           </IconButton>
+
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             {props.title || "Page Title"}
           </Typography>
-          {props.barItems?.map((item, index) => (
-            <React.Fragment key={`barItem_${index}`}>{item}</React.Fragment>
+
+          {props.barItems?.map((item) => (
+            <React.Fragment key={uuidv4()}>{item}</React.Fragment>
           ))}
         </Toolbar>
       </AppBar>
