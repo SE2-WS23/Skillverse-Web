@@ -6,13 +6,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import App from "./pages/App/App";
 import ErrorPage from "./pages/Error/ErrorPage";
+import HomePage from "./pages/Home/HomePage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <HomePage />,
     errorElement: <ErrorPage />,
   },
 ]);
