@@ -8,7 +8,6 @@ import PropTypes from "prop-types";
 import * as React from "react";
 
 function NavBar(props) {
-  // clicker state
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -38,7 +37,5 @@ NavBar.propTypes = {
   title: PropTypes.string,
   barItems: PropTypes.arrayOf(PropTypes.element),
 };
-
-NavBar.defaultProps = {};
 
 export default NavBar;
