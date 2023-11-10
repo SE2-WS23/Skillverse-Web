@@ -33,7 +33,7 @@ function PageLayout(props) {
         />
       </header>
       <Toolbar />
-      <body>{props.children}</body>
+      <main>{props.children}</main>
     </>
   );
 }
