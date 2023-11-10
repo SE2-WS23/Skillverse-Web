@@ -1,7 +1,27 @@
+import Button from "@mui/material/Button";
 import { Box } from "@mui/system";
+import { useNavigate } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import PageLayout from "../../components/PageLayout";
 
 function DashboardPage() {
+  const navigate = useNavigate();
+
+  const STANDARD_DASHBOARD_ITEMS = [
+    {
+      text: "Company Course Management",
+      link: "#",
+    },
+    {
+      text: "Employee Management",
+      link: "#",
+    },
+    {
+      text: "Job Profiles",
+      link: "#",
+    },
+  ];
+
   return (
     <PageLayout>
       <Box
@@ -12,9 +32,22 @@ function DashboardPage() {
           //56px and 64px are the height of the toolbar specified in the
           //theme for different viewports
           height: { xs: "calc(100vh - 56px)", sm: "calc(100vh - 64px)" },
-          backgroundColor: "secondary.main",
         }}
-      ></Box>
+      >
+        {STANDARD_DASHBOARD_ITEMS?.map((item) => (
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            fullWidth
+            sx={{ margin: "15vh 5vw" }}
+            onClick={() => navigate(item.link)}
+            key={uuidv4()}
+          >
+            {item.text.toUpperCase()}
+          </Button>
+        ))}
+      </Box>
     </PageLayout>
   );
 }
