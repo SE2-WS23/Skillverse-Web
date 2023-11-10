@@ -1,6 +1,24 @@
+import { useState } from "react";
 import { Button, Box, Grid, TextField, Typography } from "@mui/material";
 
 function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = () => {
+    console.log("Login clicked");
+    console.log("Email: " + email);
+    console.log("Password: " + password);
+  };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
   return (
     <Grid
       container
@@ -16,7 +34,7 @@ function LoginPage() {
       }}>
       <Grid
         item
-        xs={12}>
+        xs={5}>
         <Typography
           fontWeight={700}
           variant="h2">
@@ -25,7 +43,7 @@ function LoginPage() {
       </Grid>
       <Grid
         item
-        xs={12}>
+        xs={6}>
         <Box
           sx={{
             py: 18,
@@ -52,6 +70,9 @@ function LoginPage() {
               label="Email"
               variant="standard"
               type="email"
+              required
+              value={email}
+              onChange={handleEmailChange}
               sx={{
                 mb: 8,
               }}
@@ -61,6 +82,9 @@ function LoginPage() {
               label="Password"
               variant="standard"
               type="password"
+              required
+              value={password}
+              onChange={handlePasswordChange}
               sx={{
                 mb: 16,
               }}
@@ -73,7 +97,8 @@ function LoginPage() {
             sx={{
               width: "auto",
               flexGrow: 0,
-            }}>
+            }}
+            onClick={handleLogin}>
             Login
           </Button>
         </Box>
