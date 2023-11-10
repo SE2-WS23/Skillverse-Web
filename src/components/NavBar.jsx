@@ -14,7 +14,7 @@ import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import * as React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 
 /**
@@ -27,6 +27,7 @@ import { v4 as uuidv4 } from "uuid";
  */
 function NavBar(props) {
   const [drawerState, setDrawerState] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDrawer = () => (event) => {
     if (
@@ -76,16 +77,18 @@ function NavBar(props) {
           <Toolbar />
           <List>
             {props.drawerItems?.map((item) => (
-              <Link to={item.link || "#"} key={uuidv4()}>
-                <ListItem disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      {item.icon || <QuestionMarkIcon />}
-                    </ListItemIcon>
-                    <ListItemText primary={item.text || "Not given"} />
-                  </ListItemButton>
-                </ListItem>
-              </Link>
+              <ListItem
+                disablePadding
+                onClick={() => navigate(item.link || "#")}
+                key={uuidv4()}
+              >
+                <ListItemButton>
+                  <ListItemIcon>
+                    {item.icon || <QuestionMarkIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={item.text || "Not given"} />
+                </ListItemButton>
+              </ListItem>
             ))}
           </List>
         </Box>
