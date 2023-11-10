@@ -9,6 +9,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import ErrorPage from "./pages/Error/ErrorPage";
 import HomePage from "./pages/Home/HomePage";
+import LoginPage from "./pages/Login/LoginPage";
 
 const theme = createTheme({
   palette: {
@@ -19,12 +20,18 @@ const theme = createTheme({
       contrastText: "#fff",
     },
   },
+  spacing: 4,
 });
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
     errorElement: <ErrorPage />,
   },
 ]);
