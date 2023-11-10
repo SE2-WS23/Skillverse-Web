@@ -27,7 +27,7 @@ function DashboardPage() {
   ];
 
   return (
-    <PageLayout>
+    <PageLayout title="Dashboard">
       <Box
         sx={{
           display: "flex",
