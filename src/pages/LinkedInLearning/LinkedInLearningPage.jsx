@@ -14,22 +14,21 @@ function LinkedInLearning() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "100%",
+          height: "calc(100% - 60px)",
         }}
       >
-        <video width="80%" height="80%" controls>
+        <video width="80%" height="90%" controls>
           <source src="" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </Box>
-
       <Button
         variant="contained"
         color="primary"
         size="large"
-        sx={{ position: "fixed", bottom: "10px", right: "10px" }}
+        sx={{ position: "absolute", bottom: "10px", right: "10px" }}
       >
-        Download
+        Next
       </Button>
     </PageLayout>
   );
