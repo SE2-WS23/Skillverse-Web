@@ -4,6 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import PageLayout from "../../components/PageLayout";
 
+/**
+ * Renders the dashboard page with 3 menu items.
+ * @returns {JSX.Element} The dashboard page component.
+ */
 function DashboardPage() {
   const navigate = useNavigate();
 
