@@ -27,9 +27,15 @@ function LoginPage() {
     setPassword(event.target.value);
   };
 
+  /**
+   * The function `validateEmail` uses a regular expression to validate if an email address is in the
+   * correct format.
+   * @returns The function `validateEmail` returns a boolean value indicating whether the provided
+   * email is valid or not.
+   */
   const validateEmail = (email) => {
     // Regular expression for email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
     return emailRegex.test(email);
   };
 
