@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { Button, Box, Grid, TextField, Typography } from "@mui/material";
 
+/**
+ * Renders a login page with email and password fields and a login button.
+ *
+ * @returns {JSX.Element} The LoginPage component.
+ */
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
