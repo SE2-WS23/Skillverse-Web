@@ -39,13 +39,11 @@ function LoginPage() {
       spacing={4}
       justifyContent="center"
       alignItems="center"
-      style={{
-        backgroundColor: "#1975D2",
-        color: "#fff",
-        height: "100vh",
-        width: "100vw",
-        margin: 0,
-      }}>
+      backgroundColor="#1975D2"
+      color="#fff"
+      height="100vh"
+      width="100vw"
+      margin="0">
       <Grid
         item
         xs={5}>
