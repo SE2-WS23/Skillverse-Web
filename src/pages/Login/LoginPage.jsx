@@ -9,6 +9,7 @@ import { Button, Box, Grid, TextField, Typography } from "@mui/material";
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [emailError, setEmailError] = useState(false);
 
   const handleLogin = () => {
     console.log("Login clicked");
@@ -17,11 +18,19 @@ function LoginPage() {
   };
 
   const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+    const emailValue = event.target.value;
+    setEmail(emailValue);
+    setEmailError(!validateEmail(emailValue));
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+  };
+
+  const validateEmail = (email) => {
+    // Regular expression for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
 
   return (
@@ -63,7 +72,7 @@ function LoginPage() {
             fontWeight={500}
             variant="h4"
             sx={{
-              mb: 1,
+              mb: 16,
               color: "black",
               textAlign: "center",
             }}>
@@ -78,6 +87,10 @@ function LoginPage() {
               required
               value={email}
               onChange={handleEmailChange}
+              error={emailError}
+              helperText={
+                emailError ? "Please enter a valid email address" : ""
+              }
               sx={{
                 mb: 8,
               }}
@@ -103,7 +116,8 @@ function LoginPage() {
               width: "auto",
               flexGrow: 0,
             }}
-            onClick={handleLogin}>
+            onClick={handleLogin}
+            disabled={!validateEmail(email)}>
             Login
           </Button>
         </Box>
