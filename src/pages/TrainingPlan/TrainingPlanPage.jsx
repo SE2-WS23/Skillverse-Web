@@ -1,5 +1,11 @@
+import TrainingBlock from "./components/TrainingBlock";
+
 function TrainingPlanPage() {
-  return <>TrainingPlanPage</>;
+  return (
+    <>
+      <TrainingBlock />
+    </>
+  );
 }
 
 export default TrainingPlanPage;
