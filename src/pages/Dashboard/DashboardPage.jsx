@@ -27,15 +27,13 @@ function DashboardPage() {
   ];
 
   return (
-    <PageLayout title="Dashboard">
+    <PageLayout title="Dashboard" viewportPage>
       <Box
         sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "stretch",
-          //56px and 64px are the height of the toolbar specified in the
-          //theme for different viewports
-          height: { xs: "calc(100vh - 56px)", sm: "calc(100vh - 64px)" },
+          height: "100%",
         }}
       >
         {STANDARD_DASHBOARD_ITEMS?.map((item) => (
