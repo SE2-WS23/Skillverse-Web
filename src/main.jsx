@@ -10,6 +10,7 @@ import "./index.css";
 import DashboardPage from "./pages/Dashboard/DashboardPage";
 import ErrorPage from "./pages/Error/ErrorPage";
 import HomePage from "./pages/Home/HomePage";
+import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
 import LoginPage from "./pages/Login/LoginPage";
 
 const theme = createTheme({
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
     path: "/login",
     element: <LoginPage />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/linked-in-learning",
+    element: <LinkedInLearning />,
   },
 ]);
 
