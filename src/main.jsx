@@ -10,6 +10,7 @@ import "./index.css";
 import DashboardPage from "./pages/Dashboard/DashboardPage";
 import ErrorPage from "./pages/Error/ErrorPage";
 import HomePage from "./pages/Home/HomePage";
+import LoginPage from "./pages/Login/LoginPage";
 
 const theme = createTheme({
   palette: {
@@ -20,6 +21,7 @@ const theme = createTheme({
       contrastText: "#fff",
     },
   },
+  spacing: 4,
 });
 
 const router = createBrowserRouter([
@@ -31,6 +33,12 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <DashboardPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
+    errorElement: <ErrorPage />,
   },
 ]);
 
