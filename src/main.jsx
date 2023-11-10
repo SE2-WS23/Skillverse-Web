@@ -43,6 +43,7 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <DashboardPage />,
+    errorElement: <ErrorPage />,
   },
 ]);
 
