@@ -63,14 +63,12 @@ function LoginPage() {
         item
         xs={6}>
         <Box
-          sx={{
-            py: 18,
-            px: "20%",
-            backgroundColor: "#fff",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "between",
-          }}
+          py={8}
+          px="20%"
+          backgroundColor="#fff"
+          display="flex"
+          flexDirection="column"
+          justifyContent="between"
           maxWidth="xl">
           <Typography
             fontWeight={500}
@@ -82,7 +80,10 @@ function LoginPage() {
             }}>
             Login into your account
           </Typography>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: "10" }}>
+          <Box
+            display="flex"
+            flexDirection="column"
+            xs={{ gap: 10 }}>
             <TextField
               size="medium"
               label="Email"
