@@ -7,6 +7,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
+import AssessmentPage from "./pages/Assessment/AssessmentPage";
 import DashboardPage from "./pages/Dashboard/DashboardPage";
 import ErrorPage from "./pages/Error/ErrorPage";
 import HomePage from "./pages/Home/HomePage";
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/assessment",
+    element: <AssessmentPage />,
     errorElement: <ErrorPage />,
   },
 ]);
