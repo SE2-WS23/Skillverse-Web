@@ -7,6 +7,17 @@ import React from "react";
 import CircularProgressWithLabel from "../../../components/CircularProgressWithLabel";
 import ExpandMoreButton from "../../../components/ExpandMoreButton";
 
+/**
+ * A component that displays a training block with course name, skills, progress, and description.
+ *
+ * @param {Object} props - The props object.
+ * @param {string} props.courseName - The name of the course.
+ * @param {string[]} props.skills - An array of skills related to the course.
+ * @param {string} props.description - The description of the course.
+ * @param {number} props.progress - The progress of the course as a percentage.
+ * @returns {JSX.Element} - The TrainingBlock component.
+ */
+
 function TrainingBlock(props) {
   const theme = useTheme();
 

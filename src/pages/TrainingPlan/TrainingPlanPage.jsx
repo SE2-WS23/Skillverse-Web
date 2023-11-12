@@ -3,8 +3,12 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import CustomTabPanel from "../../components/CustomTabPanel";
 import PageLayout from "../../components/PageLayout";
-import TrainingBlock from "./components/TrainingBlock";
+import TrainingBlockListItem from "./components/TrainingBlockListItem";
 
+/**
+ * Renders the Training Plan page with tabs for Not started, In Progress, and Done.
+ * @returns {JSX.Element} The Training Plan page.
+ */
 function TrainingPlanPage() {
   const mockedTrainings = [
     {
@@ -90,7 +94,7 @@ function TrainingPlanPage() {
     <PageLayout
       title="Training Plan"
       viewportPage>
-      <Box sx={{ width: "100%", typography: "body1" }}>
+      <Box sx={{ width: "100%", typography: "body1", mt: 2 }}>
         <Tabs
           value={value}
           onChange={handleChange}>
@@ -115,14 +119,10 @@ function TrainingPlanPage() {
           {mockedTrainings.map((training, index) => {
             if (training.status === 0) {
               return (
-                <li key={uuidv4()}>
-                  <TrainingBlock
-                    courseName={training.courseName}
-                    skills={training.skills}
-                    description={training.description}
-                    progress={training.progress}
-                  />
-                </li>
+                <TrainingBlockListItem
+                  training={training}
+                  key={uuidv4()}
+                />
               );
             }
             return null;
@@ -136,14 +136,10 @@ function TrainingPlanPage() {
           {mockedTrainings.map((training, index) => {
             if (training.status === 1) {
               return (
-                <li key={uuidv4()}>
-                  <TrainingBlock
-                    courseName={training.courseName}
-                    skills={training.skills}
-                    description={training.description}
-                    progress={training.progress}
-                  />
-                </li>
+                <TrainingBlockListItem
+                  training={training}
+                  key={uuidv4()}
+                />
               );
             }
             return null;
@@ -157,26 +153,16 @@ function TrainingPlanPage() {
           {mockedTrainings.map((training, index) => {
             if (training.status === 2) {
               return (
-                <li key={uuidv4()}>
-                  <TrainingBlock
-                    courseName={training.courseName}
-                    skills={training.skills}
-                    description={training.description}
-                    progress={training.progress}
-                  />
-                </li>
+                <TrainingBlockListItem
+                  training={training}
+                  key={uuidv4()}
+                />
               );
             }
             return null;
           })}{" "}
         </List>
       </CustomTabPanel>
-      <TrainingBlock
-        courseName="Coding Course"
-        skills={["React", "Python", "React"]}
-        description="This is a description"
-        progress={89}
-      />
     </PageLayout>
   );
 }
