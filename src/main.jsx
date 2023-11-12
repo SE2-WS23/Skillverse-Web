@@ -12,6 +12,7 @@ import DashboardPage from "./pages/Dashboard/DashboardPage";
 import ErrorPage from "./pages/Error/ErrorPage";
 import HomePage from "./pages/Home/HomePage";
 import LoginPage from "./pages/Login/LoginPage";
+import QuizPage from "./pages/Quiz/QuizPage";
 
 const theme = createTheme({
   palette: {
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
   {
     path: "/assessment",
     element: <AssessmentPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/quiz",
+    element: <QuizPage />,
     errorElement: <ErrorPage />,
   },
 ]);
