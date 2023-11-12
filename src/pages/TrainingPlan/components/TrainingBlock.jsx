@@ -42,8 +42,19 @@ function TrainingBlock(props) {
           paddingBottom: "0 !important",
         }}>
         <Box overflow="hidden">
-          <Typography>{props.courseName}</Typography>
-          <Typography noWrap>{props.skills.join(", ")}</Typography>
+          <Typography variant="h6">{props.courseName}</Typography>
+          <Typography
+            variant="caption"
+            noWrap>
+            {props.skills.join(", ")}
+          </Typography>
+          <Collapse
+            sx={{ pt: 2 }}
+            in={expanded}
+            timeout="auto"
+            unmountOnExit>
+            <Typography paragraph>{props.description}</Typography>
+          </Collapse>
         </Box>
         <Box
           ml={4}
@@ -59,15 +70,6 @@ function TrainingBlock(props) {
           </ExpandMoreButton>
         </Box>
       </CardContent>
-      <Collapse
-        sx={{ background: lightBlue }}
-        in={expanded}
-        timeout="auto"
-        unmountOnExit>
-        <CardContent>
-          <Typography paragraph>{props.description}</Typography>
-        </CardContent>
-      </Collapse>
     </Card>
   );
 }
