@@ -1,12 +1,13 @@
 import Button from "@mui/material/Button";
 import { Box } from "@mui/system";
+import PropTypes from "prop-types";
 import PageLayout from "../../components/PageLayout";
 
 /**
  * Renders the LinkedIn Learning page.
  * @returns {JSX.Element} LinkedIn Learning page component
  */
-function LinkedInLearning() {
+function LinkedInLearning(props) {
   return (
     <PageLayout viewportPage title="LinkedIn Learning">
       <Box
@@ -18,7 +19,7 @@ function LinkedInLearning() {
         }}
       >
         <video width="80%" height="90%" controls>
-          <source src="" type="video/mp4" />
+          <source src={props.videoSource || ""} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </Box>
@@ -33,5 +34,9 @@ function LinkedInLearning() {
     </PageLayout>
   );
 }
+
+LinkedInLearning.propTypes = {
+  videoSource: PropTypes.string,
+};
 
 export default LinkedInLearning;
