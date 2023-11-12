@@ -28,22 +28,25 @@ const theme = createTheme({
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/dashboard",
-    element: <DashboardPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/linked-in-learning",
-    element: <LinkedInLearning />,
+    children: [
+      {
+        path: "",
+        element: <HomePage />,
+      },
+      {
+        path: "dashboard",
+        element: <DashboardPage />,
+      },
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+      {
+        path: "linked-in-learning",
+        element: <LinkedInLearning />,
+      },
+    ],
   },
 ]);
 
