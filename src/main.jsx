@@ -48,21 +48,17 @@ const router = createBrowserRouter([
         path: "linked-in-learning",
         element: <LinkedInLearning />,
       },
+      {
+        path: "/training-plan",
+        element: <TrainingPlanPage />,
+      },
+      {
+        path: "/assessment",
+        element: <AssessmentPage />,
+      },
     ],
   },
   {
-    path: "/dashboard",
-    element: <DashboardPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/training-plan",
-    element: <TrainingPlanPage />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/assessment",
-    element: <AssessmentPage />,
     errorElement: <ErrorPage />,
   },
 ]);
