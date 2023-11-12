@@ -91,72 +91,44 @@ function TrainingPlanPage() {
     setValue(newValue);
   };
   return (
-    <PageLayout
-      title="Training Plan"
-      viewportPage>
+    <PageLayout title="Training Plan" viewportPage>
       <Box sx={{ width: "100%", typography: "body1", mt: 2 }}>
-        <Tabs
-          value={value}
-          onChange={handleChange}>
-          <Tab
-            value={0}
-            label="Not started"
-          />
-          <Tab
-            value={1}
-            label="In Progress"
-          />
-          <Tab
-            value={2}
-            label="Done"
-          />
+        <Tabs value={value} onChange={handleChange}>
+          <Tab value={0} label="Not started" />
+          <Tab value={1} label="In Progress" />
+          <Tab value={2} label="Done" />
         </Tabs>
       </Box>
-      <CustomTabPanel
-        value={value}
-        index={0}>
+      <CustomTabPanel value={value} index={0}>
         <List>
-          {mockedTrainings.map((training, index) => {
+          {mockedTrainings.map((training) => {
             if (training.status === 0) {
               return (
-                <TrainingBlockListItem
-                  training={training}
-                  key={uuidv4()}
-                />
+                <TrainingBlockListItem training={training} key={uuidv4()} />
               );
             }
             return null;
           })}
         </List>
       </CustomTabPanel>
-      <CustomTabPanel
-        value={value}
-        index={1}>
+      <CustomTabPanel value={value} index={1}>
         <List>
-          {mockedTrainings.map((training, index) => {
+          {mockedTrainings.map((training) => {
             if (training.status === 1) {
               return (
-                <TrainingBlockListItem
-                  training={training}
-                  key={uuidv4()}
-                />
+                <TrainingBlockListItem training={training} key={uuidv4()} />
               );
             }
             return null;
           })}{" "}
         </List>
       </CustomTabPanel>
-      <CustomTabPanel
-        value={value}
-        index={2}>
+      <CustomTabPanel value={value} index={2}>
         <List>
-          {mockedTrainings.map((training, index) => {
+          {mockedTrainings.map((training) => {
             if (training.status === 2) {
               return (
-                <TrainingBlockListItem
-                  training={training}
-                  key={uuidv4()}
-                />
+                <TrainingBlockListItem training={training} key={uuidv4()} />
               );
             }
             return null;

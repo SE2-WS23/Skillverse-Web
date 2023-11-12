@@ -27,16 +27,15 @@ function DashboardPage() {
   ];
 
   return (
-    <PageLayout
-      title="Dashboard"
-      viewportPage>
+    <PageLayout title="Dashboard" viewportPage>
       <Box
         sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "stretch",
           height: "100%",
-        }}>
+        }}
+      >
         {STANDARD_DASHBOARD_ITEMS?.map((item) => (
           <Button
             variant="contained"
@@ -45,7 +44,8 @@ function DashboardPage() {
             fullWidth
             sx={{ margin: "15vh 5vw" }}
             onClick={() => navigate(item.link)}
-            key={uuidv4()}>
+            key={uuidv4()}
+          >
             {item.text.toUpperCase()}
           </Button>
         ))}

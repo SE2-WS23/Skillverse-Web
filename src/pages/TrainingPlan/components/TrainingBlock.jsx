@@ -33,39 +33,31 @@ function TrainingBlock(props) {
     <Card
       sx={{
         m: 2,
-      }}>
+      }}
+    >
       <CardContent
         sx={{
           background: lightBlue,
           display: "flex",
           justifyContent: "space-between",
           paddingBottom: "0 !important",
-        }}>
+        }}
+      >
         <Box overflow="hidden">
           <Typography variant="h6">{props.courseName}</Typography>
-          <Typography
-            variant="caption"
-            noWrap>
-            {props.skills.join(", ")}
-          </Typography>
-          <Collapse
-            sx={{ pt: 2 }}
-            in={expanded}
-            timeout="auto"
-            unmountOnExit>
+          <Typography variant="caption">{props.skills.join(", ")}</Typography>
+          <Collapse sx={{ pt: 2 }} in={expanded} timeout="auto" unmountOnExit>
             <Typography paragraph>{props.description}</Typography>
           </Collapse>
         </Box>
-        <Box
-          ml={4}
-          display="flex"
-          flexDirection="column">
+        <Box ml={4} display="flex" flexDirection="column">
           <CircularProgressWithLabel value={props.progress} />
           <ExpandMoreButton
             expand={expanded}
             onClick={handleExpandClick}
             aria-expanded={expanded}
-            aria-label="show more">
+            aria-label="show more"
+          >
             <ExpandMoreIcon />
           </ExpandMoreButton>
         </Box>

@@ -11,16 +11,14 @@ import PropTypes from "prop-types";
  * @returns {JSX.Element} - The custom tab panel component.
  */
 function CustomTabPanel(props) {
-  const { children, value, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}>
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+      hidden={props.value !== props.index}
+      id={`simple-tabpanel-${props.index}`}
+      aria-labelledby={`simple-tab-${props.index}`}
+    >
+      {props.value === props.index && <Box sx={{ p: 3 }}>{props.children}</Box>}
     </div>
   );
 }
