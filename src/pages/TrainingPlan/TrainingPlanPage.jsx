@@ -29,7 +29,7 @@ function TrainingPlanPage() {
       courseName: "Mobile App Development with Flutter",
       skills: ["Dart", "Flutter", "Mobile App Development"],
       description: "Build cross-platform mobile apps using Flutter and Dart.",
-      progress: 60,
+      progress: 100,
       status: 2,
     },
     {
@@ -51,7 +51,7 @@ function TrainingPlanPage() {
       skills: ["Digital Marketing", "SEO", "Social Media"],
       description:
         "Create effective digital marketing strategies for businesses.",
-      progress: 70,
+      progress: 100,
       status: 2,
     },
     {
@@ -73,7 +73,7 @@ function TrainingPlanPage() {
       courseName: "Artificial Intelligence and Machine Learning",
       skills: ["AI", "Machine Learning", "Deep Learning"],
       description: "Explore the fascinating world of AI and machine learning.",
-      progress: 85,
+      progress: 100,
       status: 2,
     },
     {
