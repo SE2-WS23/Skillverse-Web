@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         element: <LinkedInLearning />,
       },
       {
-        path: "Article",
+        path: "article",
         element: <ArticlePage />,
       },
     ],
