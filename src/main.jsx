@@ -13,6 +13,7 @@ import ErrorPage from "./pages/Error/ErrorPage";
 import HomePage from "./pages/Home/HomePage";
 import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
 import LoginPage from "./pages/Login/LoginPage";
+import CreateJobProfilePage from "./pages/CreateJobProfile/CreateJobProfilePage";
 
 const theme = createTheme({
   palette: {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "linked-in-learning",
         element: <LinkedInLearning />,
+      },
+      {
+        path: "create-job-profile",
+        element: <CreateJobProfilePage />,
       },
     ],
   },
