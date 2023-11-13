@@ -1,8 +1,9 @@
 import React from 'react';
 import PageLayout from '../../components/PageLayout';
-import Button from '@mui/material/Button';
+import { Button, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import PropTypes from 'prop-types';
+import { useTheme } from '@mui/material/styles';
 
 /**
  * Renders the Article page.
@@ -10,6 +11,7 @@ import PropTypes from 'prop-types';
  */
 
 function ArticlePage(props) {
+  const theme = useTheme();
   return (
     <PageLayout viewportPage title='Article'>
       <Box
@@ -19,7 +21,7 @@ function ArticlePage(props) {
           justifyContent: 'center',
           alignItems: 'center',
           height: 'calc(100% - 60px)',
-          overflowY: 'auto'
+          overflowY: 'auto',
         }}
       >
         <Box
@@ -30,26 +32,31 @@ function ArticlePage(props) {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: '#D9D9D9',
+            backgroundColor: theme.palette.primary.light ,
             padding: '20px',
+            color: theme.palette.primary.contrastText
           }}
         >
-          <div
-            style={{
+          <Typography
+            sx={{
               border: '1px solid black',
               padding: '5px',
               overflow: 'hidden',
               overflowY: 'auto',
             }}
-          > Article content here
-            <h2>{props.title}</h2>
-            <p>{props.content}</p>
+          >
+            <h2>{props.title || 'no title'}</h2>
+            <p>{props.content || 'website content is displayed here'}</p>
             <p>
-              <a href={props.link} target='_blank' rel='noopener noreferrer'>
+              <a
+                href={props.link || ''}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 Visit Website
               </a>
             </p>
-          </div>
+          </Typography>
         </Box>
       </Box>
 
@@ -65,9 +72,9 @@ function ArticlePage(props) {
   );
 }
 ArticlePage.propTypes = {
-  title: PropTypes.string,
-  content: PropTypes.string,
-  link: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default ArticlePage;
