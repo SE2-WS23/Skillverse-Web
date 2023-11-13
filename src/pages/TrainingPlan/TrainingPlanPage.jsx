@@ -1,5 +1,5 @@
 import { Box, List, Tab, Tabs } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import CustomTabPanel from "../../components/CustomTabPanel";
 import PageLayout from "../../components/PageLayout";
@@ -85,7 +85,7 @@ function TrainingPlanPage() {
       status: 0,
     },
   ];
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (_, newValue) => {
     setValue(newValue);
