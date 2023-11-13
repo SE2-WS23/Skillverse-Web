@@ -3,7 +3,7 @@ import { Box, Card, CardContent, Collapse, Typography } from "@mui/material";
 
 import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useState } from "react";
 import CircularProgressWithLabel from "../../../components/CircularProgressWithLabel";
 import ExpandMoreButton from "../../../components/ExpandMoreButton";
 
@@ -23,7 +23,7 @@ function TrainingBlock(props) {
 
   const lightBlue = theme.palette.primary.light;
 
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
