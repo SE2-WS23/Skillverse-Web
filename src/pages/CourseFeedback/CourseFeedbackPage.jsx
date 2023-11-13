@@ -1,24 +1,11 @@
-import React, { useState } from "react";
-import { Button, Slider } from "@mui/material";
+import { Button } from "@mui/material";
 import PageLayout from "../../components/PageLayout";
+import HorizontalLabeledSlider from "./components/HorizontalLabeledSlider";
 
 function CourseFeedbackPage() {
-  const [value, setValue] = useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
   return (
     <PageLayout viewportPage title="Course Feedback">
-      <Slider
-        size="medium"
-        color="primary"
-        orientation="horizontal"
-        value={value}
-        onChange={handleChange}
-        aria-label="feedback slider"
-      />
+      <HorizontalLabeledSlider label="Course Content" max={10} />
       <Button
         variant="contained"
         color="primary"
