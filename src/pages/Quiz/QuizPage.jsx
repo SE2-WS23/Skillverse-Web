@@ -12,26 +12,27 @@ import { Box } from "@mui/system";
 
 function QuizPage() {
 
-    const [currentQuestion, setcurrentQuestion] = useState(0);
-    const [progressValue, setprogressValue] = useState(1);
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+    const [progressValue, setProgressValue] = useState(1);
 
     const handleAnswerButtonClick = (answer) => {
-        if (quiztions[currentQuestion].correct === answer.target.textContent) // checks if the answer is correct
+        if (dummyQuestions[currentQuestion].correct === answer.target.textContent) // checks if the answer is correct
             console.log("Correct");
         else
             console.log("Incorrect");
 
-        if (currentQuestion !== quiztions.length - 1) { // updates questions and progress bar
-            setcurrentQuestion(currentQuestion + 1);
-            setprogressValue((((currentQuestion +1)/ quiztions.length) * 100));
+        if (currentQuestion !== dummyQuestions.length - 1) { 
+            setCurrentQuestion(currentQuestion + 1);
+            setProgressValue((((currentQuestion +1)/ dummyQuestions.length) * 100));
+            return;
         }
 
         // update the progress bar on the last question
-        if (currentQuestion === quiztions.length-1)
-            setprogressValue(100); 
+        if (currentQuestion === dummyQuestions.length-1)
+            setProgressValue(100); 
     }
 
-    const quiztions = [ // placeholder for the real questions
+    const dummyQuestions = [ // placeholder for the real questions
         {
           question: "Question 1",
           answers: ["Answer 1", "Answer 2", "Answer 3"],
@@ -65,9 +66,9 @@ function QuizPage() {
             >
                 <LinearProgress 
                     sx={{
-                    margin: "4% 0 3% 0",
+                    margin: "4vh 0 3vh 0",
                     height: "1.5%", 
-                    width: "90%"
+                    width: "90vw"
                     }} 
                     variant="determinate" 
                     value={progressValue} 
@@ -75,8 +76,8 @@ function QuizPage() {
 
                 <Box
                     sx={{
-                    height: "80%",
-                    width: "80%",
+                    height: "80vh",
+                    width: "80vw",
                     backgroundColor: "#D9D9D9",
                     flexGrow: 1,
                     display: "flex",
@@ -86,16 +87,16 @@ function QuizPage() {
                     }}
                 >
                     
-                    <h1 style={{margin: "0% 0 15% 0"}}>
-                        {quiztions[currentQuestion].question}
+                    <h1 style={{margin: "0% 0 15vh 0"}}>
+                        {dummyQuestions[currentQuestion].question}
                     </h1>
 
-                    {quiztions[currentQuestion].answers?.map((answer) => (
+                    {dummyQuestions[currentQuestion].answers?.map((answer) => (
                         <Button
                             variant="contained"
                             color="primary"
                             size="large"
-                            sx={{ width: "70%", margin: "2% 0"}}
+                            sx={{ width: "70%", margin: "2vh 0"}}
                             key={uuidv4()}
                             onClick={handleAnswerButtonClick}
                         >
