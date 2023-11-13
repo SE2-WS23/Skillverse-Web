@@ -19,6 +19,14 @@ function CourseFeedbackPage() {
         onChange={handleChange}
         aria-label="feedback slider"
       />
+      <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        sx={{ position: "absolute", bottom: "10px", right: "10px" }}
+      >
+        Send
+      </Button>
     </PageLayout>
   );
 }
