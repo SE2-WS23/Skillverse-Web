@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import CustomTabPanel from "../../components/CustomTabPanel";
 import PageLayout from "../../components/PageLayout";
-import TrainingBlockListItem from "./components/TrainingBlockListItem";
+import TrainingBlock from "./components/TrainingBlock";
 
 /**
  * Renders the Training Plan page with tabs for Not started, In Progress, and Done.
@@ -103,9 +103,7 @@ function TrainingPlanPage() {
         <List>
           {mockedTrainings?.map((training) => {
             if (training.status === 0) {
-              return (
-                <TrainingBlockListItem training={training} key={uuidv4()} />
-              );
+              return <TrainingBlock training={training} key={uuidv4()} />;
             }
             return null;
           })}
@@ -115,9 +113,7 @@ function TrainingPlanPage() {
         <List>
           {mockedTrainings?.map((training) => {
             if (training.status === 1) {
-              return (
-                <TrainingBlockListItem training={training} key={uuidv4()} />
-              );
+              return <TrainingBlock training={training} key={uuidv4()} />;
             }
             return null;
           })}{" "}
@@ -127,9 +123,7 @@ function TrainingPlanPage() {
         <List>
           {mockedTrainings?.map((training) => {
             if (training.status === 2) {
-              return (
-                <TrainingBlockListItem training={training} key={uuidv4()} />
-              );
+              return <TrainingBlock training={training} key={uuidv4()} />;
             }
             return null;
           })}{" "}
