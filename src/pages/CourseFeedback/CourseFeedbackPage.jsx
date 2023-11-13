@@ -2,6 +2,7 @@ import { Button, TextField } from "@mui/material";
 import PageLayout from "../../components/PageLayout";
 import HorizontalLabeledSlider from "./components/HorizontalLabeledSlider";
 import { useState } from "react";
+import "./CourseFeedbackPage.css";
 
 function CourseFeedbackPage() {
   const [textInput, setTextInput] = useState("");

@@ -9,7 +9,7 @@ function HorizontalLabeledSlider(props) {
   };
 
   return (
-    <Box sx={{ padding: "30px" }}>
+    <Box sx={{ padding: "10px" }}>
       <Typography variant="h6">{props.label}</Typography>
       <Slider
         size="medium"
