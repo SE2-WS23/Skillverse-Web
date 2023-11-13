@@ -101,7 +101,7 @@ function TrainingPlanPage() {
       </Box>
       <CustomTabPanel value={value} index={0}>
         <List>
-          {mockedTrainings.map((training) => {
+          {mockedTrainings?.map((training) => {
             if (training.status === 0) {
               return (
                 <TrainingBlockListItem training={training} key={uuidv4()} />
@@ -113,7 +113,7 @@ function TrainingPlanPage() {
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         <List>
-          {mockedTrainings.map((training) => {
+          {mockedTrainings?.map((training) => {
             if (training.status === 1) {
               return (
                 <TrainingBlockListItem training={training} key={uuidv4()} />
@@ -125,7 +125,7 @@ function TrainingPlanPage() {
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         <List>
-          {mockedTrainings.map((training) => {
+          {mockedTrainings?.map((training) => {
             if (training.status === 2) {
               return (
                 <TrainingBlockListItem training={training} key={uuidv4()} />
