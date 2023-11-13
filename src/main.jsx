@@ -49,11 +49,11 @@ const router = createBrowserRouter([
         element: <LinkedInLearning />,
       },
       {
-        path: "/training-plan",
+        path: "training-plan",
         element: <TrainingPlanPage />,
       },
       {
-        path: "/assessment",
+        path: "assessment",
         element: <AssessmentPage />,
       },
     ],
