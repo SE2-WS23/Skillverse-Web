@@ -33,7 +33,7 @@ function CourseFeedbackPage() {
           variant="contained"
           color="primary"
           size="large"
-          sx={{ position: "absolute", bottom: "10px", right: "10px" }}
+          sx={{ marginLeft: "auto" }}
         >
           Send
         </Button>
