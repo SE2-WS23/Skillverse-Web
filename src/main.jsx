@@ -13,6 +13,8 @@ import ErrorPage from "./pages/Error/ErrorPage";
 import HomePage from "./pages/Home/HomePage";
 import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
 import LoginPage from "./pages/Login/LoginPage";
+import CCMPage from "./pages/CompanyCourseManagement/CCMPage";
+import CTOPage from "./pages/CompanyTrainingOverview/CTOPage";
 
 const theme = createTheme({
   palette: {
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <LoginPage />,
+      },
+      {
+        path: "ccm",
+        element: <CCMPage />,
+      },
+      {
+        path: "cto",
+        element: <CTOPage />,
       },
       {
         path: "linked-in-learning",
