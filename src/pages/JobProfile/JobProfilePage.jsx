@@ -110,7 +110,7 @@ function JobProfilePage(){
                 marginBottom: "50px"
             }}
             >
-                {mockedJobs.map((job) => (
+                {mockedJobs?.map((job) => (
                     <Grid item xs={6} key={job.title}>
                         <ListItem
                             sx={{
