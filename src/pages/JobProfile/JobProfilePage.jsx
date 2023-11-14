@@ -1,7 +1,6 @@
 import PageLayout from "../../components/PageLayout";
-import { Button, Grid, List, ListItem, ListItemText } from "@mui/material";
+import { Button, Grid, ListItem, ListItemText } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { v4 as uuidv4 } from "uuid";
 
 
 function JobProfilePage(){
@@ -112,18 +111,17 @@ function JobProfilePage(){
             }}
             >
                 {mockedJobs.map((job) => (
-                    <Grid item xs={6}>
-                        <ListItem 
-                        key={uuidv4()} 
-                        sx={{
-                            height: "100px",
-                            background: lightBlue,
-                        }}
+                    <Grid item xs={6} key={job.title}>
+                        <ListItem
+                            sx={{
+                                height: "100px",
+                                background: lightBlue,
+                            }}
                         >
-                            <ListItemText 
-                            primary={job.category} 
-                            secondary={job.title} 
-                            secondaryTypographyProps={{ align: "center" }}
+                            <ListItemText
+                                primary={job.category}
+                                secondary={job.title}
+                                secondaryTypographyProps={{ align: "center" }}
                             />
                         </ListItem>
                     </Grid>
