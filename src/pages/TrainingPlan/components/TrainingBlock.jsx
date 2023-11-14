@@ -52,16 +52,20 @@ function TrainingBlock(props) {
           }}
         >
           <Box overflow="hidden">
-            <Typography variant="h6">{props.training.courseName}</Typography>
+            <Typography variant="h6">
+              {props.training.courseName || ""}
+            </Typography>
             <Typography variant="caption">
-              {props.training.skills.join(", ")}
+              {props.training.skills?.join(", ") || ""}
             </Typography>
             <Collapse sx={{ pt: 2 }} in={expanded} timeout="auto" unmountOnExit>
-              <Typography paragraph>{props.training.description}</Typography>
+              <Typography paragraph>
+                {props.training.description || ""}
+              </Typography>
             </Collapse>
           </Box>
           <Box ml={4} display="flex" flexDirection="column">
-            <CircularProgressWithLabel value={props.training.progress} />
+            <CircularProgressWithLabel value={props.training.progress || 0} />
             <ExpandMoreButton
               expand={expanded}
               onClick={handleExpandClick}
@@ -81,10 +85,10 @@ export default TrainingBlock;
 
 TrainingBlock.propTypes = {
   training: PropTypes.shape({
-    courseName: PropTypes.string.isRequired,
-    skills: PropTypes.arrayOf(PropTypes.string).isRequired,
-    description: PropTypes.string.isRequired,
-    progress: PropTypes.number.isRequired,
+    courseName: PropTypes.string,
+    skills: PropTypes.arrayOf(PropTypes.string),
+    description: PropTypes.string,
+    progress: PropTypes.number,
     status: PropTypes.number,
   }),
 };

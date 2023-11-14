@@ -116,7 +116,7 @@ function TrainingPlanPage() {
               return <TrainingBlock training={training} key={uuidv4()} />;
             }
             return null;
-          })}{" "}
+          })}
         </List>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
@@ -126,7 +126,7 @@ function TrainingPlanPage() {
               return <TrainingBlock training={training} key={uuidv4()} />;
             }
             return null;
-          })}{" "}
+          })}
         </List>
       </CustomTabPanel>
     </PageLayout>
