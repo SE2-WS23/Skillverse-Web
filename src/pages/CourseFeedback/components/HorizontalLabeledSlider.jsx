@@ -1,13 +1,7 @@
 import { Box, Slider, Typography } from "@mui/material";
-import { useState } from "react";
 import PropTypes from "prop-types";
 
 function HorizontalLabeledSlider(props) {
-  const [value, setValue] = useState(0);
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
   return (
     <Box sx={{ padding: "10px" }}>
       <Typography variant="h6">{props.label}</Typography>
@@ -15,11 +9,11 @@ function HorizontalLabeledSlider(props) {
         size="medium"
         color="primary"
         orientation="horizontal"
-        value={value}
+        value={props.value || 0}
         valueLabelDisplay="auto"
         marks
-        max={props.max}
-        onChange={handleChange}
+        max={props.max || 10}
+        onChange={props.onChange}
       />
     </Box>
   );
@@ -28,6 +22,8 @@ function HorizontalLabeledSlider(props) {
 HorizontalLabeledSlider.propTypes = {
   label: PropTypes.string.isRequired,
   max: PropTypes.number,
+  value: PropTypes.number,
+  onChange: PropTypes.func,
 };
 
 export default HorizontalLabeledSlider;
