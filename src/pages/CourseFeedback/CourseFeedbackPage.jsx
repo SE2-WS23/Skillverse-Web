@@ -7,26 +7,24 @@ import "./CourseFeedbackPage.css";
 function CourseFeedbackPage() {
   const [courseContentValue, setCourseContentValue] = useState(0);
   const [courseLengthValue, setCourseLengthValue] = useState(0);
-  const [textInput, setTextInput] = useState("");
+  const [additionalFeedback, setAdditionalFeedback] = useState("");
 
-  const handleCourseContentChange = (event, newValue) => {
-    setCourseContentValue(newValue);
+  const handleCourseContentChange = (event) => {
+    setCourseContentValue(event.target.value);
   };
 
-  const handleCourseLengthChange = (event, newValue) => {
-    setCourseLengthValue(newValue);
+  const handleCourseLengthChange = (event) => {
+    setCourseLengthValue(event.target.value);
   };
 
   const handleTextChange = (event) => {
-    setTextInput(event.target.value);
+    setAdditionalFeedback(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Content Value:", courseContentValue);
-    console.log("Length Value:", courseLengthValue);
-    console.log("Text Input:", textInput);
   };
+
   return (
     <PageLayout viewportPage title="Course Feedback">
       <form className="feedbackForm" onSubmit={handleSubmit}>
@@ -45,7 +43,7 @@ function CourseFeedbackPage() {
         <TextField
           label="Additional Comments"
           variant="standard"
-          value={textInput}
+          value={additionalFeedback}
           onChange={handleTextChange}
           multiline
         />
