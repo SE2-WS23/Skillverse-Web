@@ -2,12 +2,16 @@ import { Box, Typography } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import PageLayout from "../../components/PageLayout";
+import { useState } from "react";
 
 /**
  * Renders the create job profile page.
  * @returns {JSX.Element} The create job profile page component.
  */
 function CreateJobProfilePage() {
+
+    const [jobName, setJobName] = useState("");
+    const [jobDescription, setJobDescription] = useState("");
 
     return (
         <PageLayout title="Create Job Profile" viewportPage>
@@ -17,6 +21,7 @@ function CreateJobProfilePage() {
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
+                    hight: "calc(100% - 60px)",
                 }}
             >
                 <Typography variant="h3">Insert details of the job</Typography>
@@ -26,6 +31,7 @@ function CreateJobProfilePage() {
                     variant="outlined"
                     size="medium"
                     sx={{ mt: 4, width: "60%" }}  
+                    onChange={(event) => {setJobName(event.target.value)}}
                 />
                 <TextField
                     id="jobDescription"
@@ -35,6 +41,7 @@ function CreateJobProfilePage() {
                     multiline
                     rows={15}
                     sx={{ mt: 4, width: "60%" }} 
+                    onChange={(event) => {setJobDescription(event.target.value)}}
                 />
             </Box>
 
@@ -43,7 +50,7 @@ function CreateJobProfilePage() {
                 color="primary"
                 size="large"
                 sx={{
-                    position: "fixed",
+                    position: "absolute",
                     bottom: "10px",
                     right: "10px"
                 }}
