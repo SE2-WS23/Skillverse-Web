@@ -13,6 +13,8 @@ import ErrorPage from "./pages/Error/ErrorPage";
 import HomePage from "./pages/Home/HomePage";
 import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
 import LoginPage from "./pages/Login/LoginPage";
+import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
+import ArticlePage from "./pages/Article/ArticlePage";
 
 const theme = createTheme({
   palette: {
@@ -43,17 +45,29 @@ const router = createBrowserRouter([
         path: "login",
         element: <LoginPage />,
       },
+
       {
         path: "linked-in-learning",
         element: <LinkedInLearning />,
       },
+      {
+        path: "training-plan",
+        element: <TrainingPlanPage />,
+      },
+      {
+        path: "article",
+        element: <ArticlePage />,
+      },
+      {
+        path: "assessment",
+        element: <AssessmentPage />,
+      }
+
+
+
     ],
   },
-  {
-    path: "/assessment",
-    element: <AssessmentPage />,
-    errorElement: <ErrorPage />,
-  },
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
