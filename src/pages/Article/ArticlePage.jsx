@@ -12,6 +12,7 @@ import { useTheme } from '@mui/material/styles';
 
 function ArticlePage(props) {
   const theme = useTheme();
+
   return (
     <PageLayout viewportPage title='Article'>
       <Box
@@ -32,30 +33,28 @@ function ArticlePage(props) {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: theme.palette.primary.light ,
-            padding: '20px',
-            color: theme.palette.primary.contrastText
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.primary.contrastText,
           }}
         >
+          <Typography variant='h4'>{props.title || 'no title'}</Typography>
           <Typography
             sx={{
-              border: '1px solid black',
-              padding: '5px',
+              p: 3,
               overflow: 'hidden',
               overflowY: 'auto',
             }}
           >
-            <h2>{props.title || 'no title'}</h2>
-            <p>{props.content || 'website content is displayed here'}</p>
-            <p>
-              <a
-                href={props.link || ''}
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                Visit Website
-              </a>
-            </p>
+            {props.content || 'article content is displayed here'}
+          </Typography>
+          <Typography>
+            <a
+              href={props.link || ''}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Visit Website
+            </a>
           </Typography>
         </Box>
       </Box>
