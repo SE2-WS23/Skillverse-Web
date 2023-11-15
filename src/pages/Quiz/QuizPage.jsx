@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import LinearProgress from '@mui/material/LinearProgress';
 import { v4 as uuidv4 } from "uuid";
 import { Box } from "@mui/system";
+import { useTheme } from '@mui/material/styles';
 
 /**
  * Renders the Assessment page.
@@ -12,6 +13,7 @@ import { Box } from "@mui/system";
 
 function QuizPage() {
 
+    const theme = useTheme();
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [progressValue, setProgressValue] = useState(1);
 
@@ -30,6 +32,10 @@ function QuizPage() {
         // update the progress bar on the last question
         if (currentQuestion === dummyQuestions.length-1)
             setProgressValue(100); 
+    }
+
+    const nextButtonClick = () => {
+        return;
     }
 
     const dummyQuestions = [ // placeholder for the real questions
@@ -78,7 +84,7 @@ function QuizPage() {
                     sx={{
                     height: "80vh",
                     width: "80vw",
-                    backgroundColor: "#D9D9D9",
+                    backgroundColor: theme.palette.primary.light,
                     flexGrow: 1,
                     display: "flex",
                     flexDirection: "column",
@@ -111,6 +117,7 @@ function QuizPage() {
                 color="primary"
                 size="large"
                 sx={{ position: "absolute", bottom: "10px", right: "10px" }}
+                onClick={nextButtonClick}
             >
                 Next
             </Button>
