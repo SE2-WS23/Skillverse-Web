@@ -13,13 +13,14 @@ import ErrorPage from "./pages/Error/ErrorPage";
 import HomePage from "./pages/Home/HomePage";
 import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
 import LoginPage from "./pages/Login/LoginPage";
+import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
 import ArticlePage from "./pages/Article/ArticlePage";
 
 const theme = createTheme({
   palette: {
     primary: {
       main: "#1565C0",
-      light: "#1975D2",
+      light: "#BBDEFB",
       dark: "#0D46A1",
       contrastText: "#fff",
     },
@@ -47,10 +48,6 @@ const router = createBrowserRouter([
       {
         path: "linked-in-learning",
         element: <LinkedInLearning />,
-      },
-      {
-        path: "article",
-        element: <ArticlePage />,
       },
     ],
   },
