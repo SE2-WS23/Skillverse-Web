@@ -1,22 +1,23 @@
+import { useTheme } from "@emotion/react";
 import {Grid, ListItem, ListItemText, createTheme } from "@mui/material";
 
 function JobProfileItem(){
 
     const mockedJobs = [
         {
-            category: "Web Development", 
+            category: "Web Development - 1", 
             title: "Frontend Developer"
         },
         {
-            category: "Web Development", 
+            category: "Web Development - 2", 
             title: "Full Stack Developer"
         },
         {
-            category: "Mobile App Development", 
+            category: "Mobile App Development - 1", 
             title: "iOS Developer"
         },
         {
-            category: "Mobile App Development", 
+            category: "Mobile App Development - 2", 
             title: "Android Developer"
         },
         {
@@ -94,7 +95,7 @@ function JobProfileItem(){
                     <ListItem
                     sx={{
                         height: "100px",
-                        background: createTheme().palette.primary.light,
+                        background: useTheme().palette.primary.light,
                     }}
                     >
                         <ListItemText
