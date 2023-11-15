@@ -1,5 +1,5 @@
 import { useTheme } from "@emotion/react";
-import {Grid, ListItem, ListItemText, createTheme } from "@mui/material";
+import {Grid, ListItem, ListItemText } from "@mui/material";
 
 function JobProfileItem(){
 
