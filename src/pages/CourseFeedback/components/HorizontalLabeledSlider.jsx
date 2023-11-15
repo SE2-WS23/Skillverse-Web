@@ -1,8 +1,6 @@
 import { Box, Slider, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 /**
- * A custom tab panel component.
- *
  * @param {number} props.value - The value of the Slider component.
  * @param {number} props.max - The maximum value of the Slider component.
  * @param {string} props.label - The label for the Slider component.

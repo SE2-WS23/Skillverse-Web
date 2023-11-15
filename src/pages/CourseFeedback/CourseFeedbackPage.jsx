@@ -4,6 +4,12 @@ import HorizontalLabeledSlider from "./components/HorizontalLabeledSlider";
 import { useState } from "react";
 import "./CourseFeedbackPage.css";
 
+/**
+ * The `CourseFeedbackPage` function is a React component that renders a form for users to provide
+ * feedback on a course, including sliders for course content and length, a text field for additional
+ * comments, and a submit button.
+ * @returns The CourseFeedbackPage component is being returned.
+ */
 function CourseFeedbackPage() {
   const [courseContentValue, setCourseContentValue] = useState(0);
   const [courseLengthValue, setCourseLengthValue] = useState(0);
