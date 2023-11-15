@@ -13,6 +13,12 @@ function CreateJobProfilePage() {
     const [jobName, setJobName] = useState("");
     const [jobDescription, setJobDescription] = useState("");
 
+    const handelNext = () => {
+        console.log("Next clicked");
+        console.log("Job Name: " + jobName);
+        console.log("Job Description: " + jobDescription);
+    }
+
     return (
         <PageLayout title="Create Job Profile" viewportPage>
             <Box
@@ -54,6 +60,7 @@ function CreateJobProfilePage() {
                     bottom: "10px",
                     right: "10px"
                 }}
+                onClick={handelNext}
             >
                 Next
             </Button>
