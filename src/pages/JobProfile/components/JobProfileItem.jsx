@@ -2,7 +2,7 @@ import { useTheme } from "@emotion/react";
 import { Grid, ListItem, ListItemText } from "@mui/material";
 import PropTypes from "prop-types";
 
-function JobProfileItem({ job }) {
+function JobProfileItem(props) {
   return (
     <Grid item xs={6}>
       <ListItem
@@ -12,8 +12,8 @@ function JobProfileItem({ job }) {
         }}
       >
         <ListItemText
-          primary={job.category}
-          secondary={job.title}
+          primary={props.job.category}
+          secondary={props.job.title}
           secondaryTypographyProps={{ align: "center" }}
         />
       </ListItem>
