@@ -1,8 +1,11 @@
+import PageLayout from "../../components/PageLayout";
+import EmployeeCard from "./components/EmployeeCard";
+
 function EmployeeOverviewPage() {
   return (
-    <>
-      <p>EmployeeOverview</p>
-    </>
+    <PageLayout title="Employee Overview">
+      <EmployeeCard />
+    </PageLayout>
   );
 }
 
