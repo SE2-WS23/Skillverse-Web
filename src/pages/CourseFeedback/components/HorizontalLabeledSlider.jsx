@@ -27,7 +27,7 @@ function HorizontalLabeledSlider(props) {
 
 HorizontalLabeledSlider.propTypes = {
   label: PropTypes.string.isRequired,
-  max: PropTypes.number.isRequired,
+  max: PropTypes.number,
   value: PropTypes.number,
   onChange: PropTypes.func,
 };
