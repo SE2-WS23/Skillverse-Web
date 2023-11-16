@@ -13,7 +13,15 @@ function CreateJobProfilePage() {
     const [jobName, setJobName] = useState("");
     const [jobDescription, setJobDescription] = useState("");
 
-    const handelNext = () => {
+    const handleJobNameChange = (event) => {
+        setJobName(event.target.value);
+    }
+
+    const handleJobDescriptionChange = (event) => {
+        setJobDescription(event.target.value);
+    }
+
+    const handleNext = () => {
         console.log("Next clicked");
         console.log("Job Name: " + jobName);
         console.log("Job Description: " + jobDescription);
@@ -37,7 +45,7 @@ function CreateJobProfilePage() {
                     variant="outlined"
                     size="medium"
                     sx={{ mt: 4, width: "60%" }}  
-                    onChange={(event) => {setJobName(event.target.value)}}
+                    onChange={handleJobNameChange}
                 />
                 <TextField
                     id="jobDescription"
@@ -47,23 +55,19 @@ function CreateJobProfilePage() {
                     multiline
                     rows={15}
                     sx={{ mt: 4, width: "60%" }} 
-                    onChange={(event) => {setJobDescription(event.target.value)}}
+                    onChange={handleJobDescriptionChange}
                 />
+                <Button
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    sx={{ mt: 4, alignSelf: "flex-end", marginRight: "10px" }} // Align the button to the right
+                    onClick={handleNext}
+                >
+                    Next
+                </Button>
             </Box>
 
-            <Button
-                variant="contained"
-                color="primary"
-                size="large"
-                sx={{
-                    position: "absolute",
-                    bottom: "10px",
-                    right: "10px"
-                }}
-                onClick={handelNext}
-            >
-                Next
-            </Button>
         </PageLayout>
     );
 }
