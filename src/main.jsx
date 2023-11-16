@@ -8,7 +8,6 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import ErrorPage from "./pages/Error/ErrorPage";
-import HomePage from "./pages/Home/HomePage";
 import ROUTES from "./routes";
 
 const theme = createTheme({
@@ -27,13 +26,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "",
-        element: <HomePage />,
-      },
-      ...ROUTES,
-    ],
+    children: ROUTES,
   },
 ]);
 
