@@ -12,8 +12,8 @@ function JobProfileItem(props) {
         }}
       >
         <ListItemText
-          primary={props.jobProfile.category}
-          secondary={props.jobProfile.title}
+          primary={props.jobProfile.category || ""}
+          secondary={props.jobProfile.title || ""}
           secondaryTypographyProps={{ align: "center" }}
         />
       </ListItem>
@@ -25,7 +25,7 @@ export default JobProfileItem;
 
 JobProfileItem.propTypes = {
   jobProfile: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    category: PropTypes.string,
   }),
 };
