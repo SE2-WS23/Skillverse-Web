@@ -1,5 +1,6 @@
 import { useTheme } from "@emotion/react";
 import { Grid, ListItem, ListItemText } from "@mui/material";
+import PropTypes from "prop-types";
 
 function JobProfileItem({ job }) {
   return (
@@ -21,3 +22,11 @@ function JobProfileItem({ job }) {
 }
 
 export default JobProfileItem;
+
+JobProfileItem.propTypes = {
+  JobProfile: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    job: PropTypes.string.isRequired,
+  }),
+};

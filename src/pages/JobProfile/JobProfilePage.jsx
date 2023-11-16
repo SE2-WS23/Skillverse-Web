@@ -29,8 +29,8 @@ function JobProfilePage() {
           marginBottom: "50px",
         }}
       >
-        {mockedJobs?.map((job) => (
-          <JobProfileItem key={job.title} job={job} />
+        {mockedJobs?.map((jobProfile) => (
+          <JobProfileItem key={jobProfile.title} job={jobProfile} />
         ))}
       </Grid>
     </PageLayout>
