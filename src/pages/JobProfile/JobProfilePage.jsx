@@ -12,7 +12,7 @@ function JobProfilePage() {
         color="primary"
         size="large"
         sx={{
-          margin: "115px 0 0px 115px",
+          margin: "116px 0 0px 116px",
         }}
       >
         Add Job
