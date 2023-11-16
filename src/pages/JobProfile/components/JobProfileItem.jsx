@@ -27,6 +27,5 @@ JobProfileItem.propTypes = {
   jobProfile: PropTypes.shape({
     title: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
-    job: PropTypes.string.isRequired,
   }),
 };
