@@ -12,8 +12,6 @@ export default function FileActionItem({files}) {
     const [file, setFile] = React.useState(files[0]);
     const [action, setAction] = React.useState('view');
 
-    const [showAlert, setShowAlert] = useState(false);
-
     const handleFileChange = (event) => {
       setFile(event.target.value);
     };
@@ -25,6 +23,7 @@ export default function FileActionItem({files}) {
         console.log("NotImplemented file: "+file)
       };
 
+      //populates files selection with prop array
       function populateSelect(_files){
         return _files.map(el => {
             return (<MenuItem value={el} key={_files.indexOf(el)}>{el}</MenuItem>)

@@ -4,6 +4,7 @@ import "./style.css"
 import { List, ListItem, ListItemText, Box } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 
+//populate lists with prop array. secondary, primary are (1) skill and level, or (2) certificate and origin
 function renderList(list){
     return list.map(el => {
         return (
