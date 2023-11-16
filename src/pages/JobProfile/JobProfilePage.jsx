@@ -1,5 +1,5 @@
-import PageLayout from "../../components/PageLayout";
 import { Button, Grid } from "@mui/material";
+import PageLayout from "../../components/PageLayout";
 import JobProfileItem from "./components/JobProfileItem";
 import mockedJobs from "./mockData";
 
@@ -30,7 +30,7 @@ function JobProfilePage() {
         }}
       >
         {mockedJobs?.map((jobProfile) => (
-          <JobProfileItem key={jobProfile.title} job={jobProfile} />
+          <JobProfileItem jobProfile={jobProfile} />
         ))}
       </Grid>
     </PageLayout>
