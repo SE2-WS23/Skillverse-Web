@@ -51,5 +51,5 @@ export default function FileActionItem({files}) {
 }
 
 FileActionItem.propTypes={
-  file: PropTypes.array
+  files: PropTypes.array
 }
