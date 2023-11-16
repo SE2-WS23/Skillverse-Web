@@ -13,6 +13,7 @@ import ErrorPage from "./pages/Error/ErrorPage";
 import HomePage from "./pages/Home/HomePage";
 import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
 import LoginPage from "./pages/Login/LoginPage";
+import JobProfilePage from "./pages/JobProfile/JobProfilePage";
 import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
 
 const theme = createTheme({
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "linked-in-learning",
         element: <LinkedInLearning />,
+      },
+      {
+        path: "job-profile",
+        element: <JobProfilePage />,
       },
       {
         path: "training-plan",
