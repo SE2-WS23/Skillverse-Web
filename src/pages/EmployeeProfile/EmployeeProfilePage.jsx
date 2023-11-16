@@ -10,9 +10,9 @@ import { v4 as uuid } from "uuid";
 //mock data
 const skills = [{prmry:'Skill1', scndry:'1', uid: uuid()}, {prmry:'Skill2', scndry:'2', uid: uuid()}, {prmry:'Skill3', scndry:'5', uid: uuid()}];
 const certificates = [{prmry:'Cert1', scndry:'from school', uid: uuid()}, {prmry:'Cert2', scndry:'from work', uid: uuid()}, {prmry:'Cert3', scndry:'from uni', uid: uuid()}];
-var aboutme = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam."
-var files = ['cv.pdf', 'report.pdf']
-var contacts = {phone:'+12345678', email:'username@email.com', address:'Street address 1'}
+const aboutme = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam."
+const files = ['cv.pdf', 'report.pdf']
+const contacts = {phone:'+12345678', email:'username@email.com', address:'Street address 1'}
 
 function EmployeeProfilePage(){
 

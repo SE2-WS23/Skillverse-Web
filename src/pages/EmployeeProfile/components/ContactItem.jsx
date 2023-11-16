@@ -2,6 +2,7 @@
 import { Stack, Typography, Box } from "@mui/material";
 import "./style.css"
 import { useTheme } from '@mui/material/styles';
+import PropTypes from 'prop-types'
 
 export default function ContactItem({contact}) {
 
@@ -18,3 +19,10 @@ export default function ContactItem({contact}) {
         </Box>
     );
 }
+
+ContactItem.propTypes= {
+    contact: PropTypes.object,
+    phone: PropTypes.string,
+    email: PropTypes.string,
+    address: PropTypes.string,
+  };

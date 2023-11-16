@@ -2,8 +2,8 @@
 import { Button, MenuItem, Select, FormGroup, Stack, Box } from "@mui/material";
 import "./style.css"
 import React from "react";
-import { useState } from "react";
 import { useTheme } from '@mui/material/styles';
+import PropTypes from 'prop-types'
 
 export default function FileActionItem({files}) {
 
@@ -48,4 +48,8 @@ export default function FileActionItem({files}) {
 
         </Box>
     );
+}
+
+FileActionItem.propTypes={
+  file: PropTypes.array
 }

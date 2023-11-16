@@ -31,5 +31,6 @@ export default function OverviewItem({title, list}) {
 }
 
 OverviewItem.propTypes = {
-    title: PropTypes.string
+    title: PropTypes.string,
+    list: PropTypes.array
   };
