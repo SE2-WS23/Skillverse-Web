@@ -15,6 +15,7 @@ var files = ['cv.pdf', 'report.pdf']
 var contacts = {phone:'+12345678', email:'username@email.com', address:'Street address 1'}
 
 function EmployeeProfilePage(){
+
     return(
 
         //return html

@@ -1,7 +1,8 @@
 //imports
 import { PropTypes } from "prop-types";
 import "./style.css"
-import { List, ListItem, ListItemText } from "@mui/material";
+import { List, ListItem, ListItemText, Box } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
 
 function renderList(list){
     return list.map(el => {
@@ -14,14 +15,17 @@ function renderList(list){
 }
 
 export default function OverviewItem({title, list}) {
+
+    const theme = useTheme()
+
     return (
-        <div className="component">
+        <Box className="component" sx={{backgroundColor: theme.palette.primary.light}}>
             <h2>{title}</h2>
 
             <List sx={{ width: '100%' }}>
                     {renderList(list)}
             </List>
-        </div>
+        </Box>
     )
 }
 

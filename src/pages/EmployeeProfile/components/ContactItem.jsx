@@ -1,16 +1,20 @@
 //imports
-import { Stack, Typography } from "@mui/material";
+import { Stack, Typography, Box } from "@mui/material";
 import "./style.css"
+import { useTheme } from '@mui/material/styles';
 
 export default function ContactItem({contact}) {
+
+    const theme = useTheme()
+
     return (
-        <div className="component">
+        <Box className="component" sx={{backgroundColor: theme.palette.primary.light}}>
             <h2>Contact</h2>
             <Stack direction="row"  columnGap={8} sx={{justifyContent: 'center'}} className="contact">
                 <Typography variant="body1" component="a" href={'tel:'+contact.phone}>{contact.phone}</Typography>
                 <Typography variant="body1" component="a" href={'mailto:'+contact.email}>{contact.email}</Typography>
                 <Typography variant="body1">{contact.address}</Typography>
             </Stack>
-        </div>
+        </Box>
     );
 }

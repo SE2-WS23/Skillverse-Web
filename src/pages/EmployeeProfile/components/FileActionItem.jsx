@@ -1,10 +1,13 @@
 //imports
-import { Button, FormControl, Grid, MenuItem, Select, InputLabel, FormGroup, Stack, Alert } from "@mui/material";
+import { Button, MenuItem, Select, FormGroup, Stack, Box } from "@mui/material";
 import "./style.css"
 import React from "react";
 import { useState } from "react";
+import { useTheme } from '@mui/material/styles';
 
 export default function FileActionItem({files}) {
+
+    const theme = useTheme()
 
     const [file, setFile] = React.useState(files[0]);
     const [action, setAction] = React.useState('view');
@@ -29,7 +32,7 @@ export default function FileActionItem({files}) {
       }
 
     return (
-        <div className="component">
+        <Box className="component" sx={{backgroundColor: theme.palette.primary.light}}>
 
             <FormGroup className="form-control">
                         <Stack spacing={2} direction="row">
@@ -40,10 +43,10 @@ export default function FileActionItem({files}) {
                                 <MenuItem value={"view"}>View</MenuItem>
                                 <MenuItem value={"dload"}>Download</MenuItem>
                             </Select>
-                            <Button variant="outlined" onClick={handleGoBtn}>GO</Button>
+                            <Button variant="contained" onClick={handleGoBtn}>GO</Button>
                         </Stack>
             </FormGroup>
 
-        </div>
+        </Box>
     );
 }
