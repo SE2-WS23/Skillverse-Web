@@ -7,30 +7,57 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
+import AssessmentPage from "./pages/Assessment/AssessmentPage";
+import DashboardPage from "./pages/Dashboard/DashboardPage";
 import ErrorPage from "./pages/Error/ErrorPage";
 import HomePage from "./pages/Home/HomePage";
 import EmployeeProfilePage from './pages/EmployeeProfile/EmployeeProfilePage'
+import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
+import LoginPage from "./pages/Login/LoginPage";
+import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
 
 const theme = createTheme({
   palette: {
     primary: {
       main: "#1565C0",
-      light: "#1975D2",
+      light: "#BBDEFB",
       dark: "#0D46A1",
       contrastText: "#fff",
     },
   },
+  spacing: 4,
 });
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
     errorElement: <ErrorPage />,
-  }, {
-    path: "/employeeprofile",
-    element: <EmployeeProfilePage />,
-    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "",
+        element: <HomePage />,
+      },
+      {
+        path: "dashboard",
+        element: <DashboardPage />,
+      },
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+      {
+        path: "linked-in-learning",
+        element: <LinkedInLearning />,
+      },
+      {
+        path: "training-plan",
+        element: <TrainingPlanPage />,
+      },
+      {
+        path: "assessment",
+        element: <AssessmentPage />,
+      },
+    ],
   },
 ]);
 
