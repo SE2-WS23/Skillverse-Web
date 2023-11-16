@@ -20,34 +20,36 @@ function EmployeeProfilePage(){
 
         //return html
         <div>
-            <PageLayout title="Employee Profile" viewportPage></PageLayout>
+            <PageLayout title="Employee Profile" viewportPage>
 
-            <Box    alignItems="center"
-                    justifyContent="center">
+                <Box    alignItems="center"
+                        justifyContent="center">
 
-            <Grid   container spacing={2}
-                    rowSpacing={2}>
-                <Grid xs={12}>
-                    <BannerItem></BannerItem>
+                <Grid   container spacing={2}
+                        rowSpacing={2}>
+                    <Grid xs={12}>
+                        <BannerItem></BannerItem>
+                    </Grid>
+                    <Grid xs={2.5}>
+                        <OverviewItem title="Skills" list={skills}></OverviewItem>
+                    </Grid>
+                    <Grid xs={2.5}>
+                        <OverviewItem title="Certificates" list={certificates}></OverviewItem>
+                    </Grid>
+                    <Grid xs={7}>
+                        <BioItem abouttxt={aboutme}></BioItem>
+                    </Grid>
+                    <Grid xs={5}>
+                        <FileActionItem files={files}></FileActionItem>
+                    </Grid>
+                    <Grid xs={7}>
+                        <ContactItem contact={contacts}></ContactItem>
+                    </Grid>
                 </Grid>
-                <Grid xs={2.5}>
-                    <OverviewItem title="Skills" list={skills}></OverviewItem>
-                </Grid>
-                <Grid xs={2.5}>
-                    <OverviewItem title="Certificates" list={certificates}></OverviewItem>
-                </Grid>
-                <Grid xs={7}>
-                    <BioItem abouttxt={aboutme}></BioItem>
-                </Grid>
-                <Grid xs={5}>
-                    <FileActionItem files={files}></FileActionItem>
-                </Grid>
-                <Grid xs={7}>
-                    <ContactItem contact={contacts}></ContactItem>
-                </Grid>
-            </Grid>
 
-        </Box>
+                </Box>
+
+        </PageLayout>
 
         </div>
     );
