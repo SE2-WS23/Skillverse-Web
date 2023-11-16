@@ -1,0 +1,49 @@
+//imports
+import { Button, FormControl, Grid, MenuItem, Select, InputLabel, FormGroup, Stack, Alert } from "@mui/material";
+import "./style.css"
+import React from "react";
+import { useState } from "react";
+
+export default function FileActionItem({files}) {
+
+    const [file, setFile] = React.useState(files[0]);
+    const [action, setAction] = React.useState('view');
+
+    const [showAlert, setShowAlert] = useState(false);
+
+    const handleFileChange = (event) => {
+      setFile(event.target.value);
+    };
+    const handleActionChange = (event) => {
+        setAction(event.target.value);
+      };
+
+      const handleGoBtn = () => {
+        console.log("NotImplemented file: "+file)
+      };
+
+      function populateSelect(_files){
+        return _files.map(el => {
+            return (<MenuItem value={el} key={_files.indexOf(el)}>{el}</MenuItem>)
+        })
+      }
+
+    return (
+        <div className="component">
+
+            <FormGroup className="form-control">
+                        <Stack spacing={2} direction="row">
+                            <Select fullWidth onChange={handleFileChange} value={file}>
+                                {populateSelect(files)}
+                            </Select>
+                            <Select fullWidth onChange={handleActionChange} value={action}>
+                                <MenuItem value={"view"}>View</MenuItem>
+                                <MenuItem value={"dload"}>Download</MenuItem>
+                            </Select>
+                            <Button variant="outlined" onClick={handleGoBtn}>GO</Button>
+                        </Stack>
+            </FormGroup>
+
+        </div>
+    );
+}
