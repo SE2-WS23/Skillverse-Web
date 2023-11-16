@@ -18,7 +18,7 @@ function HorizontalLabeledSlider(props) {
         value={props.value || 0}
         valueLabelDisplay="auto"
         marks
-        max={props.max}
+        max={props.max || 10}
         onChange={props.onChange}
       />
     </Box>
