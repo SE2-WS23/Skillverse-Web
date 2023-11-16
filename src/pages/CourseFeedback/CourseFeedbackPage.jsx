@@ -29,6 +29,9 @@ function CourseFeedbackPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log("Content Feedback: " + courseContentValue);
+    console.log("Length Feedback: " + courseLengthValue);
+    console.log("Additional Feedback: " + additionalFeedback);
   };
 
   return (
