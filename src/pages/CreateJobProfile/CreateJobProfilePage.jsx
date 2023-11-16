@@ -35,7 +35,7 @@ function CreateJobProfilePage() {
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    hight: "calc(100% - 60px)",
+                    height: "calc(100% - 60px)",
                 }}
             >
                 <Typography variant="h3">Insert details of the job</Typography>
