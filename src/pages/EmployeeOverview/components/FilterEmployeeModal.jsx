@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
+
 /* The code block is defining constants and an object that are used for styling the dropdown menus in
 the `FilterEmployeeModal` component. */
 const ITEM_HEIGHT = 48;
