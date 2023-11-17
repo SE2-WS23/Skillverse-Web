@@ -16,10 +16,8 @@ const employees = [
     name: "Jane Smith",
     jobTitle: "Product Manager",
     email: "jane.smith@example.com",
-    courses: [
-      { name: "Product Management 101", progress: 95 },
-      { name: "User Experience Design", progress: 85 },
-    ],
+    courses: { name: "User Experience Design", progress: 85 },
+
     profileUrl: "https://example.com/jane_smith",
     profileImageUrl: "https://ui-avatars.com/api/?name=Jane+Smith",
     finishedCourses: 3,

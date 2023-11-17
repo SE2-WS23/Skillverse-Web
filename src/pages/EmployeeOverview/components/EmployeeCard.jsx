@@ -69,7 +69,7 @@ function EmployeeCard(props) {
                 {props.employee.email || "No Email"}
               </Typography>
             </ListItem>
-            {props.employee?.courses?.[0] ? (
+            {props.employee?.courses?.[0] || props.employee?.courses?.name ? (
               <ListItem disablePadding>
                 <Typography variant="body1" marginTop={2}>
                   Courses
@@ -80,7 +80,18 @@ function EmployeeCard(props) {
                 No Courses Assigned
               </Typography>
             )}
-            {props.employee?.courses?.[0] ? (
+            {!Array.isArray(props.employee?.courses) &&
+            props.employee?.courses?.name &&
+            props.employee?.courses?.progress ? (
+              <ListItem disablePadding>
+                <LinearProgressWithLabel
+                  title={props.employee.courses.name}
+                  value={props.employee.courses.progress}
+                />
+              </ListItem>
+            ) : null}
+            {Array.isArray(props.employee?.courses) &&
+            props.employee.courses[0] ? (
               <ListItem disablePadding>
                 <LinearProgressWithLabel
                   title={props.employee.courses[0].name}
@@ -88,7 +99,8 @@ function EmployeeCard(props) {
                 />
               </ListItem>
             ) : null}
-            {props.employee?.courses?.[1] ? (
+            {Array.isArray(props.employee?.courses) &&
+            props.employee?.courses?.[1] ? (
               <ListItem disablePadding>
                 <LinearProgressWithLabel
                   title={props.employee.courses[1].name}

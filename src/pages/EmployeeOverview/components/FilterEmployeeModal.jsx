@@ -69,9 +69,11 @@ function FilterEmployeeModal(props) {
   const [selectedCourse, setSelectedCourse] = useState([]);
   const uniqueCourseNamesArray = [
     ...new Set(
-      props.employees?.flatMap((employee) =>
-        employee.courses?.map((course) => course.name)
-      )
+      props.employees?.flatMap((employee) => {
+        if (Array.isArray(employee?.courses)) {
+          employee.courses?.map((course) => course.name);
+        }
+      })
     ),
   ];
   /**
