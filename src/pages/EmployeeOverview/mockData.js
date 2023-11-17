@@ -34,7 +34,7 @@ const employees = [
       { name: "SQL for Data Science", progress: 70 },
     ],
     profileUrl: "https://example.com/alice_johnson",
-    profileImageUrl: "hhttps://ui-avatars.com/api/?name=Alice+Johnson",
+    profileImageUrl: "https://ui-avatars.com/api/?name=Alice+Johnson",
     finishedCourses: 3,
     ongoingCourses: 2,
   },

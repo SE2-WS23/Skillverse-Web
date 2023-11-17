@@ -1,5 +1,4 @@
 import InventoryOutlinedIcon from "@mui/icons-material/InventoryOutlined";
-
 import PendingActionsOutlinedIcon from "@mui/icons-material/PendingActionsOutlined";
 import {
   Avatar,
@@ -11,14 +10,13 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { Box } from "@mui/system";
+import PropTypes from "prop-types";
 import LinearProgressWithLabel from "../../../components/LinearProgressWithLabel";
 
 function EmployeeCard(props) {
   const theme = useTheme();
   return (
     <Card
-      display="grid"
-      gridTemplateColumns="repeat(2, 1fr)"
       sx={{
         display: "grid",
         gridTemplateColumns: "repeat(2, 1fr)",
@@ -63,8 +61,12 @@ function EmployeeCard(props) {
         <Typography variant="h6" noWrap>
           {props.employee.name}
         </Typography>
-        <Typography variant="body2">{props.employee.jobTitle}</Typography>
-        <Typography variant="body2">{props.employee.email}</Typography>
+        <Typography variant="body2" noWrap>
+          {props.employee.jobTitle}
+        </Typography>
+        <Typography variant="body2" noWrap>
+          {props.employee.email}
+        </Typography>
         <Typography variant="body1" marginTop={2}>
           Courses
         </Typography>

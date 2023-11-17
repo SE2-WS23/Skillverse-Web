@@ -5,7 +5,9 @@ function LinearProgressWithLabel(props) {
   return (
     <Box display="flex" flexDirection="column">
       <Box display="flex" justifyContent="space-between">
-        <Typography>{props.title || ""}</Typography>
+        <Typography noWrap marginRight={3}>
+          {props.title || ""}
+        </Typography>
         <Typography>{props.value || 0}%</Typography>
       </Box>
       <LinearProgress variant="determinate" value={props.value || 0} />
