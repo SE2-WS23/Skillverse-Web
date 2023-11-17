@@ -40,13 +40,13 @@ function EmployeeCard(props) {
               <IconButton>
                 <InventoryOutlinedIcon />
                 <Typography variant="body2">
-                  {props.employee.finishedCourses}
+                  {props.employee.finishedCourses || 0}
                 </Typography>
               </IconButton>
               <IconButton>
                 <PendingActionsOutlinedIcon />
                 <Typography variant="body2">
-                  {props.employee.ongoingCourses}
+                  {props.employee.ongoingCourses || 0}
                 </Typography>
               </IconButton>
             </Box>
@@ -56,37 +56,46 @@ function EmployeeCard(props) {
           <List disablePadding>
             <ListItem disablePadding alignItems="flex-start">
               <Typography variant="h6" noWrap>
-                {props.employee.name}
+                {props.employee.name || "No Name"}
               </Typography>
             </ListItem>
             <ListItem disablePadding>
               <Typography variant="body2" noWrap>
-                {props.employee.jobTitle}
+                {props.employee.jobTitle || "No Job Title"}
               </Typography>
             </ListItem>
             <ListItem disablePadding>
               <Typography variant="body2" noWrap>
-                {props.employee.email}
+                {props.employee.email || "No Email"}
               </Typography>
             </ListItem>
-            <ListItem disablePadding>
+            {props.employee?.courses?.[0] ? (
+              <ListItem disablePadding>
+                <Typography variant="body1" marginTop={2}>
+                  Courses
+                </Typography>
+              </ListItem>
+            ) : (
               <Typography variant="body1" marginTop={2}>
-                Courses
+                No Courses Assigned
               </Typography>
-            </ListItem>
-            <ListItem disablePadding>
-              <LinearProgressWithLabel
-                title={props.employee.courses[0].name}
-                value={props.employee.courses[0].progress}
-              />
-            </ListItem>
-            <ListItem disablePadding>
-              <LinearProgressWithLabel
-                title={props.employee.courses[1].name}
-                value={props.employee.courses[1].progress}
-              />
-            </ListItem>
-
+            )}
+            {props.employee?.courses?.[0] ? (
+              <ListItem disablePadding>
+                <LinearProgressWithLabel
+                  title={props.employee.courses[0].name}
+                  value={props.employee.courses[0].progress}
+                />
+              </ListItem>
+            ) : null}
+            {props.employee?.courses?.[1] ? (
+              <ListItem disablePadding>
+                <LinearProgressWithLabel
+                  title={props.employee.courses[1].name}
+                  value={props.employee.courses[1].progress}
+                />
+              </ListItem>
+            ) : null}
             <ListItem disablePadding sx={{ justifyContent: "end" }}>
               <Link marginTop={2} href={props.employee.profileUrl}>
                 View All

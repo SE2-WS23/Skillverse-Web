@@ -3,10 +3,7 @@ const employees = [
     name: "John Doe",
     jobTitle: "Software Engineer",
     email: "john.doe@example.com",
-    courses: [
-      { name: "JavaScript Fundamentals", progress: 80 },
-      { name: "React Basics", progress: 90 },
-    ],
+
     profileUrl: "https://example.com/john_doe",
     profileImageUrl: "https://ui-avatars.com/api/?name=John+Doe",
     finishedCourses: 3,

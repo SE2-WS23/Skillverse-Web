@@ -12,6 +12,7 @@ import {
   Select,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import PropTypes from "prop-types";
 import { useState } from "react";
 
 /* The code block is defining constants and an object that are used for styling the dropdown menus in
@@ -51,7 +52,7 @@ function FilterEmployeeModal(props) {
   const [selectedJobTitle, setSelectedJobTitle] = useState([]);
 
   const uniqueJobTitles = [
-    ...new Set(props.employees.map((employee) => employee.jobTitle)),
+    ...new Set(props.employees?.map((employee) => employee.jobTitle)),
   ];
 
   /**
@@ -68,8 +69,8 @@ function FilterEmployeeModal(props) {
   const [selectedCourse, setSelectedCourse] = useState([]);
   const uniqueCourseNamesArray = [
     ...new Set(
-      props.employees.flatMap((employee) =>
-        employee.courses.map((course) => course.name)
+      props.employees?.flatMap((employee) =>
+        employee.courses?.map((course) => course.name)
       )
     ),
   ];
