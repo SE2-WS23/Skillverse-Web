@@ -8,6 +8,10 @@ import EmployeeCard from "./components/EmployeeCard";
 import FilterEmployeeModal from "./components/FilterEmployeeModal";
 import employees from "./mockData";
 
+/**
+ * EmployeeOverviewPage component displays a list of employees and allows filtering by job title and course.
+ * @returns {JSX.Element} EmployeeOverviewPage component
+ */
 function EmployeeOverviewPage() {
   const [filteredEmployees, setFilteredEmployees] = useState(employees);
   const [openModal, setOpenModal] = useState(false);
@@ -15,9 +19,38 @@ function EmployeeOverviewPage() {
     setOpenModal(true);
   };
 
-  const handleCloseModal = () => {
+  /**
+   * The function filters employees based on job titles and courses.
+   * @returns a boolean value. It will return true if the employee matches the filter parameters, and
+   * false otherwise.
+   */
+  function filterEmployees(filterParams, employee) {
+    const jobTitlesMatch =
+      filterParams.jobTitles?.length === 0 ||
+      filterParams.jobTitles?.includes(employee.jobTitle);
+
+    const coursesMatch =
+      filterParams.courses?.length === 0 ||
+      employee.courses.some((course) =>
+        filterParams.courses?.includes(course.name)
+      );
+    return jobTitlesMatch && coursesMatch;
+  }
+
+  /**
+   * The function handleCloseModal updates the filteredEmployees state based on the filterParams and
+   * closes the modal.
+   */
+  function handleCloseModal(filterParams) {
+    if (filterParams) {
+      setFilteredEmployees(
+        employees.filter((employee) => {
+          return filterEmployees(filterParams, employee);
+        })
+      );
+    }
     setOpenModal(false);
-  };
+  }
 
   const theme = useTheme();
   return (
@@ -42,11 +75,19 @@ function EmployeeOverviewPage() {
         </Box>
       </Box>
       <Grid container spacing={4} sx={{ p: 4 }}>
-        {employees?.map((employee) => (
-          <Grid item md={6} lg={4} xl={3} key={uuidv4()}>
-            <EmployeeCard employee={employee} />
+        {filteredEmployees?.length > 0 ? (
+          filteredEmployees.map((employee) => (
+            <Grid item md={6} lg={4} xl={3} key={uuidv4()}>
+              <EmployeeCard employee={employee} />
+            </Grid>
+          ))
+        ) : (
+          <Grid item xs={12}>
+            <Typography variant="h6">
+              No employees match the filter criteria.
+            </Typography>
           </Grid>
-        ))}
+        )}
       </Grid>
       <FilterEmployeeModal
         open={openModal}

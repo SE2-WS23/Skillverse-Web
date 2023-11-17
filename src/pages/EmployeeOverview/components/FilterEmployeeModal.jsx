@@ -13,6 +13,8 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
+/* The code block is defining constants and an object that are used for styling the dropdown menus in
+the `FilterEmployeeModal` component. */
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -24,6 +26,14 @@ const MenuProps = {
   },
 };
 
+/**
+ * A modal component for filtering employees by job title and course name.
+ * @param {Object} props - The props object.
+ * @param {Array} props.employees - An array of employee objects.
+ * @param {boolean} props.open - A boolean indicating whether the modal is open or not.
+ * @param {Function} props.handleClose - A function to handle closing the modal.
+ * @returns {JSX.Element} - A JSX element representing the FilterEmployeeModal component.
+ */
 function FilterEmployeeModal(props) {
   const theme = useTheme();
 
@@ -43,6 +53,10 @@ function FilterEmployeeModal(props) {
     ...new Set(props.employees.map((employee) => employee.jobTitle)),
   ];
 
+  /**
+   * The function `handleJobTitleChange` takes an event object and updates the selected job titles based
+   * on the value of the event target.
+   */
   const handleJobTitleChange = (event) => {
     const {
       target: { value },
@@ -58,6 +72,10 @@ function FilterEmployeeModal(props) {
       )
     ),
   ];
+  /**
+   * The function `handleCourseChange` takes an event object and updates the `selectedCourse` state based
+   * on the value of the event target.
+   */
 
   const handleCourseChange = (event) => {
     const {
@@ -66,11 +84,18 @@ function FilterEmployeeModal(props) {
     setSelectedCourse(typeof value === "string" ? value.split(",") : value);
   };
 
+  function applyFilter() {
+    props.handleClose({
+      jobTitles: selectedJobTitle || [],
+      courses: selectedCourse || [],
+    });
+  }
+
   return (
     <Dialog open={props.open} onClose={props.handleClose}>
       <DialogTitle>Filter your Employees</DialogTitle>
       <DialogContent>
-        <DialogContentText>Job Title</DialogContentText>
+        <DialogContentText>Filter by Job Titles</DialogContentText>
         <FormControl sx={{ m: 1, width: 300 }}>
           <InputLabel id="job-title-select-label">Job Title</InputLabel>
           <Select
@@ -92,30 +117,33 @@ function FilterEmployeeModal(props) {
               </MenuItem>
             ))}
           </Select>
-          <InputLabel id="course-name-select-label">Course Name</InputLabel>
+        </FormControl>
+        <DialogContentText>Filter by Course Name</DialogContentText>
+        <FormControl sx={{ m: 1, width: 300 }}>
+          <InputLabel id="course-name-select-label">Courses</InputLabel>
           <Select
             labelId="course-name-select-label"
             id="course-name-select"
             multiple
             value={selectedCourse}
             onChange={handleCourseChange}
-            input={<OutlinedInput label="JobTitle" />}
+            input={<OutlinedInput label="CourseName" />}
             MenuProps={MenuProps}
           >
-            {uniqueCourseNamesArray.map((jobTitle) => (
+            {uniqueCourseNamesArray.map((courseName) => (
               <MenuItem
-                key={jobTitle}
-                value={jobTitle}
-                style={getStyles(selectedCourse, jobTitle, theme)}
+                key={courseName}
+                value={courseName}
+                style={getStyles(selectedCourse, courseName, theme)}
               >
-                {jobTitle}
+                {courseName}
               </MenuItem>
             ))}
           </Select>
         </FormControl>
       </DialogContent>
       <DialogActions>
-        <Button onClick={props.handleClose()}>Apply Filter</Button>
+        <Button onClick={applyFilter}>Apply Filter</Button>
       </DialogActions>
     </Dialog>
   );
