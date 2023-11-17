@@ -72,7 +72,7 @@ function FilterEmployeeModal(props) {
     ...new Set(
       props.employees?.flatMap((employee) => {
         if (Array.isArray(employee?.courses)) {
-          employee.courses?.map((course) => course.name);
+          return employee.courses?.map((course) => course.name);
         }
       })
     ),
