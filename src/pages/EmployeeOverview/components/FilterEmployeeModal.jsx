@@ -151,8 +151,6 @@ function FilterEmployeeModal(props) {
   );
 }
 
-export default FilterEmployeeModal;
-
 FilterEmployeeModal.propTypes = {
   employees: PropTypes.arrayOf(
     PropTypes.shape({
@@ -173,3 +171,5 @@ FilterEmployeeModal.propTypes = {
   open: PropTypes.bool,
   handleClose: PropTypes.func,
 };
+
+export default FilterEmployeeModal;

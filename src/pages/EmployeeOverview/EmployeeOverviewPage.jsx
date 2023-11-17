@@ -51,6 +51,10 @@ function EmployeeOverviewPage() {
     setOpenModal(false);
   }
 
+  function handleAddEmployee() {
+    console.log("Add Employee");
+  }
+
   return (
     <PageLayout title="Employee Overview">
       <Box
@@ -59,7 +63,12 @@ function EmployeeOverviewPage() {
         alignItems="center"
         m={4}
       >
-        <Button variant="contained" color="primary" size="large">
+        <Button
+          variant="contained"
+          color="primary"
+          size="large"
+          onClick={handleAddEmployee}
+        >
           Add Employee
         </Button>
         <Box display="flex" alignItems="center">
