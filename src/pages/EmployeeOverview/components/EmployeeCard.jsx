@@ -6,6 +6,8 @@ import {
   Grid,
   IconButton,
   Link,
+  List,
+  ListItem,
   Typography,
 } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -18,69 +20,80 @@ function EmployeeCard(props) {
   return (
     <Card
       sx={{
-        display: "grid",
-        gridTemplateColumns: "repeat(2, 1fr)",
         backgroundColor: theme.palette.primary.light,
-        padding: theme.spacing(4),
+        padding: theme.spacing(2),
       }}
     >
-      <Grid item xs={5}>
-        <Box>
-          <Avatar
-            variant="square"
-            sx={{ height: 125, width: 125 }}
-            src={props.employee.profileImageUrl}
-          />
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <IconButton>
-              <InventoryOutlinedIcon />
-              <Typography variant="body2">
-                {props.employee.finishedCourses}
-              </Typography>
-            </IconButton>
-            <IconButton>
-              <PendingActionsOutlinedIcon />
-              <Typography variant="body2">
-                {props.employee.ongoingCourses}
-              </Typography>
-            </IconButton>
+      <Grid container spacing={2}>
+        <Grid item xs={4}>
+          <Box>
+            <Avatar
+              variant="square"
+              sx={{ width: "100%", height: "auto", maxWidth: "125px" }}
+              src={props.employee.profileImageUrl}
+            />
+            <Box
+              sx={{
+                display: "flex",
+              }}
+            >
+              <IconButton>
+                <InventoryOutlinedIcon />
+                <Typography variant="body2">
+                  {props.employee.finishedCourses}
+                </Typography>
+              </IconButton>
+              <IconButton>
+                <PendingActionsOutlinedIcon />
+                <Typography variant="body2">
+                  {props.employee.ongoingCourses}
+                </Typography>
+              </IconButton>
+            </Box>
           </Box>
-        </Box>
-      </Grid>
-      <Grid
-        item
-        container
-        sx={{ display: "flex", flexDirection: "column" }}
-        xs={5}
-      >
-        <Typography variant="h6" noWrap>
-          {props.employee.name}
-        </Typography>
-        <Typography variant="body2" noWrap>
-          {props.employee.jobTitle}
-        </Typography>
-        <Typography variant="body2" noWrap>
-          {props.employee.email}
-        </Typography>
-        <Typography variant="body1" marginTop={2}>
-          Courses
-        </Typography>
-        <LinearProgressWithLabel
-          title={props.employee.courses[0].name}
-          value={props.employee.courses[0].progress}
-        />
-        <LinearProgressWithLabel
-          title={props.employee.courses[1].name}
-          value={props.employee.courses[1].progress}
-        />
-        <Link textAlign="end" marginTop={2} href={props.employee.profileUrl}>
-          View All
-        </Link>
+        </Grid>
+        <Grid item xs={7}>
+          <List disablePadding>
+            <ListItem disablePadding alignItems="flex-start">
+              <Typography variant="h6" noWrap>
+                {props.employee.name}
+              </Typography>
+            </ListItem>
+            <ListItem disablePadding>
+              <Typography variant="body2" noWrap>
+                {props.employee.jobTitle}
+              </Typography>
+            </ListItem>
+            <ListItem disablePadding>
+              <Typography variant="body2" noWrap>
+                {props.employee.email}
+              </Typography>
+            </ListItem>
+            <ListItem disablePadding>
+              <Typography variant="body1" marginTop={2}>
+                Courses
+              </Typography>
+            </ListItem>
+            <ListItem disablePadding>
+              <LinearProgressWithLabel
+                title={props.employee.courses[0].name}
+                value={props.employee.courses[0].progress}
+              />
+            </ListItem>
+            <ListItem disablePadding>
+              <LinearProgressWithLabel
+                title={props.employee.courses[1].name}
+                value={props.employee.courses[1].progress}
+              />
+            </ListItem>
+
+            <ListItem disablePadding sx={{ justifyContent: "end" }}>
+              <Link marginTop={2} href={props.employee.profileUrl}>
+                View All
+              </Link>
+            </ListItem>
+          </List>
+        </Grid>
       </Grid>
     </Card>
   );

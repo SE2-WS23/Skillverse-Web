@@ -7,7 +7,7 @@ import employees from "./mockData";
 function EmployeeOverviewPage() {
   return (
     <PageLayout title="Employee Overview">
-      <Grid container spacing={12} sx={{ p: 4 }}>
+      <Grid container spacing={4} sx={{ p: 4 }}>
         {employees?.map((employee) => (
           <Grid item md={6} lg={4} xl={3} key={uuidv4()}>
             <EmployeeCard employee={employee} />
