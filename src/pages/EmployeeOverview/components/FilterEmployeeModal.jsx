@@ -14,6 +14,7 @@ import {
 import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 /* The code block is defining constants and an object that are used for styling the dropdown menus in
 the `FilterEmployeeModal` component. */
@@ -76,11 +77,11 @@ function FilterEmployeeModal(props) {
       })
     ),
   ];
+
   /**
    * The function `handleCourseChange` takes an event object and updates the `selectedCourse` state based
    * on the value of the event target.
    */
-
   const handleCourseChange = (event) => {
     const {
       target: { value },
@@ -113,7 +114,7 @@ function FilterEmployeeModal(props) {
           >
             {uniqueJobTitles.map((jobTitle) => (
               <MenuItem
-                key={jobTitle}
+                key={uuidv4()}
                 value={jobTitle}
                 style={getStyles(selectedJobTitle, jobTitle, theme)}
               >
@@ -136,7 +137,7 @@ function FilterEmployeeModal(props) {
           >
             {uniqueCourseNamesArray.map((courseName) => (
               <MenuItem
-                key={courseName}
+                key={uuidv4()}
                 value={courseName}
                 style={getStyles(selectedCourse, courseName, theme)}
               >

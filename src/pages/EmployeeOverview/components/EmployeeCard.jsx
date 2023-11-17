@@ -109,7 +109,7 @@ function EmployeeCard(props) {
               </ListItem>
             ) : null}
             <ListItem disablePadding sx={{ justifyContent: "end" }}>
-              <Link marginTop={2} href={props.employee.profileUrl}>
+              <Link marginTop={2} href={props.employee.profileUrl || "#"}>
                 View All
               </Link>
             </ListItem>
@@ -119,8 +119,6 @@ function EmployeeCard(props) {
     </Card>
   );
 }
-
-export default EmployeeCard;
 
 EmployeeCard.propTypes = {
   employee: PropTypes.shape({
@@ -139,3 +137,5 @@ EmployeeCard.propTypes = {
     ongoingCourses: PropTypes.number,
   }),
 };
+
+export default EmployeeCard;
