@@ -48,7 +48,11 @@ function EmployeeOverviewPage() {
           </Grid>
         ))}
       </Grid>
-      <FilterEmployeeModal open={openModal} handleClose={handleCloseModal} />
+      <FilterEmployeeModal
+        open={openModal}
+        handleClose={handleCloseModal}
+        employees={employees}
+      />
     </PageLayout>
   );
 }
