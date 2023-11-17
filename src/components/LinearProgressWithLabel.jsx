@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function LinearProgressWithLabel(props) {
   return (
-    <Box display="flex" flexDirection="column">
+    <Box display="flex" flexDirection="column" sx={{ width: "100%" }}>
       <Box display="flex" justifyContent="space-between">
         <Typography noWrap marginRight={3}>
           {props.title || ""}
