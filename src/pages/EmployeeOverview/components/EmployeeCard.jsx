@@ -1,32 +1,55 @@
 import InventoryOutlinedIcon from "@mui/icons-material/InventoryOutlined";
+
 import PendingActionsOutlinedIcon from "@mui/icons-material/PendingActionsOutlined";
-import { Avatar, Grid, IconButton, Typography } from "@mui/material";
+import {
+  Avatar,
+  Card,
+  Grid,
+  IconButton,
+  Link,
+  Typography,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import LinearProgressWithLabel from "../../../components/LinearProgressWithLabel";
 
-function EmployeeCard() {
+function EmployeeCard(props) {
   const theme = useTheme();
   return (
-    <Grid
-      container
-      spacing={2}
-      bgcolor={theme.palette.primary.light}
-      xs={{ p: 2 }}
+    <Card
+      display="grid"
+      gridTemplateColumns="repeat(2, 1fr)"
+      sx={{
+        display: "grid",
+        gridTemplateColumns: "repeat(2, 1fr)",
+        backgroundColor: theme.palette.primary.light,
+        padding: theme.spacing(4),
+      }}
     >
-      <Grid item xs={6}>
+      <Grid item xs={5}>
         <Box>
-          <Avatar variant="square" sx={{ height: 125, width: 125 }} />
+          <Avatar
+            variant="square"
+            sx={{ height: 125, width: 125 }}
+            src={props.employee.profileImageUrl}
+          />
           <Box
             sx={{
               display: "flex",
+              alignItems: "center",
             }}
           >
             <IconButton>
               <InventoryOutlinedIcon />
+              <Typography variant="body2">
+                {props.employee.finishedCourses}
+              </Typography>
             </IconButton>
             <IconButton>
               <PendingActionsOutlinedIcon />
+              <Typography variant="body2">
+                {props.employee.ongoingCourses}
+              </Typography>
             </IconButton>
           </Box>
         </Box>
@@ -35,18 +58,48 @@ function EmployeeCard() {
         item
         container
         sx={{ display: "flex", flexDirection: "column" }}
-        xs={6}
+        xs={5}
       >
-        <Typography variant="h6">Employee Name</Typography>
-        <Typography variant="body2">Job Title</Typography>
-        <Typography variant="body2">Email</Typography>
-        <Typography variant="body1">Courses</Typography>
-        <LinearProgressWithLabel title="Course Name" value={12} />
-        <LinearProgressWithLabel title="Course Name" value={12} />
-        <Typography variant="a">View All</Typography>
+        <Typography variant="h6" noWrap>
+          {props.employee.name}
+        </Typography>
+        <Typography variant="body2">{props.employee.jobTitle}</Typography>
+        <Typography variant="body2">{props.employee.email}</Typography>
+        <Typography variant="body1" marginTop={2}>
+          Courses
+        </Typography>
+        <LinearProgressWithLabel
+          title={props.employee.courses[0].name}
+          value={props.employee.courses[0].progress}
+        />
+        <LinearProgressWithLabel
+          title={props.employee.courses[1].name}
+          value={props.employee.courses[1].progress}
+        />
+        <Link textAlign="end" marginTop={2} href={props.employee.profileUrl}>
+          View All
+        </Link>
       </Grid>
-    </Grid>
+    </Card>
   );
 }
 
 export default EmployeeCard;
+
+EmployeeCard.propTypes = {
+  employee: PropTypes.shape({
+    name: PropTypes.string,
+    jobTitle: PropTypes.string,
+    email: PropTypes.string,
+    courses: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string,
+        progress: PropTypes.number,
+      })
+    ),
+    profileUrl: PropTypes.string,
+    profileImageUrl: PropTypes.string,
+    finishedCourses: PropTypes.number,
+    ongoingCourses: PropTypes.number,
+  }),
+};
