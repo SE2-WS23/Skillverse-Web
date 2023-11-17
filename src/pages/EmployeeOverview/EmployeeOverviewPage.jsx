@@ -1,4 +1,3 @@
-import { useTheme } from "@emotion/react";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { Box, Button, Grid, IconButton, Typography } from "@mui/material";
 import { useState } from "react";
@@ -52,7 +51,6 @@ function EmployeeOverviewPage() {
     setOpenModal(false);
   }
 
-  const theme = useTheme();
   return (
     <PageLayout title="Employee Overview">
       <Box

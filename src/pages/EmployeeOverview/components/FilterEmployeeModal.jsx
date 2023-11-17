@@ -151,3 +151,24 @@ function FilterEmployeeModal(props) {
 }
 
 export default FilterEmployeeModal;
+
+FilterEmployeeModal.propTypes = {
+  employees: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      jobTitle: PropTypes.string,
+      email: PropTypes.string,
+      courses: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string,
+          progress: PropTypes.number,
+        })
+      ),
+      profileUrl: PropTypes.string,
+      profileImageUrl: PropTypes.string,
+      finishedCourses: PropTypes.number,
+    })
+  ),
+  open: PropTypes.bool,
+  handleClose: PropTypes.func,
+};
