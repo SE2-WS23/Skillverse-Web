@@ -6,6 +6,7 @@ import JobProfilePage from "./pages/JobProfile/JobProfilePage";
 import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
 import LoginPage from "./pages/Login/LoginPage";
 import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
+import SkillSetPage from "./pages/JobProfile/SkillSetPage";
 
 const ROUTES = [
   {
@@ -40,6 +41,10 @@ const ROUTES = [
     path: "assessment",
     element: <AssessmentPage />,
   },
+  {
+    path: "skill-set",
+    element: <SkillSetPage />,
+  }
 ];
 
 export default ROUTES;
