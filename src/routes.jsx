@@ -1,5 +1,6 @@
 import AssessmentPage from "./pages/Assessment/AssessmentPage";
 import CourseFeedbackPage from "./pages/CourseFeedback/CourseFeedbackPage";
+import CreateJobProfilePage from "./pages/CreateJobProfile/CreateJobProfilePage";
 import DashboardPage from "./pages/Dashboard/DashboardPage";
 import HomePage from "./pages/Home/HomePage";
 import JobProfilePage from "./pages/JobProfile/JobProfilePage";
@@ -39,6 +40,10 @@ const ROUTES = [
   {
     path: "assessment",
     element: <AssessmentPage />,
+  },
+  {
+    path: "create-job-profile",
+    element: <CreateJobProfilePage />,
   },
 ];
 
