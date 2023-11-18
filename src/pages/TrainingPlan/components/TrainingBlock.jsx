@@ -1,15 +1,3 @@
-/**
- * A component that displays a training block with course name, skills, progress, and description.
- * @param {Object} props - The props object.
- * @param {Object} props.training - The training object containing course name, skills, progress, description, and status.
- * @param {string} props.training.courseName - The name of the course.
- * @param {string[]} props.training.skills - The skills covered in the course.
- * @param {string} props.training.description - The description of the course.
- * @param {number} props.training.progress - The progress of the user in the course.
- * @param {number} [props.training.status] - The status of the course.
- * @returns {JSX.Element} - The TrainingBlock component.
- */
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import {
   Box,
   Card,
@@ -25,6 +13,17 @@ import React, { useState } from "react";
 import CircularProgressWithLabel from "../../../components/CircularProgressWithLabel";
 import ExpandMoreButton from "../../../components/ExpandMoreButton";
 
+/**
+ * A component that displays a training block with course name, skills, progress, and description.
+ * @param {Object} props - The props object.
+ * @param {Object} props.training - The training object containing course name, skills, progress, description, and status.
+ * @param {string} props.training.courseName - The name of the course.
+ * @param {string[]} props.training.skills - The skills covered in the course.
+ * @param {string} props.training.description - The description of the course.
+ * @param {number} props.training.progress - The progress of the user in the course.
+ * @param {number} [props.training.status] - The status of the course.
+ * @returns {JSX.Element} - The TrainingBlock component.
+ */
 function TrainingBlock(props) {
   const theme = useTheme();
 
@@ -71,9 +70,7 @@ function TrainingBlock(props) {
               onClick={handleExpandClick}
               aria-expanded={expanded}
               aria-label="show more"
-            >
-              <ExpandMoreIcon />
-            </ExpandMoreButton>
+            />
           </Box>
         </CardContent>
       </Card>

@@ -1,3 +1,4 @@
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { IconButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
@@ -9,7 +10,11 @@ import { styled } from "@mui/material/styles";
  */
 const ExpandMoreButton = styled((props) => {
   const { expand, ...other } = props;
-  return <IconButton {...other} />;
+  return (
+    <IconButton {...other}>
+      <ExpandMoreIcon />
+    </IconButton>
+  );
 })(({ theme, expand }) => ({
   transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
   marginLeft: "auto",
