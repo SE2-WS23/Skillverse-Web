@@ -1,6 +1,7 @@
 import AssessmentPage from "./pages/Assessment/AssessmentPage";
 import CourseFeedbackPage from "./pages/CourseFeedback/CourseFeedbackPage";
 import DashboardPage from "./pages/Dashboard/DashboardPage";
+import EmployeeCreationPage from "./pages/EmployeeCreation/EmployeeCreationPage";
 import HomePage from "./pages/Home/HomePage";
 import JobProfilePage from "./pages/JobProfile/JobProfilePage";
 import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
@@ -39,6 +40,10 @@ const ROUTES = [
   {
     path: "assessment",
     element: <AssessmentPage />,
+  },
+  {
+    path: "employee-creation",
+    element: <EmployeeCreationPage />,
   },
 ];
 
