@@ -3,19 +3,17 @@ import PageLayout from '../../components/PageLayout';
 import { Box, Button, Typography, ToggleButton, useTheme } from '@mui/material';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import PropTypes from 'prop-types';
-import jobSkills from './components/mockSkills';
+import jobSkills from './components/mockData2';
 import { v4 as uuidv4 } from 'uuid';
 
 /**
  * Renders the Skill Set page.
  * @returns {JSX.Element} Skill Set page component
  */
-
 function SkillSetPage(props) {
   const [skillList, setSkillList] = useState([]);
   const theme = useTheme();
 
-  // Updates the list of selected skills when the user interacts with the ToggleButtonGroup.
   const handleSelectedSkill = (event, selectedSkill) => {
     setSkillList(selectedSkill);
   };
@@ -57,20 +55,21 @@ function SkillSetPage(props) {
               textAlign: 'center',
               gap: 2,
               [theme.breakpoints.down('md')]: {
-                gridTemplateColumns:'repeat(4, 1fr)' /* setting break points for different screen size for responsiveness*/,
+                gridTemplateColumns:'repeat(2, 1fr)' /* setting break points for different screen size for responsiveness*/,
+
               },
-              [theme.breakpoints.down('sm')]: {
+              [theme.breakpoints.down('lg')]: {
                 gridTemplateColumns:'repeat(2, 1fr)',
               },
             }}
           >
-            {SkillSet.map((skill) => (
+            {SkillSet?.map((skill) => (
               <ToggleButton
                 key={uuidv4()}
-                value={`${skill}`}
+                value={`${skill || ""} `}
                 sx={{ backgroundColor: theme.palette.primary.main, color: theme.palette.primary.contrastText, my: 2 }}
               >
-                {skill}
+                {skill || ""}
               </ToggleButton>
             ))}
           </ToggleButtonGroup>
