@@ -27,4 +27,8 @@ function UploadedFile({ fileName }) {
   );
 }
 
+UploadedFile.propTypes = {
+    fileName: PropTypes.string.isRequired,
+};
+
 export default UploadedFile;
