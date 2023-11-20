@@ -14,6 +14,7 @@ import HomePage from "./pages/Home/HomePage";
 import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
 import LoginPage from "./pages/Login/LoginPage";
 import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
+import DescribeTheJobPage from "./pages/JobProfile/DescribeTheJobPage";
 
 const theme = createTheme({
   palette: {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "assessment",
         element: <AssessmentPage />,
+      },
+      {
+        path: "DescribeTheJob",
+        element: <DescribeTheJobPage />,
       },
     ],
   },
