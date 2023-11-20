@@ -2,6 +2,8 @@ import React from "react";
 import { Typography, Box, IconButton } from "@mui/material";
 import { InsertDriveFile } from "@mui/icons-material";
 import DeleteIcon from '@mui/icons-material/Delete';
+import PropTypes from 'prop-types'
+
 
 /**
  * @returns {JSX.Element} The File Component for Employee creation page to display uploaded Files.

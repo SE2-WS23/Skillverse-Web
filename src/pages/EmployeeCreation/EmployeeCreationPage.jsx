@@ -11,8 +11,34 @@ import PageLayout from "../../components/PageLayout";
 
 function EmployeeCreationPage() {
 
+  const [employeeName, setEmployeeName] = useState("");
+  const [employeeEmail, setEmployeeEmail] = useState("");
+  const [employeePhoneNumber, setEmployeePhoneNumber] = useState("");
+  const [employeeAddress, setEmployeeAddress] = useState("");
+  const [employeeExtraInfo, setEmployeeExtraInfo] = useState("");
+
+  const handleEmployeeNameChange = (event) => {
+    setEmployeeName(event.target.value);
+  };
+  const handleEmployeeEmailChange = (event) => {
+    setEmployeeEmail(event.target.value);
+  };
+  const handleEmployeePhoneNumberChange = (event) => {
+    setEmployeePhoneNumber(event.target.value);
+  }
+  const handleEmployeeAddressChange = (event) => {
+    setEmployeeAddress(event.target.value);
+  }
+  const handleEmployeeExtraInfoChange = (event) => {
+    setEmployeeExtraInfo(event.target.value);
+  }
+
   function EmployeeCreation(event) {
     console.log("Employee has been created");
+    console.log("Name of employee: " + employeeName);
+    console.log("Email of employee: " + employeeEmail);
+    console.log("Phone number of employee: " + employeePhoneNumber);
+    console.log("Address of employee: " + employeeAddress);
   }
   function changeAvatar(event) {
     console.log("Avatar has been changed");
@@ -51,15 +77,15 @@ function EmployeeCreationPage() {
   </Box>
       <Box >
       <TextField  
-      label="Name"  margin="normal" sx={{ minWidth:"20vw"}}/>
+      label="Name"  margin="normal" sx={{ minWidth:"20vw"}} value={employeeName} onChange={handleEmployeeNameChange}/>
       <TextField  
-      label="Email" margin="normal" sx={{ minWidth:"20vw"}}/>
+      label="Email" margin="normal" sx={{ minWidth:"20vw"}} value={employeeEmail} onChange={handleEmployeeEmailChange}/>
       
       </Box>
       <Box display="flex" flexDirection="row">
-      <TextField  label="Phone number" margin="normal" sx={{ minWidth:"20vw"}} />
+      <TextField  label="Phone number" margin="normal" sx={{ minWidth:"20vw"}} value={employeePhoneNumber} onChange={handleEmployeePhoneNumberChange}/>
       <TextField  
-      label="Address" margin="normal" sx={{ minWidth:"20vw"}}/>
+      label="Address" margin="normal" sx={{ minWidth:"20vw"}} value={employeeAddress} onChange={handleEmployeeAddressChange}/>
       </Box>
     <Box display="flex "
     
@@ -70,7 +96,9 @@ function EmployeeCreationPage() {
         label="Extra info" 
         minRows={6}
         sx={{ minWidth:"40vw"}}
-        multiline/>
+        value={employeeExtraInfo}
+        multiline 
+        onChange={handleEmployeeExtraInfoChange}/>
     </Box>
       <Typography variant="h6">Submit Files </Typography>
       <UploadBox title="Resume" />
