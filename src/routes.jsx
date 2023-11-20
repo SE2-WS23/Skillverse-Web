@@ -9,7 +9,7 @@ import JobProfilePage from "./pages/JobProfile/JobProfilePage";
 import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
 import LoginPage from "./pages/Login/LoginPage";
 import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
-
+import DescribeTheJobPage from "./pages/JobProfile/DescribeTheJobPage";
 const ROUTES = [
   {
     path: "",
@@ -54,6 +54,10 @@ const ROUTES = [
   {
     path: "code-challenge",
     element: <CodeChallengePage />,
+  },
+  {
+    path: "DescribeTheJob",
+    element: <DescribeTheJobPage />,
   },
 ];
 
