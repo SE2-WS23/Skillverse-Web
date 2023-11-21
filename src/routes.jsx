@@ -1,4 +1,6 @@
 import AssessmentPage from "./pages/Assessment/AssessmentPage";
+import CompanyCourseManagementPage from "./pages/CompanyCourseManagement/CompanyCourseManagementPage";
+import CompanyTrainingsOverviewPage from "./pages/CompanyTrainingOverview/CompanyTrainingsOverviewPage";
 import CourseFeedbackPage from "./pages/CourseFeedback/CourseFeedbackPage";
 import DashboardPage from "./pages/Dashboard/DashboardPage";
 import EmployeeOverviewPage from "./pages/EmployeeOverview/EmployeeOverviewPage";
@@ -20,6 +22,14 @@ const ROUTES = [
   {
     path: "login",
     element: <LoginPage />,
+  },
+  {
+    path: "companycoursemanagement",
+    element: <CompanyCourseManagementPage />,
+  },
+  {
+    path: "companytrainingsoverview",
+    element: <CompanyTrainingsOverviewPage />,
   },
   {
     path: "linked-in-learning",
