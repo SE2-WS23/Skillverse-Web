@@ -47,7 +47,6 @@ function SkillSetPage(props) {
           }}
         >
           <ToggleButtonGroup
-            color='primary'
             value={skillList}
             onChange={handleSelectedSkill}
             sx={{
