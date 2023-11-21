@@ -1,6 +1,7 @@
 import { Avatar, Box, Button, Fab, TextField, Typography } from "@mui/material";
 import UploadBox from "./components/UploadBox";
 import PageLayout from "../../components/PageLayout";
+import { useState } from "react";
 
 /**
  * The `EmployeeCreationPage` function is a React component that renders a form for users to create
