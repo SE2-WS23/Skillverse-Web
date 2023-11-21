@@ -10,12 +10,6 @@ import "./index.css";
 import ErrorPage from "./pages/Error/ErrorPage";
 import ROUTES from "./routes";
 
-import HomePage from "./pages/Home/HomePage";
-import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
-import LoginPage from "./pages/Login/LoginPage";
-import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
-import DescribeTheJobPage from "./pages/JobProfile/DescribeTheJobPage";
-
 
 const theme = createTheme({
   palette: {
@@ -33,36 +27,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "",
-        element: <HomePage />,
-      },
-      {
-        path: "dashboard",
-        element: <DashboardPage />,
-      },
-      {
-        path: "login",
-        element: <LoginPage />,
-      },
-      {
-        path: "linked-in-learning",
-        element: <LinkedInLearning />,
-      },
-      {
-        path: "training-plan",
-        element: <TrainingPlanPage />,
-      },
-      {
-        path: "assessment",
-        element: <AssessmentPage />,
-      },
-      {
-        path: "DescribeTheJob",
-        element: <DescribeTheJobPage />,
-      },
-    ],
+    children: ROUTES,
   },
 ]);
 
