@@ -47,15 +47,17 @@ function SkillSetPage(props) {
           }}
         >
           <ToggleButtonGroup
+            color='primary'
             value={skillList}
             onChange={handleSelectedSkill}
             sx={{
+             
               display: 'grid',
               gridTemplateColumns:'repeat(5, 1fr)',
               textAlign: 'center',
               gap: 2,
               [theme.breakpoints.down('md')]: {
-                gridTemplateColumns:'repeat(2, 1fr)' /* setting break points for different screen size for responsiveness*/,
+                gridTemplateColumns:'repeat(3, 1fr)' /* setting break points for different screen size for responsiveness*/,
 
               },
               [theme.breakpoints.down('lg')]: {
@@ -67,7 +69,11 @@ function SkillSetPage(props) {
               <ToggleButton
                 key={uuidv4()}
                 value={`${skill || ""} `}
-                sx={{ backgroundColor: theme.palette.primary.main, color: theme.palette.primary.contrastText, my: 2 }}
+                sx={{ backgroundColor: theme.palette.primary.main, color: theme.palette.primary.contrastText, my: 2,
+                  ":hover":{
+                    backgroundColor: theme.palette.primary.dark,
+                  },
+                }}
               >
                 {skill || ""}
               </ToggleButton>
