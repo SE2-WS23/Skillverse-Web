@@ -5,11 +5,11 @@ import CreateJobProfilePage from "./pages/CreateJobProfile/CreateJobProfilePage"
 import DashboardPage from "./pages/Dashboard/DashboardPage";
 import EmployeeOverviewPage from "./pages/EmployeeOverview/EmployeeOverviewPage";
 import HomePage from "./pages/Home/HomePage";
+import JobDescriptionPage from "./pages/JobProfile/JobDescriptionPage";
 import JobProfilePage from "./pages/JobProfile/JobProfilePage";
 import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
 import LoginPage from "./pages/Login/LoginPage";
 import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
-import DescribeTheJobPage from "./pages/JobProfile/DescribeTheJobPage";
 const ROUTES = [
   {
     path: "",
@@ -56,8 +56,8 @@ const ROUTES = [
     element: <CodeChallengePage />,
   },
   {
-    path: "DescribeTheJob",
-    element: <DescribeTheJobPage />,
+    path: "job-description",
+    element: <JobDescriptionPage />,
   },
 ];
 
