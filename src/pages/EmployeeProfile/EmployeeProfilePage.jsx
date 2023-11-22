@@ -1,5 +1,4 @@
 import PageLayout from "../../components/PageLayout";
-
 import {
   BannerItem,
   BioItem,
@@ -11,15 +10,19 @@ import Grid from "@mui/material/Unstable_Grid2";
 import { Box } from "@mui/material";
 import person1 from "./data/mockData";
 
+/**
+ *Renders employeeprofile page
+ * @returns {JSX.Element} Employee profile page
+ */
+
 function EmployeeProfilePage() {
   return (
-    //return html
-    <div>
+    <Box>
       <PageLayout title="Employee Profile" viewportPage>
         <Box alignItems="center" justifyContent="center">
           <Grid container spacing={2} rowSpacing={2}>
             <Grid xs={12}>
-              <BannerItem></BannerItem>
+              <BannerItem />
             </Grid>
             <Grid xs={2.5}>
               <OverviewItem title="Skills" list={person1.skills}></OverviewItem>
@@ -42,7 +45,7 @@ function EmployeeProfilePage() {
           </Grid>
         </Box>
       </PageLayout>
-    </div>
+    </Box>
   );
 }
 

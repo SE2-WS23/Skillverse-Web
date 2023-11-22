@@ -5,6 +5,11 @@ import React from "react";
 import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
 
+/**
+ *renders FileAction component of employee profile
+ * @returns {JSX.Element} FileAction item for employee profile page component
+ */
+
 export default function FileActionItem({ files }) {
   const theme = useTheme();
 

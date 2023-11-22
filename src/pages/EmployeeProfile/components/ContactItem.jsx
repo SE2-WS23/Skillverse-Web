@@ -12,7 +12,7 @@ export default function ContactItem({ contact }) {
       className="component"
       sx={{ backgroundColor: theme.palette.primary.light }}
     >
-      <h2>Contact</h2>
+      <Typography variant="h2">Contact</Typography>
       <Stack
         direction="row"
         columnGap={8}
