@@ -33,7 +33,7 @@ function EmployeeCreationPage() {
     setEmployeeExtraInfo(event.target.value);
   }
 
-  function EmployeeCreation(event) {
+  function handleSubmit(event) {
     console.log("Employee has been created");
     console.log("Name of employee: " + employeeName);
     console.log("Email of employee: " + employeeEmail);
