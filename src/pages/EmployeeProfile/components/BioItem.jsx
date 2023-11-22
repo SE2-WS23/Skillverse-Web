@@ -8,7 +8,7 @@ import { PropTypes } from "prop-types";
  * @returns {JSX.Element} Biography item for employee profile page component
  */
 
-export default function BioItem({ abouttxt }) {
+export default function BioItem(props) {
   const theme = useTheme();
 
   return (
@@ -18,7 +18,7 @@ export default function BioItem({ abouttxt }) {
     >
       <Typography variant="h2">About</Typography>
       <Typography variant="body1" gutterBottom className="about-text">
-        {abouttxt}
+        {props.abouttxt || ""}
       </Typography>
     </Box>
   );

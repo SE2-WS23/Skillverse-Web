@@ -11,6 +11,7 @@ import { v4 as uuid } from "uuid";
  */
 
 //populate lists with prop array. secondary, primary are (1) skill and level, or (2) certificate and origin
+//el means "element" and is what is iterated through
 function renderList(list) {
   return list.map((el) => {
     return (
@@ -26,7 +27,7 @@ function renderList(list) {
   });
 }
 
-export default function OverviewItem({ title, list }) {
+export default function OverviewItem(props) {
   const theme = useTheme();
 
   return (
@@ -34,9 +35,9 @@ export default function OverviewItem({ title, list }) {
       className="component"
       sx={{ backgroundColor: theme.palette.primary.light }}
     >
-      <Typography variant="h2">{title}</Typography>
+      <Typography variant="h2">{props.title}</Typography>
 
-      <List sx={{ width: "100%" }}>{renderList(list)}</List>
+      <List sx={{ width: "100%" }}>{renderList(props.list)}</List>
     </Box>
   );
 }

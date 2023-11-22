@@ -4,7 +4,7 @@ import "./style.css";
 import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
 
-export default function ContactItem({ contact }) {
+export default function ContactItem(props) {
   const theme = useTheme();
 
   return (
@@ -19,24 +19,23 @@ export default function ContactItem({ contact }) {
         sx={{ justifyContent: "center" }}
         className="contact"
       >
-        <Typography variant="body1" component="a" href={"tel:" + contact.phone}>
-          {contact.phone}
+        <Typography variant="body1" component="a" href={"tel:" + props.phone}>
+          {props.phone}
         </Typography>
         <Typography
           variant="body1"
           component="a"
-          href={"mailto:" + contact.email}
+          href={"mailto:" + props.email}
         >
-          {contact.email}
+          {props.email}
         </Typography>
-        <Typography variant="body1">{contact.address}</Typography>
+        <Typography variant="body1">{props.address}</Typography>
       </Stack>
     </Box>
   );
 }
 
 ContactItem.propTypes = {
-  contact: PropTypes.object,
   phone: PropTypes.string,
   email: PropTypes.string,
   address: PropTypes.string,

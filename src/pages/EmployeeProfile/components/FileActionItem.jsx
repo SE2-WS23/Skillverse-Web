@@ -4,16 +4,17 @@ import "./style.css";
 import React from "react";
 import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
+import { v4 as uuid } from "uuid";
 
 /**
  *renders FileAction component of employee profile
  * @returns {JSX.Element} FileAction item for employee profile page component
  */
 
-export default function FileActionItem({ files }) {
+export default function FileActionItem(props) {
   const theme = useTheme();
 
-  const [file, setFile] = React.useState(files[0]);
+  const [file, setFile] = React.useState(props.files[0]);
   const [action, setAction] = React.useState("view");
 
   const handleFileChange = (event) => {
@@ -29,9 +30,9 @@ export default function FileActionItem({ files }) {
 
   //populates files selection with prop array
   function populateSelect(_files) {
-    return _files.map((el) => {
+    return _files?.map((el) => {
       return (
-        <MenuItem value={el} key={_files.indexOf(el)}>
+        <MenuItem value={el} key={uuid()}>
           {el}
         </MenuItem>
       );
@@ -46,7 +47,7 @@ export default function FileActionItem({ files }) {
       <FormGroup className="form-control">
         <Stack spacing={2} direction="row">
           <Select fullWidth onChange={handleFileChange} value={file}>
-            {populateSelect(files)}
+            {populateSelect(props.files)}
           </Select>
           <Select fullWidth onChange={handleActionChange} value={action}>
             <MenuItem value={"view"}>View</MenuItem>
