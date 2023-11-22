@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Typography, Box } from "@mui/material";
+import { Button, Typography, Box, Input } from "@mui/material";
 import UploadedFile from "./UploadedFile";
 
 
@@ -21,7 +21,7 @@ function UploadBox() {
   }
 
   return (
-    <div>
+    <Box>
       {selectedFiles.map((file) => (
     <Box key={file.name} display="flex" alignItems="center" mb={1}>
       <UploadedFile />
@@ -31,7 +31,7 @@ function UploadBox() {
     </Box>
     ))}
       <label htmlFor="upload-file">
-        <input
+        <Input
           style={{ display: "none" }}
           id="upload-file"
           name="upload-file"
@@ -43,7 +43,7 @@ function UploadBox() {
           Upload File
         </Button>
       </label>
-    </div>
+    </Box>
   );
 }
 
