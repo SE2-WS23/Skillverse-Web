@@ -109,7 +109,7 @@ function EmployeeCreationPage() {
         variant="contained"
         color="primary"
         size="large"
-        onClick={EmployeeCreation}>Create Employee
+        onClick={handleSubmit}>Create Employee
         </Button>
       </Box>
     </form>
