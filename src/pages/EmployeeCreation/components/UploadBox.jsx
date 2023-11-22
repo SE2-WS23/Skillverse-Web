@@ -6,7 +6,6 @@ import UploadedFile from "./UploadedFile";
 /**
  * @returns {JSX.Element} The Box holding all uploaded files in the Employee creation page component.
  */
-
 function UploadBox() {
   const [selectedFiles, setSelectedFiles] = useState([]);
 
