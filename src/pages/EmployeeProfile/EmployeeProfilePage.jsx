@@ -1,4 +1,3 @@
-//imports
 import PageLayout from "../../components/PageLayout";
 
 import {
@@ -10,27 +9,7 @@ import {
 } from "./components";
 import Grid from "@mui/material/Unstable_Grid2";
 import { Box } from "@mui/material";
-import { v4 as uuid } from "uuid";
-
-//mock data
-const skills = [
-  { prmry: "Skill1", scndry: "1", uid: uuid() },
-  { prmry: "Skill2", scndry: "2", uid: uuid() },
-  { prmry: "Skill3", scndry: "5", uid: uuid() },
-];
-const certificates = [
-  { prmry: "Cert1", scndry: "from school", uid: uuid() },
-  { prmry: "Cert2", scndry: "from work", uid: uuid() },
-  { prmry: "Cert3", scndry: "from uni", uid: uuid() },
-];
-const aboutme =
-  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.";
-const files = ["cv.pdf", "report.pdf"];
-const contacts = {
-  phone: "+12345678",
-  email: "username@email.com",
-  address: "Street address 1",
-};
+import person1 from "./data/mockData";
 
 function EmployeeProfilePage() {
   return (
@@ -43,22 +22,22 @@ function EmployeeProfilePage() {
               <BannerItem></BannerItem>
             </Grid>
             <Grid xs={2.5}>
-              <OverviewItem title="Skills" list={skills}></OverviewItem>
+              <OverviewItem title="Skills" list={person1.skills}></OverviewItem>
             </Grid>
             <Grid xs={2.5}>
               <OverviewItem
                 title="Certificates"
-                list={certificates}
+                list={person1.certificates}
               ></OverviewItem>
             </Grid>
             <Grid xs={7}>
-              <BioItem abouttxt={aboutme}></BioItem>
+              <BioItem abouttxt={person1.aboutme}></BioItem>
             </Grid>
             <Grid xs={5}>
-              <FileActionItem files={files}></FileActionItem>
+              <FileActionItem files={person1.files}></FileActionItem>
             </Grid>
             <Grid xs={7}>
-              <ContactItem contact={contacts}></ContactItem>
+              <ContactItem contact={person1.contacts}></ContactItem>
             </Grid>
           </Grid>
         </Box>
