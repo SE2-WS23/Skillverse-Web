@@ -48,7 +48,15 @@ const ROUTES = [
   },
   {
     path: "employee-overview",
-    element: <EmployeeOverviewPage />
+    element: <EmployeeOverviewPage />,
+  },
+  {
+    path: "job-description",
+    element: <JobDescriptionPage />,
+  },
+  {
+    path: "job-description",
+    element: <JobDescriptionPage />,
   },
 ];
 
