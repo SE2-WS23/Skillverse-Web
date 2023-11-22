@@ -24,11 +24,11 @@ const ROUTES = [
     element: <LoginPage />,
   },
   {
-    path: "companycoursemanagement",
+    path: "company-course-management",
     element: <CompanyCourseManagementPage />,
   },
   {
-    path: "companytrainingsoverview",
+    path: "company-trainings-overview",
     element: <CompanyTrainingsOverviewPage />,
   },
   {
