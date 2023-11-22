@@ -54,10 +54,6 @@ const ROUTES = [
     path: "job-description",
     element: <JobDescriptionPage />,
   },
-  {
-    path: "job-description",
-    element: <JobDescriptionPage />,
-  },
 ];
 
 export default ROUTES;
