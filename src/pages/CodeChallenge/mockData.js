@@ -19,7 +19,22 @@ Front-end development involves creating the parts of a website that users intera
 **HTML:** The standard markup language for creating web pages, 
 **CSS:** A stylesheet language used to control the layout and appearance of web pages, 
 **JavaScript:** A scripting language used to create dynamic content.
-
 `;
 
-export default markdown;
+const exampleLanguage = "html";
+
+const exampleCode = `<!DOCTYPE html>
+<html>
+<head>
+    <title>My Simple Page</title>
+</head>
+<body>
+    <h1>Welcome to My Webpage</h1>
+    <p>This is a simple HTML page.</p>
+</body>
+</html>
+`;
+
+const exampleTheme = "vs-light";
+
+export { exampleCode, exampleLanguage, exampleTheme, markdown };
