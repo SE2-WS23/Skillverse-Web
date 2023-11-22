@@ -1,27 +1,41 @@
 import React, { useState } from "react";
 import SplitPane, { Pane } from "split-pane-react";
 import "split-pane-react/esm/themes/default.css";
+import PageLayout from "../../components/PageLayout";
 
 function CodeChallengePage() {
-  const [sizes, setSizes] = useState([100, "30%", "auto"]);
+  const [sizes, setSizes] = useState([
+    "calc(3/100%)",
+    "calc(3/100%)",
+    "calc(3/100%)",
+  ]);
+
+  const minSize = "10%";
+  const maxSize = "50%";
 
   const layoutCSS = {
     height: "100%",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    borderLeft: "2px solid black",
+    borderRight: "2px solid black",
   };
 
   return (
-    <div style={{ height: 500 }}>
-      <SplitPane split="vertical" sizes={sizes} onChange={setSizes}>
-        <Pane minSize={50} maxSize="50%">
+    <PageLayout title="Code Challenge" viewportPage>
+      <SplitPane
+        split="vertical"
+        sizes={sizes}
+        onChange={setSizes}
+        height="100%"
+      >
+        <Pane minSize={minSize} maxSize={maxSize}>
           <div style={{ ...layoutCSS, background: "#ddd" }}>pane1</div>
         </Pane>
-        <div style={{ ...layoutCSS, background: "#d5d7d9" }}>pane2</div>
-        <div style={{ ...layoutCSS, background: "#a1a5a9" }}>pane3</div>
+        <Pane minSize={minSize} maxSize={maxSize}>
+          <div style={{ ...layoutCSS, background: "#eee" }}>pane2</div>
+        </Pane>
+        <Pane minSize={minSize} maxSize={maxSize}></Pane>
       </SplitPane>
-    </div>
+    </PageLayout>
   );
 }
 
