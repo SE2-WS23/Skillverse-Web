@@ -8,7 +8,6 @@ import PropTypes from 'prop-types'
 /**
  * @returns {JSX.Element} The File Component for Employee creation page to display uploaded Files.
  */
-
 function UploadedFile({ fileName }) {
 
     const deleteFile = (event) => {
