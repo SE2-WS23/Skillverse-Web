@@ -9,7 +9,6 @@ import { useState } from "react";
  * additional information, as well as a button to upload a resume and a button to create the employee.
  * @returns {JSX.Element} The Employee creation page component.
  */
-
 function EmployeeCreationPage() {
 
   const [employeeName, setEmployeeName] = useState("");
