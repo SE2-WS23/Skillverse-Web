@@ -82,7 +82,7 @@ function EmployeeCreationPage() {
               <TextField label="Name" margin="normal" sx={{ minWidth: "20vw" }} value={employeeName} onChange={handleEmployeeNameChange} />
               <TextField label="Email" margin="normal" sx={{ minWidth: "20vw" }} value={employeeEmail} onChange={handleEmployeeEmailChange} />
             </Box>
-            <Box display="flex" flexDirection="row">
+            <Box>
               <TextField label="Phone number" margin="normal" sx={{ minWidth: "20vw" }} value={employeePhoneNumber} onChange={handleEmployeePhoneNumberChange} />
               <TextField label="Address" margin="normal" sx={{ minWidth: "20vw" }} value={employeeAddress} onChange={handleEmployeeAddressChange} />
             </Box>
