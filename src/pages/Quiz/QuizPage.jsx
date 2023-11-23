@@ -14,13 +14,16 @@ import { useTheme } from '@mui/material/styles';
 
 
 function shuffle(array) {
+    const crypto = window.crypto || window.msCrypto;
+    let cryptoArray = new Uint32Array(1);
     let arrayLength = array.length,
         randomNumber = 0,
         temp;
 
     while (arrayLength--) {
 
-        randomNumber = Math.floor(Math.random() * (arrayLength+1));
+        randomNumber = Math.floor(crypto.getRandomValues(cryptoArray)/(Math.pow(10,9)));
+        console.log(randomNumber);
 
         temp = array[arrayLength];
         array[arrayLength] = array[randomNumber];
