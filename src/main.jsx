@@ -8,12 +8,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import ErrorPage from "./pages/Error/ErrorPage";
-import AssessmentPage from "./pages/Assessment/AssessmentPage";
-import DashboardPage from "./pages/Dashboard/DashboardPage";
-import HomePage from "./pages/Home/HomePage";
-import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
-import LoginPage from "./pages/Login/LoginPage";
-import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
+import ROUTES from "./routes";
 
 const theme = createTheme({
   palette: {
@@ -31,32 +26,8 @@ const router = createBrowserRouter([
   {
     path: "/",
     errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "",
-        element: <HomePage />,
-      },
-      {
-        path: "dashboard",
-        element: <DashboardPage />,
-      },
-      {
-        path: "login",
-        element: <LoginPage />,
-      },
-      {
-        path: "linked-in-learning",
-        element: <LinkedInLearning />,
-      },
-      {
-        path: "training-plan",
-        element: <TrainingPlanPage />,
-      },
-      {
-        path: "assessment",
-        element: <AssessmentPage />,
-      },
-    ],
+    children: ROUTES,
+      
   },
 ]);
 
