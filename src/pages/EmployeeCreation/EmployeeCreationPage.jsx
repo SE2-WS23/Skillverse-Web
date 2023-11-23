@@ -61,7 +61,7 @@ function EmployeeCreationPage() {
           }}
         >
           <Box maxWidth="50%">
-            <Box display="flex" flexDirection="row" alignItems="center" justifyContent="center">
+            <Box>
               <Avatar sx={{ width: "10vw", height: "20vh", variant: "circular" }} />
               <Fab
                 color="primary"
