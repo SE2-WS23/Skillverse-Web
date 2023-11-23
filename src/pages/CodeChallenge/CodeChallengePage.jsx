@@ -16,6 +16,7 @@ import {
 /**
  * The `CodeChallengePage` function returns a React component that displays a split pane layout with a
  * Markdown viewer, code editor, and code output pane.
+ * @returns The CodeChallengePage component.
  */
 function CodeChallengePage() {
   const [sizes, setSizes] = useState([
