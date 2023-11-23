@@ -1,4 +1,3 @@
-import { Padding } from "@mui/icons-material";
 import "./style.css";
 import { Typography, Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
