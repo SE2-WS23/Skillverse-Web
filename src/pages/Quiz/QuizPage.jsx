@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import PageLayout from "../../components/PageLayout";
+import mockData from "./mockData";
 import Button from "@mui/material/Button";
 import LinearProgress from '@mui/material/LinearProgress';
 import { v4 as uuidv4 } from "uuid";
@@ -11,9 +12,41 @@ import { useTheme } from '@mui/material/styles';
  * @returns {JSX.Element} QuizPage component
  */
 
+
+function shuffle(array) {
+    let arrayLength = array.length,
+        randomNumber = 0,
+        temp;
+
+    while (arrayLength--) {
+
+        randomNumber = Math.floor(Math.random() * (arrayLength+1));
+
+        temp = array[arrayLength];
+        array[arrayLength] = array[randomNumber];
+        array[randomNumber] = temp;
+    }
+    return array;
+}
+
 function QuizPage() {
 
     const theme = useTheme();
+
+    const randomQuestionsSelection = () => {
+        let mockDataLength = [];
+        let chosenQuestions = [];
+        for (let i = 0; i < mockData.length; i++) {
+            mockDataLength.push(i);
+        }
+        let shuffledMockDataLength = shuffle(mockDataLength);
+        shuffledMockDataLength = shuffledMockDataLength.slice(0, 3);
+        chosenQuestions = shuffledMockDataLength.map((index) => mockData[index]);
+
+        return chosenQuestions;
+    }
+
+    const dummyQuestions = useMemo(() => randomQuestionsSelection(), []); 
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [progressValue, setProgressValue] = useState(1);
 
@@ -34,28 +67,9 @@ function QuizPage() {
             setProgressValue(100); 
     }
 
-    const nextButtonClick = () => {
+    const handleNextButtonClick = () => {
         return;
     }
-
-    const dummyQuestions = [ // placeholder for the real questions
-        {
-          question: "Question 1",
-          answers: ["Answer 1", "Answer 2", "Answer 3"],
-          correct: "Answer 1",
-        },
-        {
-            question: "Question 2",
-            answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-            correct: "Answer 2",
-        },
-        {
-            question: "Question 3",
-            answers: ["Answer 1", "Answer 2", "Answer 3"],
-            correct: "Answer 3",
-        },
-      ];
-      
 
     return (
         <PageLayout title="Quiz" viewportPage>
@@ -93,7 +107,7 @@ function QuizPage() {
                     }}
                 >
                     
-                    <h1 style={{margin: "0% 0 15vh 0"}}>
+                    <h1 style={{margin: "0 0 15vh 0"}}> 
                         {dummyQuestions[currentQuestion].question}
                     </h1>
 
@@ -117,7 +131,7 @@ function QuizPage() {
                 color="primary"
                 size="large"
                 sx={{ position: "absolute", bottom: "10px", right: "10px" }}
-                onClick={nextButtonClick}
+                onClick={handleNextButtonClick}
             >
                 Next
             </Button>
