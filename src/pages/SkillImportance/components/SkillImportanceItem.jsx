@@ -33,6 +33,7 @@ function SkillImportanceItem(props) {
         onChange={handleSlide}
         sx={{ width: 350 }}
         valueLabelDisplay="auto"
+        value={slider}
         step={1}
         marks
         min={0}
