@@ -21,11 +21,11 @@ function JobProfileItem(props) {
   );
 }
 
-export default JobProfileItem;
-
 JobProfileItem.propTypes = {
   jobProfile: PropTypes.shape({
     title: PropTypes.string,
     category: PropTypes.string,
   }),
 };
+
+export default JobProfileItem;
