@@ -1,11 +1,9 @@
+import BannerItem from "./components/BannerItem";
+import BioItem from "./components/BioItem";
+import ContactItem from "./components/ContactItem";
+import FileActionItem from "./components/FileActionItem";
+import OverviewItem from "./components/OverviewItem";
 import PageLayout from "../../components/PageLayout";
-import {
-  BannerItem,
-  BioItem,
-  ContactItem,
-  FileActionItem,
-  OverviewItem,
-} from "./components";
 import Grid from "@mui/material/Unstable_Grid2";
 import { Box } from "@mui/material";
 import { PropTypes } from "prop-types";
