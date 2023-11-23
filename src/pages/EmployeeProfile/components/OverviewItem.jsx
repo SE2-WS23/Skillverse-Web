@@ -19,7 +19,7 @@ function renderList(list) {
           primary={el.prmry || ""}
           secondary={el.scndry || ""}
           key={uuid()}
-          className="list-item-text"
+          sx={{ textAlign: "center" }}
         />
       </ListItem>
     );

@@ -1,3 +1,4 @@
+import { Padding } from "@mui/icons-material";
 import "./style.css";
 import { Typography, Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
@@ -17,7 +18,7 @@ export default function BioItem(props) {
       sx={{ backgroundColor: theme.palette.primary.light }}
     >
       <Typography variant="h2">About</Typography>
-      <Typography variant="body1" gutterBottom className="about-text">
+      <Typography variant="body1" gutterBottom sx={{ padding: "15vh" }}>
         {props.abouttxt || ""}
       </Typography>
     </Box>

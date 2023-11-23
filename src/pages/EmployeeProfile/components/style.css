@@ -13,12 +13,6 @@ h2{
 .banner-paper{
     height: 150%;
 }
-.list-item-text{
-    text-align: center;
-}
-.about-text{
-    padding: 5vh;
-}
 .form-control{
     padding: 1vh;
     height: fit-content;
