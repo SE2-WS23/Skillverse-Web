@@ -1,4 +1,5 @@
 import Editor from "@monaco-editor/react";
+import Button from "@mui/material/Button";
 import { Box } from "@mui/system";
 import React, { useRef, useState } from "react";
 import Markdown from "react-markdown";
@@ -71,6 +72,16 @@ function CodeChallengePage() {
           </Box>
         </Pane>
       </SplitPane>
+
+      <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        sx={{ position: "fixed", bottom: "10px", right: "10px" }}
+        onClick={() => {}}
+      >
+        Next
+      </Button>
     </PageLayout>
   );
 }
