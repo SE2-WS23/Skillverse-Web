@@ -55,6 +55,10 @@ const ROUTES = [
     path: "job-description",
     element: <JobDescriptionPage />,
   },
+  {
+    path: "code-challenge",
+    element: <CodeChallengePage />,
+  },
 ];
 
 export default ROUTES;
