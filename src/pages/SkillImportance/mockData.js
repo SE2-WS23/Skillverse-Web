@@ -43,8 +43,6 @@ const mockedSkills = [
     category: "Mobile App Development",
     skill: "Flutter",
   },
-
-  
 ];
 
 export default mockedSkills;
