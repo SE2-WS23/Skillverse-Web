@@ -20,16 +20,16 @@ export default function ContactItem(props) {
         className="contact"
       >
         <Typography variant="body1" component="a" href={"tel:" + props.phone}>
-          {props.phone}
+          {props.phone || ""}
         </Typography>
         <Typography
           variant="body1"
           component="a"
           href={"mailto:" + props.email}
         >
-          {props.email}
+          {props.email || ""}
         </Typography>
-        <Typography variant="body1">{props.address}</Typography>
+        <Typography variant="body1">{props.address || ""}</Typography>
       </Stack>
     </Box>
   );

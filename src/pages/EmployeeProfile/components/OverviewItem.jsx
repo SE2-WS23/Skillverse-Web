@@ -1,4 +1,3 @@
-//imports
 import { PropTypes } from "prop-types";
 import "./style.css";
 import { List, ListItem, ListItemText, Box, Typography } from "@mui/material";
@@ -17,8 +16,8 @@ function renderList(list) {
     return (
       <ListItem key={uuid()}>
         <ListItemText
-          primary={el.prmry}
-          secondary={el.scndry}
+          primary={el.prmry || ""}
+          secondary={el.scndry || ""}
           key={uuid()}
           className="list-item-text"
         />
@@ -35,9 +34,9 @@ export default function OverviewItem(props) {
       className="component"
       sx={{ backgroundColor: theme.palette.primary.light }}
     >
-      <Typography variant="h2">{props.title}</Typography>
+      <Typography variant="h2">{props.title || ""}</Typography>
 
-      <List sx={{ width: "100%" }}>{renderList(props.list)}</List>
+      <List sx={{ width: "100%" }}>{renderList(props.list) || ""}</List>
     </Box>
   );
 }

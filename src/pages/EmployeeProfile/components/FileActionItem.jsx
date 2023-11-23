@@ -1,4 +1,3 @@
-//imports
 import { Button, MenuItem, Select, FormGroup, Stack, Box } from "@mui/material";
 import "./style.css";
 import React from "react";
