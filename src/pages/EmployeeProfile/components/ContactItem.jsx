@@ -19,24 +19,30 @@ export default function ContactItem(props) {
         sx={{ justifyContent: "center" }}
         className="contact"
       >
-        <Typography variant="body1" component="a" href={"tel:" + props.phone}>
-          {props.phone || ""}
+        <Typography
+          variant="body1"
+          component="a"
+          href={"tel:" + props.contact.phone}
+        >
+          {props.contact.phone}
         </Typography>
         <Typography
           variant="body1"
           component="a"
-          href={"mailto:" + props.email}
+          href={"mailto:" + props.contact.email}
         >
-          {props.email || ""}
+          {props.contact.email}
         </Typography>
-        <Typography variant="body1">{props.address || ""}</Typography>
+        <Typography variant="body1">{props.contact.address}</Typography>
       </Stack>
     </Box>
   );
 }
 
 ContactItem.propTypes = {
-  phone: PropTypes.string,
-  email: PropTypes.string,
-  address: PropTypes.string,
+  contact: PropTypes.shape({
+    phone: PropTypes.string,
+    email: PropTypes.string,
+    address: PropTypes.string,
+  }).isRequired,
 };
