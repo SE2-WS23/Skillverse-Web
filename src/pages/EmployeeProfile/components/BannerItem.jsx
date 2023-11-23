@@ -8,16 +8,12 @@ import Image from "../media/plant-banner.jpg";
  */
 
 export default function BannerItem() {
-  const styles = {
-    paperContainer: {
-      backgroundImage: `url(${Image})`,
-      borderRadius: 0,
-    },
-  };
-
   return (
     <Box className="banner">
-      <Paper style={styles.paperContainer} className="banner-paper">
+      <Paper
+        className="banner-paper"
+        sx={{ backgroundImage: `url(${Image})`, borderRadius: 0 }}
+      >
         <Stack direction="row">
           <Avatar
             alt="Avatar"
