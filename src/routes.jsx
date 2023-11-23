@@ -1,4 +1,5 @@
 import AssessmentPage from "./pages/Assessment/AssessmentPage";
+import CodeChallengePage from "./pages/CodeChallenge/CodeChallengePage";
 import CourseFeedbackPage from "./pages/CourseFeedback/CourseFeedbackPage";
 import CreateJobProfilePage from "./pages/CreateJobProfile/CreateJobProfilePage";
 import DashboardPage from "./pages/Dashboard/DashboardPage";
@@ -54,6 +55,10 @@ const ROUTES = [
   {
     path: "employee-profile",
     element: <EmployeeProfilePage />,
+  },
+  {
+    path: "code-challenge",
+    element: <CodeChallengePage />,
   },
 ];
 
