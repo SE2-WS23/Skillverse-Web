@@ -20,6 +20,11 @@ const person1 = {
     email: "username@email.com",
     address: "Street address 1",
   },
+
+  userHeader: {
+    username: "UsernameTest",
+    companyname: "testCompany",
+  },
 };
 
 export default person1;

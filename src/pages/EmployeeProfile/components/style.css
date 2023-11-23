@@ -7,12 +7,6 @@ h2{
     height: 100%;
     position: relative;
 }
-.banner{
-    height: 15vh;
-}
-.banner-paper{
-    height: 150%;
-}
 .form-control{
     padding: 1vh;
     height: fit-content;

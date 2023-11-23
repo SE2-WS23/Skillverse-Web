@@ -22,7 +22,7 @@ function EmployeeProfilePage(props) {
         <Box alignItems="center" justifyContent="center">
           <Grid container spacing={2} rowSpacing={2}>
             <Grid xs={12}>
-              <BannerItem />
+              <BannerItem userHeader={empployeeProfileObject.userHeader} />
             </Grid>
             <Grid xs={2.5}>
               <OverviewItem
@@ -63,6 +63,7 @@ EmployeeProfilePage.propTypes = {
     aboutme: PropTypes.string,
     files: PropTypes.array,
     contacts: PropTypes.array,
+    userHeader: PropTypes.array,
   }).isRequired,
 };
 

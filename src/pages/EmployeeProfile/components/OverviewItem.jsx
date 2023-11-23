@@ -34,7 +34,9 @@ export default function OverviewItem(props) {
       className="component"
       sx={{ backgroundColor: theme.palette.primary.light }}
     >
-      <Typography variant="h2">{props.title || ""}</Typography>
+      <Typography variant="h5" sx={{ textAlign: "center" }}>
+        {props.title || ""}
+      </Typography>
 
       <List sx={{ width: "100%" }}>{renderList(props.list) || ""}</List>
     </Box>
