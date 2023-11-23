@@ -1,15 +1,15 @@
 import AssessmentPage from "./pages/Assessment/AssessmentPage";
-import CodeChallengePage from "./pages/CodeChallenge/CodeChallengePage";
 import CourseFeedbackPage from "./pages/CourseFeedback/CourseFeedbackPage";
-import CreateJobProfilePage from "./pages/CreateJobProfile/CreateJobProfilePage";
 import DashboardPage from "./pages/Dashboard/DashboardPage";
-import EmployeeOverviewPage from "./pages/EmployeeOverview/EmployeeOverviewPage";
 import HomePage from "./pages/Home/HomePage";
 import JobProfilePage from "./pages/JobProfile/JobProfilePage";
 import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
 import LoginPage from "./pages/Login/LoginPage";
 import SkillImportancePage from "./pages/SkillImportance/SkillImportancePage";
 import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
+import CreateJobProfilePage from "./pages/CreateJobProfile/CreateJobProfilePage";
+import EmployeeOverviewPage from "./pages/EmployeeOverview/EmployeeOverviewPage";
+import CodeChallengePage from "./pages/CodeChallenge/CodeChallengePage";
 
 const ROUTES = [
   {
