@@ -86,7 +86,7 @@ function EmployeeCreationPage() {
               <TextField label="Phone number" margin="normal" sx={{ minWidth: "20vw" }} value={employeePhoneNumber} onChange={handleEmployeePhoneNumberChange} />
               <TextField label="Address" margin="normal" sx={{ minWidth: "20vw" }} value={employeeAddress} onChange={handleEmployeeAddressChange} />
             </Box>
-            <Box display="flex" flexDirection="column">
+            <Box sx={{ flexDirection:"column"}}>
               <TextField
                 margin="normal"
                 type="submit"
