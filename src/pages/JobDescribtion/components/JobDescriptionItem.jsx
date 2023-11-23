@@ -11,7 +11,7 @@ import React from "react";
 
 function JobDescriptionItem(props) {
   const [selected, setSelected] = React.useState(() => [0]);
-  const handleChange = (event, newSelected) => {
+  const handleChange = (_, newSelected) => {
     setSelected(newSelected);
   };
   return (
@@ -20,12 +20,12 @@ function JobDescriptionItem(props) {
         <ToggleButton
           value="true"
           sx={{
-            height: "100px",
-            width: "200px",
+            height: "50px",
+            width: "150px",
             background: useTheme().palette.primary.light,
           }}
         >
-          <ListItem>
+          <ListItem sx={{ textAlign: "center", fontSize: "60px" }}>
             <ListItemText
               primary={props.jobDescription.skills || ""}
             ></ListItemText>
