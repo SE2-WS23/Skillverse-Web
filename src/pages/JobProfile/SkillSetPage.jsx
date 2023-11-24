@@ -93,7 +93,7 @@ function SkillSetPage(props) {
   );
 }
 SkillSetPage.propTypes = {
-  Skills: PropTypes.arrayOf(PropTypes.string).isRequired,
+  Skills: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default SkillSetPage;
