@@ -23,7 +23,6 @@ function shuffle(array) {
     while (arrayLength--) {
 
         randomNumber = Math.floor(crypto.getRandomValues(cryptoArray)/(Math.pow(10,9)));
-        console.log(randomNumber);
 
         temp = array[arrayLength];
         array[arrayLength] = array[randomNumber];
