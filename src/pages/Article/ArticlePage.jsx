@@ -4,6 +4,7 @@ import { Button, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
+import article from './mockData';
 
 /**
  * Renders the Article page.
@@ -12,6 +13,7 @@ import { useTheme } from '@mui/material/styles';
 
 function ArticlePage(props) {
   const theme = useTheme();
+
 
   return (
     <PageLayout viewportPage title='Article'>
@@ -28,28 +30,31 @@ function ArticlePage(props) {
         <Box
           sx={{
             height: '80%',
-            width: '60%',
+            width: '50%',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
+            justifyContent: "inherit",
+            alignItems: "inherit",
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.primary.contrastText,
+            borderStyle: "solid #000000"
           }}
         >
-          <Typography variant='h4'>{props.title || 'no title'}</Typography>
+          <Typography  variant='h4'>{props.title || article.title}</Typography>
           <Typography
             sx={{
               p: 3,
               overflow: 'hidden',
               overflowY: 'auto',
+              border: `solid ${theme.palette.primary.main} `,
+              mx: 10
             }}
           >
-            {props.content || 'article content is displayed here'}
+            {props.content || article.content}
           </Typography>
           <Typography>
             <a
-              href={props.link || ''}
+              href={props.link || article.link}
               target='_blank'
               rel='noopener noreferrer'
             >
