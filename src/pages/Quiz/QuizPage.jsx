@@ -48,15 +48,30 @@ function QuizPage() {
         return chosenQuestions;
     }
 
+    const userAnswerArrayLength = () => {
+        let userAnswerArray = [];
+        for (let i = 0; i < dummyQuestions.length; i++) {
+            userAnswerArray.push(undefined);
+        }
+        return userAnswerArray;
+    }
+
     const dummyQuestions = useMemo(() => randomQuestionsSelection(), []); 
+    const userAnswerArray = useMemo(() => userAnswerArrayLength(), []);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [progressValue, setProgressValue] = useState(1);
-
+    
     const handleAnswerButtonClick = (answer) => {
-        if (dummyQuestions[currentQuestion].correct === answer.target.textContent) // checks if the answer is correct
-            console.log("Correct");
-        else
-            console.log("Incorrect");
+        if (userAnswerArray[currentQuestion] === undefined) {
+            if (dummyQuestions[currentQuestion].correct === answer.target.textContent){ // checks if the answer is correct
+                userAnswerArray[currentQuestion] = true;
+                console.log("userAnswerArray: " + userAnswerArray);
+            }
+            else{
+                userAnswerArray[currentQuestion] = false;
+                console.log("userAnswerArray: " + userAnswerArray);
+            }
+        }
 
         if (currentQuestion !== dummyQuestions.length - 1) { 
             setCurrentQuestion(currentQuestion + 1);
