@@ -1,4 +1,4 @@
-const article = {
+const mockArticle = {
     title: 'What is Coding? ',
     content: `Coding is the practice of building websites and apps by writing out instructions in a programming language. 
     It governs how data is collected, how sites appear to the user, and every aspect of how you engage with the web. 
@@ -35,4 +35,4 @@ const article = {
   };
 
 
-export default article;
+export default mockArticle;

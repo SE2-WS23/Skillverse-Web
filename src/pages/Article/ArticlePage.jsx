@@ -4,7 +4,7 @@ import { Button, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
-import article from './mockData';
+import mockArticle from './mockData';
 
 /**
  * Renders the Article page.
@@ -13,6 +13,10 @@ import article from './mockData';
 
 function ArticlePage(props) {
   const theme = useTheme();
+
+  const articleTitle = props.title || mockArticle.title;
+  const articleContent = props.content || mockArticle.content;
+  const articleLink = props.link || mockArticle.link;
 
 
   return (
@@ -28,6 +32,7 @@ function ArticlePage(props) {
         }}
       >
         <Box
+
           sx={{
             height: '80%',
             width: '50%',
@@ -37,24 +42,26 @@ function ArticlePage(props) {
             alignItems: "inherit",
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.primary.contrastText,
-            borderStyle: "solid #000000"
+            borderStyle: "groove",
+            [theme.breakpoints.down('lg')]:{
+              width: "80%"
+            }
           }}
         >
-          <Typography  variant='h4'>{props.title || article.title}</Typography>
+          <Typography variant='h4'>{articleTitle || ""}</Typography>
           <Typography
             sx={{
-              p: 3,
               overflow: 'hidden',
               overflowY: 'auto',
               border: `solid ${theme.palette.primary.main} `,
               mx: 10
             }}
           >
-            {props.content || article.content}
+            {articleContent || ""}
           </Typography>
           <Typography>
             <a
-              href={props.link || article.link}
+              href={articleLink || ""}
               target='_blank'
               rel='noopener noreferrer'
             >
@@ -76,9 +83,9 @@ function ArticlePage(props) {
   );
 }
 ArticlePage.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  content: PropTypes.string,
+  link: PropTypes.string
 };
 
 export default ArticlePage;
