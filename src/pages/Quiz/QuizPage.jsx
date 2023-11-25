@@ -51,7 +51,7 @@ function QuizPage() {
     const userAnswerArrayLength = () => {
         let userAnswerArray = [];
         for (const question of dummyQuestions) {
-            userAnswerArray.push(undefined);
+            userAnswerArray[question] = (undefined);
         }
         return userAnswerArray;
     }
