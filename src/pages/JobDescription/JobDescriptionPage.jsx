@@ -2,25 +2,21 @@ import { Button, Grid, Typography } from "@mui/material/";
 import { v4 as uuidv4 } from "uuid";
 import PageLayout from "../../components/PageLayout";
 import JobDescriptionItem from "./components/JobDescriptionItem";
-import mockedDescription from "./mockData";
+import mockedSkills from "./mockData";
+import { useTheme } from "@emotion/react";
+/**
+ * A component which renders the JobDescriptionPage to let the company select the necessary skills for the job
+ * @returns {JSX.Element} The JobDescriptionPage component.
+ */
 
 function JobDescriptionPage() {
   return (
     <PageLayout title="Job Description">
       <Typography
-        variant="h2"
+        variant="h1"
         sx={{
-          width: "732px",
-          height: "59px",
-          flexShrink: "0",
-          fontSize: "30px",
-          fontFamily: "Inter",
-          fontStyle: "normal",
-          fontWeight: "400",
-          lineHeight: "normal",
-          marginTop: "100px",
-          marginLeft: "auto",
-          marginRight: "auto",
+          margin: "100px 100px",
+          fontSize: useTheme().typography,
         }}
       >
         Select relevant Skills describing the job
@@ -37,8 +33,8 @@ function JobDescriptionPage() {
           marginBottom: "50px",
         }}
       >
-        {mockedDescription?.map((jobDescription) => (
-          <JobDescriptionItem jobDescription={jobDescription} key={uuidv4()} />
+        {mockedSkills?.map((jobDescription) => (
+          <JobDescriptionItem mockedSkills={jobDescription} key={uuidv4()} />
         ))}
       </Grid>
       <Button
@@ -46,16 +42,8 @@ function JobDescriptionPage() {
         color="primary"
         size="large"
         sx={{
-          display: "flex",
-          width: "175px",
-          height: "43",
-          padding: "6px 16px",
-          justifyContent: "center",
-          alignItems: "center",
           left: "75%",
-          marginTop: "20%",
-          marginLeft: "60px",
-          marginBottom: "50px",
+          margin: " 80px 60px",
         }}
       >
         Save changes

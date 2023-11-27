@@ -1,31 +1,36 @@
 import { useTheme } from "@emotion/react";
-import { Grid, ListItem, ListItemText } from "@mui/material";
-import PropTypes from "prop-types";
+import { ToggleButton, Grid, ListItem, ListItemText } from "@mui/material";
+import React from "react";
+/**
+ * A component that displays a training block with course name, skills, progress, and description.
+ * @param {Object} props - The props object.
+ * @param {Object} props.jobDescription - The training object containing course name, skills, progress, description, and status.
+ * @param {string} props.skill - Prints the Skills in the toggles
+ * @returns {JSX.Element} the JobDescriptionPage Component.
+ */
 
-function JobProfileItem(props) {
+function JobDescriptionItem(props) {
+  const [selected, setSelected] = React.useState(false);
   return (
-    <Grid item xs={6}>
-      <ListItem
+    <Grid item xs={3}>
+      <ToggleButton
+        value="check"
+        selected={selected}
+        onChange={() => {
+          setSelected(!selected);
+        }}
         sx={{
-          height: "100px",
+          height: "50px",
+          width: "150px",
           background: useTheme().palette.primary.light,
         }}
       >
-        <ListItemText
-          primary={props.jobProfile.category || ""}
-          secondary={props.jobProfile.title || ""}
-          secondaryTypographyProps={{ align: "center" }}
-        />
-      </ListItem>
+        <ListItem sx={{ textAlign: "center" }}>
+          <ListItemText>{props.mockedSkills}</ListItemText>
+        </ListItem>
+      </ToggleButton>
     </Grid>
   );
 }
 
-JobProfileItem.propTypes = {
-  jobProfile: PropTypes.shape({
-    title: PropTypes.string,
-    category: PropTypes.string,
-  }),
-};
-
-export default JobProfileItem;
+export default JobDescriptionItem;
