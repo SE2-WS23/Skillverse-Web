@@ -1,11 +1,12 @@
 import { useTheme } from "@emotion/react";
 import { ToggleButton, Grid, ListItem, ListItemText } from "@mui/material";
 import React from "react";
+import PropTypes from "prop-types";
 /**
  * A component that displays a training block with course name, skills, progress, and description.
  * @param {Object} props - The props object.
- * @param {Object} props.jobDescription - The training object containing course name, skills, progress, description, and status.
- * @param {string} props.skill - Prints the Skills in the toggles
+ * @param {Object} props.JobDescription - The training object containing course name, skills, progress, description, and status.
+ * @param {string} props.mockedSkills - Prints the Skills in the toggles
  * @returns {JSX.Element} the JobDescriptionPage Component.
  */
 
@@ -32,5 +33,9 @@ function JobDescriptionItem(props) {
     </Grid>
   );
 }
+
+JobDescriptionItem.propTypes = {
+  mockedSkills: PropTypes.string,
+};
 
 export default JobDescriptionItem;

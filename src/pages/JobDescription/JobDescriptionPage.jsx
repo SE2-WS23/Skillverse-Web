@@ -33,8 +33,8 @@ function JobDescriptionPage() {
           marginBottom: "50px",
         }}
       >
-        {mockedSkills?.map((jobDescription) => (
-          <JobDescriptionItem mockedSkills={jobDescription} key={uuidv4()} />
+        {mockedSkills?.map((JobDescription) => (
+          <JobDescriptionItem mockedSkills={JobDescription} key={uuidv4()} />
         ))}
       </Grid>
       <Button
