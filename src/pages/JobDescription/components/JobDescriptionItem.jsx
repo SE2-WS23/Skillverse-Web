@@ -1,45 +1,36 @@
 import { useTheme } from "@emotion/react";
-import {
-  Grid,
-  ListItem,
-  ListItemText,
-  ToggleButton,
-  ToggleButtonGroup,
-} from "@mui/material";
-import PropTypes from "prop-types";
+import { ToggleButton, Grid, ListItem, ListItemText } from "@mui/material";
 import React from "react";
+/**
+ * A component that displays a training block with course name, skills, progress, and description.
+ * @param {Object} props - The props object.
+ * @param {Object} props.jobDescription - The training object containing course name, skills, progress, description, and status.
+ * @param {string} props.skill - Prints the Skills in the toggles
+ * @returns {JSX.Element} the JobDescriptionPage Component.
+ */
 
 function JobDescriptionItem(props) {
-  const [selected, setSelected] = React.useState(() => [0]);
-  const handleChange = (_, newSelected) => {
-    setSelected(newSelected);
-  };
+  const [selected, setSelected] = React.useState(false);
   return (
     <Grid item xs={3}>
-      <ToggleButtonGroup value={selected} onChange={handleChange}>
-        <ToggleButton
-          value="true"
-          sx={{
-            height: "50px",
-            width: "150px",
-            background: useTheme().palette.primary.light,
-          }}
-        >
-          <ListItem sx={{ textAlign: "center", fontSize: "60px" }}>
-            <ListItemText
-              primary={props.jobDescription.skills || ""}
-            ></ListItemText>
-          </ListItem>
-        </ToggleButton>
-      </ToggleButtonGroup>
+      <ToggleButton
+        value="check"
+        selected={selected}
+        onChange={() => {
+          setSelected(!selected);
+        }}
+        sx={{
+          height: "50px",
+          width: "150px",
+          background: useTheme().palette.primary.light,
+        }}
+      >
+        <ListItem sx={{ textAlign: "center" }}>
+          <ListItemText>{props.mockedSkills}</ListItemText>
+        </ListItem>
+      </ToggleButton>
     </Grid>
   );
 }
-
-JobDescriptionItem.propTypes = {
-  jobDescription: PropTypes.shape({
-    skills: PropTypes.string,
-  }),
-};
 
 export default JobDescriptionItem;
