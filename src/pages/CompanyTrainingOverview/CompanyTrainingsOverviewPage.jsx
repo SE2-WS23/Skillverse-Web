@@ -4,8 +4,9 @@ import { Button, Grid, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import PageLayout from "../../components/PageLayout";
 import { useTheme } from "@mui/material/styles";
+import mockCourses from "./mockCourses"; 
 
-const CourseListItem = ({ courseNumber, width, height, backgroundColor }) => (
+const CourseListItem = ({ courseNumber, backgroundColor }) => (
 
   <Grid
 
@@ -14,8 +15,8 @@ const CourseListItem = ({ courseNumber, width, height, backgroundColor }) => (
     sm={6}
     md={4}
     sx={{
-      width,
-      height,
+      width: "100%",
+      height: "150px",
       border: "1px solid #ccc",
       borderRadius: "8px",
       backgroundColor,
@@ -24,6 +25,7 @@ const CourseListItem = ({ courseNumber, width, height, backgroundColor }) => (
       alignItems: "center",
       justifyContent: "center",
       margin: "10px",
+
     }}
 
   >
@@ -40,34 +42,24 @@ const CourseListItem = ({ courseNumber, width, height, backgroundColor }) => (
 
 CourseListItem.propTypes = {
   courseNumber: PropTypes.number.isRequired,
-  width: PropTypes.string,
-  height: PropTypes.string,
   backgroundColor: PropTypes.string,
 };
 
 CourseListItem.defaultProps = {
-  width: "100%",
-  height: "150px",
   backgroundColor: "#2196F3",
 };
 
-/**
- * Renders the CompanyTrainingsOverview page.
- * @returns {JSX.Element} CompanyTrainingsOverviewPage component
- */
 function CompanyTrainingsOverviewPage() {
   const theme = useTheme();
 
-  // Empty onClick function for the button
   const handleAddCourseClick = () => {
     console.log("Add Course button is clicked");
   };
 
   return (
 
-    <PageLayout title="Company Trainings Overview">
+    <PageLayout title="Company Course Management">
 
-      {/* Container for the page content */}
       <Box
 
         sx={{
@@ -81,8 +73,6 @@ function CompanyTrainingsOverviewPage() {
 
       >
 
-        {/* Button for adding courses */}
-
         <Button
           variant="contained"
           color="primary"
@@ -95,8 +85,6 @@ function CompanyTrainingsOverviewPage() {
 
         </Button>
 
-        {/* Container for the Grid of courses */}
-
         <Grid
           container
           rowSpacing={4}
@@ -105,17 +93,16 @@ function CompanyTrainingsOverviewPage() {
             marginTop: "50px",
             width: "100%",
             display: "flex",
-            justifyContent: "center", // Center the Grid horizontally
+            justifyContent: "center",
           }}
+
         >
 
-          {/* Map through an array of course items to create CourseListItems */}
-          {[1, 2, 3, 4, 5, 6].map((course) => (
+          {mockCourses.map((course) => (
 
-            // Use the CourseListItem component for each course item
             <CourseListItem
-              key={course}
-              courseNumber={course}
+              key={course.courseNumber}
+              courseNumber={course.courseNumber}
               backgroundColor={theme.palette.primary.main}
             />
 
@@ -128,7 +115,7 @@ function CompanyTrainingsOverviewPage() {
     </PageLayout>
 
   );
-  
+
 }
 
 export default CompanyTrainingsOverviewPage;

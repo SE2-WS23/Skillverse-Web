@@ -4,8 +4,9 @@ import { Button, Grid, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import PageLayout from "../../components/PageLayout";
 import { useTheme } from "@mui/material/styles";
+import mockTrainings from "./mockTrainings"; 
 
-const TrainingListItem = ({ trainingNumber, width, height, backgroundColor }) => (
+const TrainingListItem = ({ trainingNumber, backgroundColor }) => (
 
   <Grid
 
@@ -14,8 +15,8 @@ const TrainingListItem = ({ trainingNumber, width, height, backgroundColor }) =>
     sm={6}
     md={4}
     sx={{
-      width,
-      height,
+      width: "100%",
+      height: "150px",
       border: "1px solid #ccc",
       borderRadius: "8px",
       backgroundColor,
@@ -24,6 +25,7 @@ const TrainingListItem = ({ trainingNumber, width, height, backgroundColor }) =>
       alignItems: "center",
       justifyContent: "center",
       margin: "10px",
+
     }}
 
   >
@@ -40,25 +42,16 @@ const TrainingListItem = ({ trainingNumber, width, height, backgroundColor }) =>
 
 TrainingListItem.propTypes = {
   trainingNumber: PropTypes.number.isRequired,
-  width: PropTypes.string,
-  height: PropTypes.string,
   backgroundColor: PropTypes.string,
 };
 
 TrainingListItem.defaultProps = {
-  width: "100%",
-  height: "150px",
   backgroundColor: "#2196F3",
 };
 
-/**
- * Renders the CompanyCourseManagement page.
- * @returns {JSX.Element} CompanyCourseManagementPage component
- */
 function CompanyCourseManagementPage() {
   const theme = useTheme();
 
-  // Empty onClick function for the button
   const handleAddTrainingClick = () => {
     console.log("Add Training button is clicked");
   };
@@ -67,7 +60,6 @@ function CompanyCourseManagementPage() {
 
     <PageLayout title="Company Course Management">
 
-      {/* Container for the page content */}
       <Box
 
         sx={{
@@ -81,8 +73,6 @@ function CompanyCourseManagementPage() {
 
       >
 
-        {/* Button for adding trainings */}
-
         <Button
           variant="contained"
           color="primary"
@@ -95,8 +85,6 @@ function CompanyCourseManagementPage() {
 
         </Button>
 
-        {/* Container for the Grid of trainings */}
-
         <Grid
           container
           rowSpacing={4}
@@ -105,17 +93,16 @@ function CompanyCourseManagementPage() {
             marginTop: "50px",
             width: "100%",
             display: "flex",
-            justifyContent: "center", // Center the Grid horizontally
+            justifyContent: "center",
           }}
+
         >
 
-          {/* Map through an array of training items to create TrainingListItems */}
-          {[1, 2, 3, 4, 5, 6].map((training) => (
+          {mockTrainings.map((training) => (
 
-            // Use the TrainingListItem component for each training item
             <TrainingListItem
-              key={training}
-              trainingNumber={training}
+              key={training.trainingNumber}
+              trainingNumber={training.trainingNumber}
               backgroundColor={theme.palette.primary.main}
             />
 
