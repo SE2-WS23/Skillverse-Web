@@ -10,7 +10,6 @@ import mockArticle from './mockData';
  * Renders the Article page.
  * @returns {JSX.Element} ArticlePage component
  */
-
 function ArticlePage(props) {
   const theme = useTheme();
 
@@ -51,6 +50,7 @@ function ArticlePage(props) {
           <Typography variant='h4'>{articleTitle || ""}</Typography>
           <Typography
             sx={{
+              p: 4,
               overflow: 'hidden',
               overflowY: 'auto',
               border: `solid ${theme.palette.primary.main} `,
@@ -59,7 +59,11 @@ function ArticlePage(props) {
           >
             {articleContent || ""}
           </Typography>
-          <Typography>
+          <Typography sx={{ "& a":{
+            color: theme.palette.primary.light,
+            textDecoration: "none",
+          },
+           }} >
             <a
               href={articleLink || ""}
               target='_blank'
