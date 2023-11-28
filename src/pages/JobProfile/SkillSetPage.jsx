@@ -21,17 +21,18 @@ function SkillSetPage(props) {
   const SkillSet = props.Skills || jobSkills; // giving  a default fallback value incase the prop is not provided.
 
   return (
-    <PageLayout viewportPage title='Skill Set'>
+    <PageLayout title='Skill Set'>
       <Box
         sx={{
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          height: 'calc(100% - 60px)',
+          overflow: 'hidden',
+          overflowY: 'auto',
         }}
       >
-        <Typography variant='h4' sx={{ mb: 8, textAlign: 'center' }}>
+        <Typography variant='h4' sx={{ mt: 5, mb: 5, textAlign: 'center' }}>
           Select Relevant Skills For the Job
         </Typography>
 
@@ -42,50 +43,49 @@ function SkillSetPage(props) {
             alignItems: 'center',
             width: '60%',
             height: '60%',
-            overflow: 'hidden',
-            overflowY: 'auto',
           }}
         >
           <ToggleButtonGroup
             value={skillList}
             onChange={handleSelectedSkill}
             sx={{
-             
               display: 'grid',
-              gridTemplateColumns:'repeat(5, 1fr)',
+              gridTemplateColumns: 'repeat(5, 1fr)',
               textAlign: 'center',
               gap: 2,
               [theme.breakpoints.down('md')]: {
-                gridTemplateColumns:'repeat(3, 1fr)' /* setting break points for different screen size for responsiveness*/,
-
+                gridTemplateColumns: 'repeat(3, 1fr)',
               },
               [theme.breakpoints.down('lg')]: {
-                gridTemplateColumns:'repeat(2, 1fr)',
+                gridTemplateColumns:
+                  'repeat(2, 1fr)' /* setting break points for different screen size for responsiveness*/,
               },
             }}
           >
             {SkillSet?.map((skill) => (
               <ToggleButton
                 key={uuidv4()}
-                value={`${skill || ""} `}
-                sx={{ backgroundColor: theme.palette.primary.main, color: theme.palette.primary.contrastText, my: 2,
-                  ":hover":{
+                value={`${skill || ''} `}
+                sx={{
+                  backgroundColor: theme.palette.primary.main,
+                  color: theme.palette.primary.contrastText,
+                  my: 2,
+                  ':hover': {
                     backgroundColor: theme.palette.primary.dark,
                   },
                 }}
               >
-                {skill || ""}
+                {skill || ''}
               </ToggleButton>
             ))}
           </ToggleButtonGroup>
         </Box>
       </Box>
-
       <Button
         variant='contained'
         color='primary'
         size='large'
-        sx={{ position: 'absolute', bottom: '10px', right: '10px' }}
+        sx={{ position: 'fixed', bottom: '10px', right: '10px' }}
       >
         Save changes
       </Button>
