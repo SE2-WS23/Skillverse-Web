@@ -17,7 +17,6 @@ function ArticlePage(props) {
   const articleContent = props.content || mockArticle.content;
   const articleLink = props.link || mockArticle.link;
 
-
   return (
     <PageLayout viewportPage title='Article'>
       <Box
