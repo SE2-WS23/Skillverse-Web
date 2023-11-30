@@ -68,10 +68,7 @@ function EmployeeCreationPage() {
         >
           <Box maxWidth="50%">
             <Box>
-              <Avatar
-                sx={{ width: "10vw", height: "10vw", variant: "circular" }}
-                src="/TestPicture.jpg"
-              />
+              <Avatar sx={{ width: "10vw", height: "20vh", variant: "circular" }} />
               <Fab
                 position="absolute"
                 color="primary"
@@ -127,7 +124,7 @@ function EmployeeCreationPage() {
                 onChange={handleEmployeeAddressChange}
               />
             </Box>
-            <Box display="flex" flexDirection="column">
+            <Box sx={{ flexDirection:"column"}}>
               <TextField
                 margin="normal"
                 type="submit"
