@@ -1,35 +1,39 @@
 import React, { useState } from "react";
-import { Button, Typography, Box, Input } from "@mui/material";
+import { Button, Box, Input } from "@mui/material";
 import UploadedFile from "./UploadedFile";
 
+  /**
+  * @returns {JSX.Element} The Box holding all uploaded files in the Employee creation page component.
+  */
 
-/**
- * @returns {JSX.Element} The Box holding all uploaded files in the Employee creation page component.
- */
 function UploadBox() {
   const [selectedFiles, setSelectedFiles] = useState([]);
 
   const handleFileSubmit = (event) => {
-    console.log("File has been deleted");
     const files = event.target.files;
     const newFiles = Array.from(files);
+
     setSelectedFiles((prevFiles) => [...prevFiles, ...newFiles]);
+    console.log({ selectedFiles });
   };
 
-  const handleFileUpload = (event) => {
+  const handleFileUpload = () => {
     document.getElementById("upload-file").click();
-  }
+  };
+
+  const handleFileDelete = (fileNameToDelete) => {
+    setSelectedFiles((prevFiles) =>
+      prevFiles.filter((file) => file.name !== fileNameToDelete)
+    );
+  };
 
   return (
     <Box>
       {selectedFiles.map((file) => (
-    <Box key={file.name} display="flex" alignItems="center" mb={1}>
-      <UploadedFile />
-      <Typography variant="subtitle1" style={{ marginLeft: 8 }}>
-      {file.name}
-      </Typography>
-    </Box>
-    ))}
+        <Box key={file.name} display="flex" alignItems="center" mb={1}>
+          <UploadedFile fileName={file.name} onDelete={handleFileDelete} />
+        </Box>
+      ))}
       <label htmlFor="upload-file">
         <Input
           style={{ display: "none" }}

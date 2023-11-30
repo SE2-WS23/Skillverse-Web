@@ -6,30 +6,31 @@ import PropTypes from 'prop-types'
 
 
 /**
- * @returns {JSX.Element} The File Component for Employee creation page to display uploaded Files.
- */
-function UploadedFile({ fileName }) {
-
-    const deleteFile = (event) => {
-        console.log("File has been deleted");
-      };
+@returns {JSX.Element} The File Component for Employee creation page to display uploaded Files.
+*/
+function UploadedFile({ fileName, onDelete }) {
+  const deleteFile = () => {
+    onDelete(fileName);
+  };
 
   return (
-    
     <Box display="flex" alignItems="center" flexDirection="row" mb={1}>
-        <InsertDriveFile fontSize="small" style={{ marginRight: 8 }} />
-            <Typography variant="subtitle1">Selected File: {fileName}</Typography>
-        <IconButton aria-label="delete" onClick={deleteFile} sx={{alignItems:"right"}} >
-            <DeleteIcon />
-        </IconButton>
-        
+      <InsertDriveFile fontSize="small" style={{ marginRight: 8 }} />
+      <Typography variant="subtitle1">Selected File: {fileName}</Typography>
+      <IconButton
+        aria-label="delete"
+        onClick={deleteFile}
+        sx={{ alignItems: "right" }}
+      >
+        <DeleteIcon />
+      </IconButton>
     </Box>
-    
   );
 }
 
 UploadedFile.propTypes = {
-    fileName: PropTypes.string.isRequired,
+  fileName: PropTypes.string.isRequired,
+  onDelete: PropTypes.func,
 };
 
 export default UploadedFile;

@@ -10,42 +10,48 @@ import { useState } from "react";
  * @returns {JSX.Element} The Employee creation page component.
  */
 function EmployeeCreationPage() {
-
   const [employeeName, setEmployeeName] = useState("");
   const [employeeEmail, setEmployeeEmail] = useState("");
   const [employeePhoneNumber, setEmployeePhoneNumber] = useState("");
   const [employeeAddress, setEmployeeAddress] = useState("");
   const [employeeExtraInfo, setEmployeeExtraInfo] = useState("");
+  const [employeeEmailError, setEmployeeEmailError] = useState(false);
 
   const handleEmployeeNameChange = (event) => {
     setEmployeeName(event.target.value);
   };
   const handleEmployeeEmailChange = (event) => {
-    setEmployeeEmail(event.target.value);
+    const emailValue = event.target.value;
+    setEmployeeEmail(emailValue);
+    setEmployeeEmailError(!validateEmail(emailValue));
   };
   const handleEmployeePhoneNumberChange = (event) => {
     setEmployeePhoneNumber(event.target.value);
-  }
+  };
   const handleEmployeeAddressChange = (event) => {
     setEmployeeAddress(event.target.value);
-  }
+  };
   const handleEmployeeExtraInfoChange = (event) => {
     setEmployeeExtraInfo(event.target.value);
+  };
+ const handleChangeAvatar = (event) => {
+    console.log("Avatar has been changed");
   }
 
-  function handleSubmit(event) {
+  function handleSubmit() {
     console.log("Employee has been created");
     console.log("Name of employee: " + employeeName);
     console.log("Email of employee: " + employeeEmail);
     console.log("Phone number of employee: " + employeePhoneNumber);
     console.log("Address of employee: " + employeeAddress);
   }
-  function changeAvatar(event) {
-    console.log("Avatar has been changed");
-  }
+ 
 
-
-
+  const validateEmail = (employeeEmail) => {
+    // Regular expression for email validation
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    return emailRegex.test(employeeEmail);
+  };
 
   return (
     <PageLayout viewportPage title="Employee Creation">
@@ -57,34 +63,69 @@ function EmployeeCreationPage() {
             alignItems: "center",
             minHeight: "100vh",
             minWidth: "100vw",
-            flexDirection: "column"
+            flexDirection: "column",
           }}
         >
           <Box maxWidth="50%">
-            <Box display="flex" flexDirection="row" alignItems="center" justifyContent="center">
-              <Avatar sx={{ width: "10vw", height: "20vh", variant: "circular" }} />
+            <Box>
+              <Avatar
+                sx={{ width: "10vw", height: "10vw", variant: "circular" }}
+                src="/TestPicture.jpg"
+              />
               <Fab
+                position="absolute"
                 color="primary"
                 aria-label="add"
                 size="large"
                 variant="circular"
                 sx={{
                   alignSelf: "end",
-                  marginRight: "1vw",
-                  marginBottom: "1vh",
+                  marginTop: "-5vw",
+                  marginInlineStart: "6vw",
                 }}
-                onClick={changeAvatar}
+                onClick={handleChangeAvatar}
               >
                 +
               </Fab>
             </Box>
             <Box>
-              <TextField label="Name" margin="normal" sx={{ minWidth: "20vw" }} value={employeeName} onChange={handleEmployeeNameChange} />
-              <TextField label="Email" margin="normal" sx={{ minWidth: "20vw" }} value={employeeEmail} onChange={handleEmployeeEmailChange} />
+              <TextField
+                label="Name"
+                margin="normal"
+                sx={{ minWidth: "20vw" }}
+                value={employeeName}
+                onChange={handleEmployeeNameChange}
+              />
+              <TextField
+                label="Email"
+                margin="normal"
+                type="email"
+                sx={{ minWidth: "20vw" }}
+                value={employeeEmail}
+                onChange={handleEmployeeEmailChange}
+                error={employeeEmailError}
+                helperText={
+                  employeeEmailError ? "Please enter a valid email address" : ""
+                }
+              />
             </Box>
             <Box display="flex" flexDirection="row">
-              <TextField label="Phone number" margin="normal" sx={{ minWidth: "20vw" }} value={employeePhoneNumber} onChange={handleEmployeePhoneNumberChange} />
-              <TextField label="Address" margin="normal" sx={{ minWidth: "20vw" }} value={employeeAddress} onChange={handleEmployeeAddressChange} />
+              <TextField
+                label="Phone number"
+                margin="normal"
+                type="tel"
+                sx={{ minWidth: "20vw" }}
+                value={employeePhoneNumber}
+                onChange={handleEmployeePhoneNumberChange}
+              />
+              <TextField
+                label="Address"
+                margin="normal"
+                type="address"
+                sx={{ minWidth: "20vw" }}
+                value={employeeAddress}
+                onChange={handleEmployeeAddressChange}
+              />
             </Box>
             <Box display="flex" flexDirection="column">
               <TextField
@@ -101,7 +142,6 @@ function EmployeeCreationPage() {
             <Typography variant="h6">Submit Files </Typography>
             <UploadBox title="Resume" />
           </Box>
-  
           <Button
             type="submit"
             variant="contained"
@@ -118,4 +158,3 @@ function EmployeeCreationPage() {
 }
 
 export default EmployeeCreationPage;
-
