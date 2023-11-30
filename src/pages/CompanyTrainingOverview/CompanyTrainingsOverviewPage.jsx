@@ -1,53 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import Box from "@mui/material/Box";
 import PageLayout from "../../components/PageLayout";
 import { useTheme } from "@mui/material/styles";
-import mockCourses from "./mockCourses"; 
-
-const CourseListItem = ({ courseNumber, backgroundColor }) => (
-
-  <Grid
-
-    item
-    xs={12}
-    sm={6}
-    md={4}
-    sx={{
-      width: "100%",
-      height: "150px",
-      border: "1px solid #ccc",
-      borderRadius: "8px",
-      backgroundColor,
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      margin: "10px",
-
-    }}
-
-  >
-
-    <Typography variant="h6" sx={{ color: "#fff", textAlign: "center" }}>
-
-      Course {courseNumber}
-
-    </Typography>
-
-  </Grid>
-
-);
-
-CourseListItem.propTypes = {
-  courseNumber: PropTypes.number.isRequired,
-  backgroundColor: PropTypes.string,
-};
-
-CourseListItem.defaultProps = {
-  backgroundColor: "#2196F3",
-};
+import mockCourses from "./mockCourses";
+import CourseListItem from "./components/CourseListItem"; 
 
 function CompanyTrainingsOverviewPage() {
   const theme = useTheme();
@@ -58,7 +15,7 @@ function CompanyTrainingsOverviewPage() {
 
   return (
 
-    <PageLayout title="Company Course Management">
+    <PageLayout title="Company Trainings Overview">
 
       <Box
 

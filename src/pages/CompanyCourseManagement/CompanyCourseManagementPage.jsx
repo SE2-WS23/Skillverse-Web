@@ -1,53 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Grid } from "@mui/material";
 import Box from "@mui/material/Box";
 import PageLayout from "../../components/PageLayout";
 import { useTheme } from "@mui/material/styles";
-import mockTrainings from "./mockTrainings"; 
-
-const TrainingListItem = ({ trainingNumber, backgroundColor }) => (
-
-  <Grid
-
-    item
-    xs={12}
-    sm={6}
-    md={4}
-    sx={{
-      width: "100%",
-      height: "150px",
-      border: "1px solid #ccc",
-      borderRadius: "8px",
-      backgroundColor,
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      margin: "10px",
-
-    }}
-
-  >
-
-    <Typography variant="h6" sx={{ color: "#fff", textAlign: "center" }}>
-
-      Training {trainingNumber}
-
-    </Typography>
-
-  </Grid>
-
-);
-
-TrainingListItem.propTypes = {
-  trainingNumber: PropTypes.number.isRequired,
-  backgroundColor: PropTypes.string,
-};
-
-TrainingListItem.defaultProps = {
-  backgroundColor: "#2196F3",
-};
+import mockTrainings from "./mockTrainings";
+import TrainingListItem from "./components/TrainingListItem"; 
 
 function CompanyCourseManagementPage() {
   const theme = useTheme();
