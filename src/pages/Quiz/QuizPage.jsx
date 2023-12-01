@@ -58,7 +58,7 @@ function QuizPage() {
     }
 
     const dummyQuestions = useMemo(randomQuestionsSelection, []); 
-    const userAnswerArray = useMemo(() => userAnswerArrayLength(), []);
+    const userAnswerArray = useMemo(userAnswerArrayLength, []);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [progressValue, setProgressValue] = useState(1);
     
@@ -126,7 +126,6 @@ function QuizPage() {
                 >
                     
                     <Typography variant="h2" sx={{margin: "0 0 15vh 0"}}> 
-                   
                         {dummyQuestions?.[currentQuestion]?.question  || "" }
                     </Typography>
 
