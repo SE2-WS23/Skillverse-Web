@@ -3,7 +3,7 @@ import PageLayout from '../../components/PageLayout';
 import { Box, Button, Typography, ToggleButton, useTheme } from '@mui/material';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import PropTypes from 'prop-types';
-import jobSkills from './components/mockData2';
+import jobSkills from './mockData';
 import { v4 as uuidv4 } from 'uuid';
 
 /**
@@ -18,7 +18,7 @@ function SkillSetPage(props) {
     setSkillList(selectedSkill);
   };
 
-  const SkillSet = props.Skills || jobSkills; // giving  a default fallback value incase the prop is not provided.
+  const skillSet = props.skills || jobSkills;
 
   return (
     <PageLayout title='Skill Set'>
@@ -62,7 +62,7 @@ function SkillSetPage(props) {
               },
             }}
           >
-            {SkillSet?.map((skill) => (
+            {skillSet?.map((skill) => (
               <ToggleButton
                 key={uuidv4()}
                 value={`${skill || ''} `}
@@ -93,7 +93,7 @@ function SkillSetPage(props) {
   );
 }
 SkillSetPage.propTypes = {
-  Skills: PropTypes.arrayOf(PropTypes.string),
+  skills: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default SkillSetPage;
