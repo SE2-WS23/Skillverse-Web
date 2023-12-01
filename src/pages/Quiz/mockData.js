@@ -1,5 +1,5 @@
 const mockData = [ 
-{
+    {
   question: "Question 1",
   answers: ["Answer 1", "Answer 2", "Answer 3"],
   correct: "Answer 1",

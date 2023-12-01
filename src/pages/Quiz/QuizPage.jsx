@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import PageLayout from "../../components/PageLayout";
 import mockData from "./mockData";
 import Button from "@mui/material/Button";
+import { Typography } from "@mui/material";
 import LinearProgress from '@mui/material/LinearProgress';
 import { v4 as uuidv4 } from "uuid";
 import { Box } from "@mui/system";
@@ -56,7 +57,7 @@ function QuizPage() {
         return userAnswerArray;
     }
 
-    const dummyQuestions = useMemo(() => randomQuestionsSelection(), []); 
+    const dummyQuestions = useMemo(randomQuestionsSelection, []); 
     const userAnswerArray = useMemo(() => userAnswerArrayLength(), []);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [progressValue, setProgressValue] = useState(1);
@@ -124,11 +125,12 @@ function QuizPage() {
                     }}
                 >
                     
-                    <h1 style={{margin: "0 0 15vh 0"}}> 
-                        {dummyQuestions[currentQuestion].question}
-                    </h1>
+                    <Typography variant="h2" sx={{margin: "0 0 15vh 0"}}> 
+                   
+                        {dummyQuestions?.[currentQuestion]?.question  || "" }
+                    </Typography>
 
-                    {dummyQuestions[currentQuestion].answers?.map((answer) => (
+                    {dummyQuestions?.[currentQuestion]?.answers?.map((answer) => (
                         <Button
                             variant="contained"
                             color="primary"
