@@ -50,7 +50,7 @@ function SkillSetPage(props) {
             onChange={handleSelectedSkill}
             sx={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(5, 1fr)',
+              gridTemplateColumns: 'repeat(4, 1fr)',
               textAlign: 'center',
               gap: 2,
               [theme.breakpoints.down('md')]: {
