@@ -1,5 +1,6 @@
 const jobSkills = [
     'JavaScript',
+    'JavaScript',
     'React.js',
     'Node.js',
     'HTML5',

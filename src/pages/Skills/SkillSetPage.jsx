@@ -62,10 +62,10 @@ function SkillSetPage(props) {
               },
             }}
           >
-            {skillSet?.map((skill) => (
+            {skillSet?.map((skill, index) => (
               <ToggleButton
                 key={uuidv4()}
-                value={`${skill || ''} `}
+                value={`${index} ${skill || ''} `}
                 sx={{
                   backgroundColor: theme.palette.primary.main,
                   color: theme.palette.primary.contrastText,
