@@ -61,7 +61,7 @@ const ROUTES = [
   {
     path: "skill-set",
     element: <SkillSetPage />,
-  }
+  },
   {
     path: "quiz",
     element: <QuizPage />
