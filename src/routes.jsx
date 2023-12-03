@@ -11,6 +11,7 @@ import LoginPage from "./pages/Login/LoginPage";
 import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
 import SkillSetPage from "./pages/Skills/SkillSetPage";
 
+import QuizPage from "./pages/Quiz/QuizPage";
 
 const ROUTES = [
   {
@@ -60,6 +61,10 @@ const ROUTES = [
   {
     path: "skill-set",
     element: <SkillSetPage />,
+  }
+  {
+    path: "quiz",
+    element: <QuizPage />
   }
 ];
 
