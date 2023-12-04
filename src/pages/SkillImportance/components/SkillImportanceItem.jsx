@@ -1,5 +1,6 @@
 import { useTheme } from "@emotion/react";
-import { Box, Grid, ListItem, ListItemText, Slider } from "@mui/material";
+import { Box, Grid, Slider } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -11,27 +12,23 @@ function SkillImportanceItem(props) {
   const value = props.value || 0;
 
   return (
-    <Box sx={{ width: 395 }}>
-      <Grid item xs={14}>
-        <ListItem
-          sx={{
-            height: "100px",
-            background: theme.palette.primary.light,
-          }}
-        >
-          <ListItemText
-            primary={category}
-            secondary={skill}
-            secondaryTypographyProps={{ align: "center" }}
-          />
-        </ListItem>
-      </Grid>
+    <Grid item xs={12} md={6} lg={4}>
+      <Box
+        sx={{
+          margin: "0 20px",
+          padding: "20px",
+          background: theme.palette.primary.light,
+        }}
+      >
+        <Typography variant="h6">{category}</Typography>
+        <Typography variant="body1">{skill}</Typography>
+      </Box>
 
       <Slider
         onChange={(e) =>
           props.handleSliderChange(category, skill, parseInt(e.target.value))
         }
-        sx={{ width: 350 }}
+        sx={{ margin: "0 50px", width: "calc(100% - 100px)" }}
         valueLabelDisplay="auto"
         value={value}
         step={1}
@@ -39,7 +36,7 @@ function SkillImportanceItem(props) {
         min={0}
         max={10}
       ></Slider>
-    </Box>
+    </Grid>
   );
 }
 

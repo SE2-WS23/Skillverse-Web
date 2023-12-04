@@ -1,4 +1,5 @@
-import { Box, Button, Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
+import Button from "@mui/material/Button";
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PageLayout from "../../components/PageLayout";
@@ -24,63 +25,69 @@ function SkillImportancePage() {
     setSliderData(updatedSliders);
   };
 
+  const handleSubmit = () => {
+    console.log(sliderData);
+  };
+
   return (
-    <PageLayout viewportPage title="Skill Importance">
+    <PageLayout
+      title="Skill Importance"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "calc(100vh - 64px)",
+      }}
+    >
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
           justifyContent: "center",
-          alignItems: "center",
-          height: "calc(100% - 60px)",
+          width: "80%",
+          minWidth: "900px",
+          margin: "auto",
+          flexGrow: 1,
         }}
       >
-        <Box
+        <Grid
+          container
+          rowSpacing={6}
+          columns={12}
           sx={{
-            display: "grid",
             justifyContent: "center",
-            alignItems: "center",
-            width: "80%",
-            height: "80%",
-            overflow: "hidden",
-            overflowY: "auto",
+            marginTop: "50px",
           }}
         >
-          <Grid
-            container
-            rowSpacing={6}
-            columnSpacing={10}
-            columns={16}
-            sx={{
-              display: "flex",
-              justifyContent: "flex-start",
-              marginTop: "50px",
-              marginBottom: "50px",
-              marginLeft: "35px",
-            }}
-          >
-            {sliderData?.map((slider) => (
-              <SkillImportanceItem
-                category={slider.category}
-                skill={slider.skill}
-                value={slider.value}
-                handleSliderChange={handleSliderChange}
-                key={uuidv4()}
-              />
-            ))}
-          </Grid>
-        </Box>
+          {sliderData?.map((slider) => (
+            <SkillImportanceItem
+              category={slider.category}
+              skill={slider.skill}
+              value={slider.value}
+              handleSliderChange={handleSliderChange}
+              key={uuidv4()}
+            />
+          ))}
+        </Grid>
       </Box>
 
-      <Button
-        type="submit"
-        variant="contained"
-        color="primary"
-        size="large"
-        sx={{ position: "absolute", bottom: "10px", right: "10px" }}
+      <Box
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "flex-end",
+          width: "100%",
+          mt: "auto",
+        }}
       >
-        Save Changes
-      </Button>
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          size="large"
+          onClick={handleSubmit}
+          sx={{ margin: "10px 20px 20px 0" }}
+        >
+          Save Changes
+        </Button>
+      </Box>
     </PageLayout>
   );
 }
