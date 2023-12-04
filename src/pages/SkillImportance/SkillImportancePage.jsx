@@ -1,11 +1,29 @@
-import React from "react";
-import PageLayout from "../../components/PageLayout";
-import { Button, Grid, Box } from "@mui/material";
-import mockedSkills from "./mockData";
+import { Box, Button, Grid } from "@mui/material";
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import PageLayout from "../../components/PageLayout";
 import SkillImportanceItem from "./components/SkillImportanceItem";
+import mockedSkills from "./mockData";
 
 function SkillImportancePage() {
+  const defaultSliderValue = 0;
+
+  const [sliderData, setSliderData] = useState(
+    mockedSkills.map((item) => ({
+      ...item,
+      value: defaultSliderValue,
+    }))
+  );
+
+  const handleSliderChange = (category, skill, newValue) => {
+    const updatedSliders = sliderData.map((slider) =>
+      slider.category === category && slider.skill === skill
+        ? { ...slider, value: newValue }
+        : slider
+    );
+    setSliderData(updatedSliders);
+  };
+
   return (
     <PageLayout viewportPage title="Skill Importance">
       <Box
@@ -41,9 +59,12 @@ function SkillImportancePage() {
               marginLeft: "35px",
             }}
           >
-            {mockedSkills?.map((skillImportance) => (
+            {sliderData?.map((slider) => (
               <SkillImportanceItem
-                skillImportance={skillImportance}
+                category={slider.category}
+                skill={slider.skill}
+                value={slider.value}
+                handleSliderChange={handleSliderChange}
                 key={uuidv4()}
               />
             ))}

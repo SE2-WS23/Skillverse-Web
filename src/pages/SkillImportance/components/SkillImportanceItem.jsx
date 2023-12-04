@@ -1,16 +1,14 @@
 import { useTheme } from "@emotion/react";
-import { Grid, ListItem, ListItemText, Box, Slider } from "@mui/material";
+import { Box, Grid, ListItem, ListItemText, Slider } from "@mui/material";
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import React from "react";
 
 function SkillImportanceItem(props) {
-  const [slider, setSlider] = useState(0);
-
-  const handleSlide = (event, newNumber) => {
-    setSlider(newNumber);
-  };
-
   const theme = useTheme();
+
+  const category = props.category || "";
+  const skill = props.skill || "";
+  const value = props.value || 0;
 
   return (
     <Box sx={{ width: 395 }}>
@@ -22,18 +20,20 @@ function SkillImportanceItem(props) {
           }}
         >
           <ListItemText
-            primary={props.skillImportance.category || ""}
-            secondary={props.skillImportance.skill || ""}
+            primary={category}
+            secondary={skill}
             secondaryTypographyProps={{ align: "center" }}
           />
         </ListItem>
       </Grid>
 
       <Slider
-        onChange={handleSlide}
+        onChange={(e) =>
+          props.handleSliderChange(category, skill, parseInt(e.target.value))
+        }
         sx={{ width: 350 }}
         valueLabelDisplay="auto"
-        value={slider}
+        value={value}
         step={1}
         marks
         min={0}
@@ -43,10 +43,11 @@ function SkillImportanceItem(props) {
   );
 }
 
-export default SkillImportanceItem;
 SkillImportanceItem.propTypes = {
-  skillImportance: PropTypes.shape({
-    category: PropTypes.string,
-    skill: PropTypes.string,
-  }),
+  category: PropTypes.string,
+  skill: PropTypes.string,
+  value: PropTypes.number,
+  handleSliderChange: PropTypes.func,
 };
+
+export default SkillImportanceItem;
