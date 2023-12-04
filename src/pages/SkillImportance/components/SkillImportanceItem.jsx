@@ -4,6 +4,11 @@ import Typography from "@mui/material/Typography";
 import PropTypes from "prop-types";
 import React from "react";
 
+/* 
+The `SkillImportanceItem` function is a React component that renders a grid item containing a box
+and a slider. 
+@param {Object} props - The props object.
+*/
 function SkillImportanceItem(props) {
   const theme = useTheme();
 

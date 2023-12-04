@@ -6,6 +6,11 @@ import PageLayout from "../../components/PageLayout";
 import SkillImportanceItem from "./components/SkillImportanceItem";
 import mockedSkills from "./mockData";
 
+/* 
+The `SkillImportancePage` function is a React component that renders a page for users to rate the
+importance of different skills. 
+@returns {JSX.Element} - The SkillImportancePage component.
+*/
 function SkillImportancePage() {
   const defaultSliderValue = 0;
 
