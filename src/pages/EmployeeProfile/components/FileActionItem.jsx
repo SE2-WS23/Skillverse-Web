@@ -1,7 +1,6 @@
 import { Button, MenuItem, Select, FormGroup, Stack, Box } from "@mui/material";
 import "./style.css";
 import React from "react";
-import { useTheme } from "@mui/material/styles";
 import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
 
@@ -11,8 +10,6 @@ import { v4 as uuid } from "uuid";
  */
 
 export default function FileActionItem(props) {
-  const theme = useTheme();
-
   const [file, setFile] = React.useState(props.files[0]);
   const [action, setAction] = React.useState("view");
 

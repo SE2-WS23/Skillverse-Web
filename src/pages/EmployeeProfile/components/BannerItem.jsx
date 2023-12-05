@@ -1,4 +1,4 @@
-import { Avatar, Paper, Stack, Box, Typography, Grid } from "@mui/material";
+import { Avatar, Paper, Stack, Box, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 import Image from "../media/plant-banner.jpg";
 
