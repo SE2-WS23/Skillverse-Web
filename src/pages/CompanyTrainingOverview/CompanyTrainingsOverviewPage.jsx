@@ -3,6 +3,7 @@ import { Button, Grid } from '@mui/material';
 import Box from '@mui/material/Box';
 import PageLayout from '../../components/PageLayout';
 import { useTheme } from '@mui/material/styles';
+import { v4 as uuidv4 } from 'uuid';
 import mockCourses from './mockCourses';
 import CourseListItem from './components/CourseListItem';
 
@@ -48,7 +49,7 @@ function CompanyTrainingsOverviewPage() {
         >
           {mockCourses.map((course) => (
             <CourseListItem
-              key={course.courseName}
+              key={uuidv4()}
               courseName={course.courseName}
               courseCategory={course.courseCategory}
               trainingNumber={course.trainingNumber}
