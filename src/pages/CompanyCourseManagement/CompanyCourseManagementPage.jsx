@@ -1,7 +1,5 @@
 import { Button, Grid } from '@mui/material';
-import Box from '@mui/material/Box';
 import PageLayout from '../../components/PageLayout';
-import { useTheme } from '@mui/material/styles';
 import { v4 as uuidv4 } from 'uuid';
 import mockTrainings from './mockTrainings';
 import TrainingListItem from './components/TrainingListItem';
