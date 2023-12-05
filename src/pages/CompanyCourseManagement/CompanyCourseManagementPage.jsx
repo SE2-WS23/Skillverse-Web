@@ -33,7 +33,13 @@ function CompanyCourseManagementPage() {
           variant='contained'
           color='primary'
           size='large'
-          sx={{ marginTop: '16px', alignSelf: 'flex-start' }}
+          sx={{
+            marginTop: '16px',
+            alignSelf: 'flex-start',
+            position: 'fixed',
+            top: '65px',
+            left: '20px',
+          }}
           onClick={handleAddTrainingClick}
         >
           ADD TRAINING

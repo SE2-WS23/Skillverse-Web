@@ -24,7 +24,7 @@ function CompanyTrainingsOverviewPage() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyConqtent: 'center',
           height: '100vh',
           padding: '20px',
         }}
@@ -33,7 +33,13 @@ function CompanyTrainingsOverviewPage() {
           variant='contained'
           color='primary'
           size='large'
-          sx={{ marginTop: '16px', alignSelf: 'flex-start' }}
+          sx={{
+            marginTop: '16px',
+            alignSelf: 'flex-start',
+            position: 'fixed',
+            top: '65px',
+            left: '20px',
+          }}
           onClick={handleAddCourseClick}
         >
           ADD COURSE
