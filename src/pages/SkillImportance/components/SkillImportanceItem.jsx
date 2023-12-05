@@ -28,11 +28,13 @@ function SkillImportanceItem(props) {
         <Typography variant="h6">{category}</Typography>
         <Typography variant="body1">{skill}</Typography>
       </Box>
-
       <Slider
-        onChange={(e) =>
-          props.handleSliderChange(category, skill, parseInt(e.target.value))
-        }
+        onChange={(e) => {
+          const value = parseInt(e.target.value);
+          if (!isNaN(value)) {
+            props.handleSliderChange(category, skill, value);
+          }
+        }}
         sx={{ margin: "0 50px", width: "calc(100% - 100px)" }}
         valueLabelDisplay="auto"
         value={value}

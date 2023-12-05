@@ -1,7 +1,6 @@
 import { Box, Grid } from "@mui/material";
 import Button from "@mui/material/Button";
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import PageLayout from "../../components/PageLayout";
 import SkillImportanceItem from "./components/SkillImportanceItem";
 import mockedSkills from "./mockData";
@@ -22,12 +21,13 @@ function SkillImportancePage() {
   );
 
   const handleSliderChange = (category, skill, newValue) => {
-    const updatedSliders = sliderData.map((slider) =>
-      slider.category === category && slider.skill === skill
-        ? { ...slider, value: newValue }
-        : slider
+    setSliderData((currentData) =>
+      currentData.map((slider) =>
+        slider.category === category && slider.skill === skill
+          ? { ...slider, value: newValue }
+          : slider
+      )
     );
-    setSliderData(updatedSliders);
   };
 
   const handleSubmit = () => {
@@ -67,7 +67,7 @@ function SkillImportancePage() {
               skill={slider.skill}
               value={slider.value}
               handleSliderChange={handleSliderChange}
-              key={uuidv4()}
+              key={`${slider.category}-${slider.skill}`} // Use a combination of category and skill as a key
             />
           ))}
         </Grid>
