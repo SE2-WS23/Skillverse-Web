@@ -31,9 +31,10 @@ function SkillImportanceItem(props) {
     <Grid item xs={12} md={6} lg={4}>
       <Box
         sx={{
-          margin: "0 20px",
+          margin: "0 20px 10px 20px",
           padding: "20px",
           background: theme.palette.primary.light,
+          boxShadow: 1,
         }}
       >
         <Typography variant="h6">{category}</Typography>

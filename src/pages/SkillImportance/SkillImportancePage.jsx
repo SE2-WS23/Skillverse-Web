@@ -58,7 +58,7 @@ function SkillImportancePage() {
           columns={12}
           sx={{
             justifyContent: "center",
-            marginTop: "50px",
+            marginTop: "30px",
           }}
         >
           {sliderData?.map((slider) => (
@@ -88,7 +88,7 @@ function SkillImportancePage() {
           color="primary"
           size="large"
           onClick={handleSubmit}
-          sx={{ margin: "10px 20px 20px 0" }}
+          sx={{ margin: "50px 20px 20px 0" }}
         >
           Save Changes
         </Button>
