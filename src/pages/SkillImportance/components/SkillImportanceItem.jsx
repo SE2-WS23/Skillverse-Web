@@ -16,6 +16,17 @@ function SkillImportanceItem(props) {
   const skill = props.skill || "";
   const value = props.value || 0;
 
+  const marks = [
+    {
+      value: props.min || 0,
+      label: props.min || 0,
+    },
+    {
+      value: props.max || 10,
+      label: props.max || 10,
+    },
+  ];
+
   return (
     <Grid item xs={12} md={6} lg={4}>
       <Box
@@ -38,10 +49,10 @@ function SkillImportanceItem(props) {
         sx={{ margin: "0 50px", width: "calc(100% - 100px)" }}
         valueLabelDisplay="auto"
         value={value}
-        step={1}
-        marks
-        min={0}
-        max={10}
+        step={props.steps || 1}
+        min={props.min || 0}
+        max={props.max || 10}
+        marks={marks}
       ></Slider>
     </Grid>
   );
@@ -51,6 +62,9 @@ SkillImportanceItem.propTypes = {
   category: PropTypes.string,
   skill: PropTypes.string,
   value: PropTypes.number,
+  min: PropTypes.number,
+  max: PropTypes.number,
+  steps: PropTypes.number,
   handleSliderChange: PropTypes.func,
 };
 
