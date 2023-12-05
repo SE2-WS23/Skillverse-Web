@@ -39,10 +39,7 @@ export default function FileActionItem(props) {
   }
 
   return (
-    <Box
-      className="component"
-      sx={{ backgroundColor: theme.palette.primary.light }}
-    >
+    <Box className="form-component">
       <FormGroup className="form-control">
         <Stack spacing={2} direction="row">
           <Select fullWidth onChange={handleFileChange} value={file}>

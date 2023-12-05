@@ -16,8 +16,14 @@ export default function BioItem(props) {
       className="component"
       sx={{ backgroundColor: theme.palette.primary.light }}
     >
-      <Typography variant="h2">About</Typography>
-      <Typography variant="body1" gutterBottom sx={{ padding: "15vh" }}>
+      <Typography variant="h5" sx={{ textAlign: "center" }}>
+        About
+      </Typography>
+      <Typography
+        variant="body1"
+        gutterBottom
+        sx={{ padding: "5%", maxHeight: "60%", overflow: "auto" }}
+      >
         {props.abouttxt || ""}
       </Typography>
     </Box>

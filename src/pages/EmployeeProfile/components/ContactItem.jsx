@@ -9,14 +9,16 @@ export default function ContactItem(props) {
 
   return (
     <Box
-      className="component"
+      className="form-component"
       sx={{ backgroundColor: theme.palette.primary.light }}
     >
-      <Typography variant="h2">Contact</Typography>
+      <Typography variant="h5" sx={{ textAlign: "center" }}>
+        Contact
+      </Typography>
       <Stack
         direction="row"
         columnGap={8}
-        sx={{ justifyContent: "center" }}
+        sx={{ justifyContent: "center", padding: "1%" }}
         className="contact"
       >
         <Typography

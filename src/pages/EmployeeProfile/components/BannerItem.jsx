@@ -9,7 +9,7 @@ import Image from "../media/plant-banner.jpg";
 
 export default function BannerItem(props) {
   return (
-    <Box sx={{ height: "20vh" }} mr={0}>
+    <Box sx={{ height: "20vh" }} overflow="clip">
       <Paper
         sx={{
           backgroundImage: `url(${Image})`,
@@ -17,31 +17,28 @@ export default function BannerItem(props) {
           height: "100%",
         }}
       >
-        <Grid
-          container
-          direction="row"
-          justify="flex-start"
-          alignItems="center"
-          spacing={2}
-          sx={{ height: "90%", marginLeft: "1vw" }}
-        >
-          <Avatar
-            alt="Avatar"
-            sx={{
-              maxWidth: 150,
-              maxHeight: 150,
-              minWidth: 100,
-              minHeight: 100,
-            }}
-          />
-          <Stack
-            direction="column"
-            sx={{ justifyContent: "center", marginLeft: "1vh" }}
-          >
-            <Typography variant="h4">{props.userHeader.username}</Typography>
-            <Typography variant="h6">{props.userHeader.companyname}</Typography>
+        <Box>
+          <Stack direction="row" justifyContent="left" padding="1%">
+            <Avatar
+              alt="Avatar"
+              sx={{
+                maxWidth: 150,
+                maxHeight: 150,
+                minWidth: 100,
+                minHeight: 100,
+              }}
+            />
+            <Stack
+              direction="column"
+              sx={{ justifyContent: "center", marginLeft: "1%" }}
+            >
+              <Typography variant="h4">{props.userHeader.username}</Typography>
+              <Typography variant="h6">
+                {props.userHeader.companyname}
+              </Typography>
+            </Stack>
           </Stack>
-        </Grid>
+        </Box>
       </Paper>
     </Box>
   );

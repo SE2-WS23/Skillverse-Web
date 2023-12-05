@@ -3,19 +3,20 @@ h2{
 }
 .component{
     border-radius: 5px;
-    margin: 1vh;
-    height: 100%;
+    height: 40vh;
+    position: relative;
+}
+.form-component{
+    width: 100%;
+    border-radius: 5px;
+    height: fit-content;
     position: relative;
 }
 .form-control{
-    padding: 1vh;
+    padding: 1%;
     height: fit-content;
-    width: 95%;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%,-50%);
-}
-.contact{
-    padding: 1vh;
-    height: fit-content;
+    position: relative;
+    border-style: dashed;
+    border-radius: 10px;
+    border-color: lightgray;
 }

@@ -19,11 +19,9 @@ function EmployeeProfilePage(props) {
   return (
     <Box>
       <PageLayout title="Employee Profile" viewportPage>
-        <Box alignItems="center" justifyContent="center">
-          <Grid container spacing={2} rowSpacing={2}>
-            <Grid xs={12}>
-              <BannerItem userHeader={empployeeProfileObject.userHeader} />
-            </Grid>
+        <BannerItem userHeader={empployeeProfileObject.userHeader} />
+        <Box alignItems="center" justifyContent="center" padding="5%">
+          <Grid container spacing={8} rowSpacing={8}>
             <Grid xs={2.5}>
               <OverviewItem
                 title="Skills"
