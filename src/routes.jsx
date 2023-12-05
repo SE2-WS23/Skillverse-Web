@@ -8,9 +8,10 @@ import HomePage from "./pages/Home/HomePage";
 import JobProfilePage from "./pages/JobProfile/JobProfilePage";
 import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
 import LoginPage from "./pages/Login/LoginPage";
+import QuizPage from "./pages/Quiz/QuizPage";
+import SkillImportancePage from "./pages/SkillImportance/SkillImportancePage";
 import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
 import ArticlePage from "./pages/Article/ArticlePage";
-import QuizPage from "./pages/Quiz/QuizPage";
 
 const ROUTES = [
   {
@@ -50,6 +51,10 @@ const ROUTES = [
     element: <ArticlePage />,
   },
   {
+    path: "skill-importance",
+    element: <SkillImportancePage />,
+  },
+  {
     path: "create-job-profile",
     element: <CreateJobProfilePage />,
   },
@@ -63,8 +68,8 @@ const ROUTES = [
   },
   {
     path: "quiz",
-    element: <QuizPage />
-  }
+    element: <QuizPage />,
+  },
 ];
 
 export default ROUTES;
