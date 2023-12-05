@@ -9,7 +9,7 @@ import CourseListItem from './components/CourseListItem';
 
 /**
  * Renders the Company Trainings Overview Page.
- * @returns {JSX.Element} The company trainings page component.
+ * @returns {JSX.Element} The company trainings overview page component.
  */
 function CompanyTrainingsOverviewPage() {
   const theme = useTheme();
