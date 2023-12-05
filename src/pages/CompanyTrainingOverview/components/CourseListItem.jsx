@@ -28,7 +28,6 @@ function CourseListItem({
         justifyContent: 'flex-start',
         margin: '10px',
         padding: '10px',
-        position: 'relative',
       }}
     >
       <Typography
