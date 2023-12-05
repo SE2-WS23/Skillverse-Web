@@ -4,9 +4,9 @@ const person1 = {
     { prmry: "Skill2", scndry: "2" },
     { prmry: "Skill3", scndry: "5" },
     { prmry: "Skill4", scndry: "3" },
-    { prmry: "Skill3", scndry: "5" },
-    { prmry: "Skill3", scndry: "5" },
-    { prmry: "Skill3", scndry: "5" },
+    { prmry: "Skill5", scndry: "5" },
+    { prmry: "Skill6", scndry: "5" },
+    { prmry: "Skill7", scndry: "5" },
   ],
 
   certificates: [
