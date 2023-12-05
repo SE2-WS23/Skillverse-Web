@@ -7,6 +7,10 @@ import { v4 as uuidv4 } from 'uuid';
 import mockTrainings from './mockTrainings';
 import TrainingListItem from './components/TrainingListItem';
 
+/**
+ * Renders the Company Course Management Page.
+ * @returns {JSX.Element} The company course management component.
+ */
 function CompanyCourseManagementPage() {
   const theme = useTheme();
 
