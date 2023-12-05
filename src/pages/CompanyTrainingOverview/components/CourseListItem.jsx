@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTheme } from '@emotion/react';
 import { Grid, Typography } from '@mui/material';
 import PropTypes from 'prop-types';
@@ -78,10 +77,6 @@ CourseListItem.propTypes = {
   courseCategory: PropTypes.string.isRequired,
   trainingNumber: PropTypes.number.isRequired,
   backgroundColor: PropTypes.string,
-};
-
-CourseListItem.defaultProps = {
-  backgroundColor: '#2196F3',
 };
 
 export default CourseListItem;
