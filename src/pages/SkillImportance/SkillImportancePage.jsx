@@ -67,7 +67,7 @@ function SkillImportancePage() {
               skill={slider.skill}
               value={slider.value}
               handleSliderChange={handleSliderChange}
-              key={`${slider.category}-${slider.skill}`} // Use a combination of category and skill as a key
+              key={`${slider.category}-${slider.skill}`}
             />
           ))}
         </Grid>
