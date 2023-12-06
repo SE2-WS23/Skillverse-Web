@@ -16,7 +16,6 @@ function SkillSetPage(props) {
 
   const handleSelectedSkill = (event, selectedSkill) => {
     setSkillList(selectedSkill)
-    console.log(selectedSkill)
   };
 
   const skillSet = props.skills || jobSkills;
