@@ -15,7 +15,8 @@ function SkillSetPage(props) {
   const theme = useTheme();
 
   const handleSelectedSkill = (event, selectedSkill) => {
-    setSkillList(selectedSkill);
+    setSkillList(selectedSkill)
+    console.log(selectedSkill)
   };
 
   const skillSet = props.skills || jobSkills;
@@ -65,7 +66,7 @@ function SkillSetPage(props) {
             {skillSet?.map((skill, index) => (
               <ToggleButton
                 key={uuidv4()}
-                value={`${index} ${skill || ''} `}
+                value={skill || ''}
                 sx={{
                   backgroundColor: theme.palette.primary.main,
                   color: theme.palette.primary.contrastText,
