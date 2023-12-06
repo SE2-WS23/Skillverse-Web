@@ -33,6 +33,12 @@ function renderSuggestions(error_type) {
           </Button>
         </Stack>
       );
+    case "Some error":
+      return (
+        <Typography variant="p">
+          Servers may be experiencing issue, try again later.
+        </Typography>
+      );
     default:
       return (
         <Button align="center" variant="contained" component={Link} to="/">
@@ -47,6 +53,12 @@ function renderExplain(error_type) {
       return (
         <Typography variant="p">
           {"The URL " + window.location.href + " could not be found."}
+        </Typography>
+      );
+    case "Some error":
+      return (
+        <Typography variant="p">
+          The server is not responding and may be offline.
         </Typography>
       );
     default:
