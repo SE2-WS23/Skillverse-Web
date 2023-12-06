@@ -28,20 +28,25 @@ function EmployeeCreationPage() {
   const handleEmployeeNameChange = (event) => {
     setEmployeeName(event.target.value);
   };
+
   const handleEmployeeEmailChange = (event) => {
     const emailValue = event.target.value;
     setEmployeeEmail(emailValue);
     setEmployeeEmailError(!validateEmail(emailValue));
   };
+
   const handleEmployeePhoneNumberChange = (event) => {
     setEmployeePhoneNumber(event.target.value);
   };
+
   const handleEmployeeAddressChange = (event) => {
     setEmployeeAddress(event.target.value);
   };
+
   const handleEmployeeExtraInfoChange = (event) => {
     setEmployeeExtraInfo(event.target.value);
   };
+
   const handleChangeAvatar = (event) => {
     console.log('Avatar has been changed');
   };
