@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import { Button, Box, Input } from "@mui/material";
-import UploadedFile from "./UploadedFile";
+import React, { useState } from 'react';
+import { Button, Box, Input } from '@mui/material';
+import UploadedFile from './UploadedFile';
+import { v4 as uuidv4 } from 'uuid';
 
-  /**
-  * @returns {JSX.Element} The Box holding all uploaded files in the Employee creation page component.
-  */
+/**
+ * @returns {JSX.Element} The Box holding all uploaded files in the Employee creation page component.
+ */
 
 function UploadBox() {
   const [selectedFiles, setSelectedFiles] = useState([]);
@@ -18,7 +19,7 @@ function UploadBox() {
   };
 
   const handleFileUpload = () => {
-    document.getElementById("upload-file").click();
+    document.getElementById('upload-file').click();
   };
 
   const handleFileDelete = (fileNameToDelete) => {
@@ -30,20 +31,20 @@ function UploadBox() {
   return (
     <Box>
       {selectedFiles.map((file) => (
-        <Box key={file.name} display="flex" alignItems="center" mb={1}>
+        <Box key={uuidv4()} display='flex' alignItems='center' mb={1}>
           <UploadedFile fileName={file.name} onDelete={handleFileDelete} />
         </Box>
       ))}
-      <label htmlFor="upload-file">
+      <label htmlFor='upload-file'>
         <Input
-          style={{ display: "none" }}
-          id="upload-file"
-          name="upload-file"
-          type="file"
+          style={{ display: 'none' }}
+          id='upload-file'
+          name='upload-file'
+          type='file'
           multiple
           onChange={handleFileSubmit}
         />
-        <Button color="primary" variant="contained" onClick={handleFileUpload}>
+        <Button color='primary' variant='contained' onClick={handleFileUpload}>
           Upload File
         </Button>
       </label>
