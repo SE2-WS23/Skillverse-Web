@@ -45,7 +45,7 @@ function PageLayout(props) {
         />
       </header>
       <Toolbar />
-      <main>
+      <main style={props.style}>
         {props.viewportPage ? (
           <Box
             sx={{
@@ -74,6 +74,7 @@ PageLayout.propTypes = {
       link: PropTypes.string,
     })
   ),
+  style: PropTypes.object,
 };
 
 export default PageLayout;
