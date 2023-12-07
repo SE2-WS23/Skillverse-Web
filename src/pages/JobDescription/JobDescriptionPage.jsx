@@ -1,4 +1,3 @@
-import { useTheme } from "@emotion/react";
 import { Box, Button, Grid, Typography } from "@mui/material/";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -11,7 +10,6 @@ import mockedSkills from "./mockData";
  */
 
 function JobDescriptionPage() {
-  const theme = useTheme();
   const [skills, setSkills] = useState(
     mockedSkills.reduce((obj, item) => {
       obj[item] = false;
