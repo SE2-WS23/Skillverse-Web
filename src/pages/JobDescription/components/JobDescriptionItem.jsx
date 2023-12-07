@@ -9,22 +9,21 @@ import React from "react";
  * @param {string} props.mockedSkills - Prints the Skills in the toggles
  * @returns {JSX.Element} the JobDescriptionPage Component.
  */
-
 function JobDescriptionItem(props) {
   const theme = useTheme();
   return (
     <Grid item xs={3}>
       <ToggleButton
-        value={props.skillName}
+        value={props.skillName || "Skill Name"}
         sx={{
           height: "50px",
           width: "150px",
           background: theme.palette.primary.light,
         }}
-        onChange={props.onChange}
-        selected={props.value}
+        onChange={props.onChange || (() => {})()}
+        selected={props.value || false}
       >
-        {props.skillName}
+        {props.skillName || "Skill Name"}
       </ToggleButton>
     </Grid>
   );
