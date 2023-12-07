@@ -21,26 +21,16 @@ function JobDescriptionPage() {
 
   return (
     <PageLayout title="Job Description">
-      <Typography
-        variant="h1"
-        sx={{
-          margin: "100px 100px",
-          fontSize: theme.typography,
-        }}
-      >
+      <Typography variant="h4" marginTop={10} marginLeft={10}>
         Select relevant Skills describing the job
       </Typography>
       <Grid
         container
-        rowSpacing={15}
+        rowSpacing={10}
         columnSpacing={10}
         columns={16}
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "50px",
-          marginBottom: "50px",
-        }}
+        marginTop={1}
+        justifyContent={"center"}
       >
         {Object.keys(skills)?.map((skill) => (
           <JobDescriptionItem

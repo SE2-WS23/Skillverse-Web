@@ -12,13 +12,13 @@ import React from "react";
 function JobDescriptionItem(props) {
   const theme = useTheme();
   return (
-    <Grid item xs={3}>
+    <Grid item xs={3} justifyContent={"center"}>
       <ToggleButton
+        fullWidth
         value={props.skillName || "Skill Name"}
+        color="primary"
         sx={{
-          height: "50px",
-          width: "150px",
-          background: theme.palette.primary.light,
+          textTransform: "none",
         }}
         onChange={props.onChange || (() => {})()}
         selected={props.value || false}
