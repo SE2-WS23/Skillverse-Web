@@ -1,7 +1,7 @@
 import { useTheme } from "@emotion/react";
-import { ToggleButton, Grid, ListItem, ListItemText } from "@mui/material";
-import React from "react";
+import { Grid, ToggleButton } from "@mui/material";
 import PropTypes from "prop-types";
+import React from "react";
 /**
  * A component that displays a training block with course name, skills, progress, and description.
  * @param {Object} props - The props object.
@@ -11,31 +11,29 @@ import PropTypes from "prop-types";
  */
 
 function JobDescriptionItem(props) {
-  const [selected, setSelected] = React.useState(false);
+  const theme = useTheme();
   return (
     <Grid item xs={3}>
       <ToggleButton
-        value="check"
-        selected={selected}
-        onChange={() => {
-          setSelected(!selected);
-        }}
+        value={props.skillName}
         sx={{
           height: "50px",
           width: "150px",
-          background: useTheme().palette.primary.light,
+          background: theme.palette.primary.light,
         }}
+        onChange={props.onChange}
+        selected={props.value}
       >
-        <ListItem sx={{ textAlign: "center" }}>
-          <ListItemText>{props.mockedSkills}</ListItemText>
-        </ListItem>
+        {props.skillName}
       </ToggleButton>
     </Grid>
   );
 }
 
 JobDescriptionItem.propTypes = {
-  mockedSkills: PropTypes.string,
+  skillName: PropTypes.string,
+  value: PropTypes.bool,
+  onChange: PropTypes.func,
 };
 
 export default JobDescriptionItem;
