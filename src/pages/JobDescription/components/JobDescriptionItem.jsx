@@ -1,4 +1,3 @@
-import { useTheme } from "@emotion/react";
 import { Grid, ToggleButton } from "@mui/material";
 import PropTypes from "prop-types";
 import React from "react";
@@ -10,7 +9,6 @@ import React from "react";
  * @returns {JSX.Element} the JobDescriptionPage Component.
  */
 function JobDescriptionItem(props) {
-  const theme = useTheme();
   return (
     <Grid item xs={3} justifyContent={"center"}>
       <ToggleButton

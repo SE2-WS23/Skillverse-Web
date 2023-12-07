@@ -1,5 +1,5 @@
 import { useTheme } from "@emotion/react";
-import { Button, Grid, Typography } from "@mui/material/";
+import { Box, Button, Grid, Typography } from "@mui/material/";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PageLayout from "../../components/PageLayout";
@@ -38,7 +38,6 @@ function JobDescriptionPage() {
             key={uuidv4()}
             value={skills[skill]}
             onChange={() => {
-              console.log(skill, skills[skill]);
               setSkills((prevState) => ({
                 ...prevState,
                 [skill]: !prevState[skill],
@@ -47,23 +46,31 @@ function JobDescriptionPage() {
           />
         ))}
       </Grid>
-      <Button
-        variant="contained"
-        color="primary"
-        size="large"
-        sx={{
-          left: "75%",
-          margin: "80px 60px",
-        }}
-        onClick={() => {
-          const selectedSkills = Object.keys(skills).filter(
-            (skill) => skills[skill]
-          ); // returns an array of selected skills
-          console.log(selectedSkills);
+      <Box
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "flex-end",
+          width: "100%",
+          mt: "auto",
         }}
       >
-        Save changes
-      </Button>
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          size="large"
+          sx={{ margin: "50px 50px 20px 0" }}
+          onClick={() => {
+            const selectedSkills = Object.keys(skills).filter(
+              (skill) => skills[skill]
+            ); // returns an array of selected skills
+            console.log(selectedSkills);
+          }}
+        >
+          Save changes
+        </Button>
+      </Box>
     </PageLayout>
   );
 }
