@@ -10,7 +10,7 @@ import React from "react";
  */
 function JobDescriptionItem(props) {
   return (
-    <Grid item xs={3} justifyContent={"center"}>
+    <Grid item xs={6} md={4} lg={3} justifyContent={"center"} display={"flex"}>
       <ToggleButton
         fullWidth
         value={props.skillName || "Skill Name"}
