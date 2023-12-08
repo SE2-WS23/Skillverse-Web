@@ -1,0 +1,28 @@
+const mockedSkills = [
+  "MongoDB",
+  "Express",
+  "Node.js",
+  "Game Development",
+  "C#",
+  "Unity",
+  "Social Media",
+  "SEO",
+  "Digital Marketing",
+  "C++",
+  "Algorithms",
+  "Data Structures",
+  "Front-End Development",
+  "JavaScript",
+  "Mobile App Development",
+  "Flutter",
+  "Dart",
+  "Machine Learning",
+  "Data Analysis",
+  "Python",
+  "React",
+  "JavaScript",
+  "CSS",
+  "HTML",
+];
+
+export default mockedSkills;
