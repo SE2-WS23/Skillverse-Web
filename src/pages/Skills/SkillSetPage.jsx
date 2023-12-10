@@ -18,7 +18,7 @@ function SkillSetPage(props) {
     setSkillList(selectedSkill)
   };
 
-  const skillSet = props.skills || jobSkills;
+  const skillSet = Array.from(new Set(props.skills || jobSkills));
 
   return (
     <PageLayout title='Skill Set'>
