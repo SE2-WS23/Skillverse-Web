@@ -15,7 +15,7 @@ function SkillSetPage(props) {
   const theme = useTheme();
 
   const handleSelectedSkill = (event, selectedSkill) => {
-    setSkillList(selectedSkill)
+    setSkillList(selectedSkill);
   };
 
   const skillSet = Array.from(new Set(props.skills || jobSkills));
@@ -81,14 +81,25 @@ function SkillSetPage(props) {
           </ToggleButtonGroup>
         </Box>
       </Box>
-      <Button
-        variant='contained'
-        color='primary'
-        size='large'
-        sx={{ position: 'fixed', bottom: '10px', right: '10px' }}
+      <Box
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'flex-end',
+          width: '100%',
+          mt: 'auto',
+        }}
       >
-        Save changes
-      </Button>
+        <Button
+          type='submit'
+          variant='contained'
+          color='primary'
+          size='large'
+          sx={{ margin: '50px 20px 20px 0' }}
+        >
+          Save Changes
+        </Button>
+      </Box>
     </PageLayout>
   );
 }
