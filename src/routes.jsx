@@ -6,13 +6,13 @@ import DashboardPage from "./pages/Dashboard/DashboardPage";
 import EmployeeCreationPage from "./pages/EmployeeCreation/EmployeeCreationPage";
 import EmployeeOverviewPage from "./pages/EmployeeOverview/EmployeeOverviewPage";
 import HomePage from "./pages/Home/HomePage";
+import JobDescriptionPage from "./pages/JobDescription/JobDescriptionPage";
 import JobProfilePage from "./pages/JobProfile/JobProfilePage";
 import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
 import LoginPage from "./pages/Login/LoginPage";
 import QuizPage from "./pages/Quiz/QuizPage";
 import SkillImportancePage from "./pages/SkillImportance/SkillImportancePage";
 import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
-
 const ROUTES = [
   {
     path: "",
@@ -61,6 +61,10 @@ const ROUTES = [
   {
     path: "employee-overview",
     element: <EmployeeOverviewPage />,
+  },
+  {
+    path: "job-description",
+    element: <JobDescriptionPage />,
   },
   {
     path: "code-challenge",
