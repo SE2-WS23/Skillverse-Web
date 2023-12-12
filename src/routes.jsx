@@ -12,6 +12,7 @@ import LoginPage from "./pages/Login/LoginPage";
 import QuizPage from "./pages/Quiz/QuizPage";
 import SkillImportancePage from "./pages/SkillImportance/SkillImportancePage";
 import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
+import ArticlePage from "./pages/Article/ArticlePage";
 const ROUTES = [
   {
     path: "",
@@ -44,6 +45,10 @@ const ROUTES = [
   {
     path: "assessment",
     element: <AssessmentPage />,
+  },
+  {
+    path: "article",
+    element: <ArticlePage />,
   },
   {
     path: "skill-importance",
