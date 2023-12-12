@@ -32,7 +32,7 @@ function ArticlePage(props) {
         <Box
 
           sx={{
-            height: '80%',
+            height: '95%',
             width: '50%',
             display: 'flex',
             flexDirection: 'column',
@@ -40,26 +40,29 @@ function ArticlePage(props) {
             alignItems: "inherit",
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.primary.contrastText,
-            borderStyle: "groove",
+            borderRadius: '6px',
             [theme.breakpoints.down('lg')]:{
               width: "80%"
             }
           }}
         >
-          <Typography variant='h4'>{articleTitle || ""}</Typography>
+          <Typography variant='h5' sx={{p: 1}}>{articleTitle || ""}</Typography>
           <Typography
             sx={{
-              p: 4,
+              p: 5,
               overflow: 'hidden',
               overflowY: 'auto',
-              border: `solid ${theme.palette.primary.main} `,
-              mx: 10
+              border: 'solid',
+              borderWidth: '3px',
+              borderRadius: '6px',
+              mx: 4
+
             }}
           >
             {articleContent || ""}
           </Typography>
-          <Typography sx={{ "& a":{
-            color: theme.palette.primary.light,
+          <Typography sx={{p:1, "& a":{
+            color: theme.palette.primary.contrastText,
             textDecoration: "none",
           },
            }} >
