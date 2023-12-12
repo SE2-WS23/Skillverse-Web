@@ -90,8 +90,8 @@ function EmployeeCreationPage() {
                 size='large'
                 variant='circular'
                 sx={{
-                  width: '3vw',
-                  height: '3vw',
+                  width: '1wv',
+                  height: '1wv',
                   alignSelf: 'end',
                   marginTop: '-5vw',
                   marginInlineStart: '6vw',
@@ -122,7 +122,7 @@ function EmployeeCreationPage() {
                 }
               />
             </Box>
-            <Box display='flex' flexDirection='row'>
+            <Box>
               <TextField
                 label='Phone number'
                 margin='normal'
@@ -146,16 +146,17 @@ function EmployeeCreationPage() {
                 type='submit'
                 label='Extra info'
                 minRows={6}
-                sx={{ minWidth: '40vw' }}
                 value={employeeExtraInfo}
                 multiline
                 onChange={handleEmployeeExtraInfoChange}
+                fullWidth
               />
             </Box>
             <Typography variant='h6'>Submit Files </Typography>
             <UploadBox title='Resume' />
           </Box>
           <Button
+            sx={{ marginTop: '2vh' }}
             type='submit'
             variant='contained'
             color='primary'

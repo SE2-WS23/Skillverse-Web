@@ -1,9 +1,8 @@
-import React from "react";
-import { Typography, Box, IconButton } from "@mui/material";
-import { InsertDriveFile } from "@mui/icons-material";
+import React from 'react';
+import { Typography, Box, IconButton } from '@mui/material';
+import { InsertDriveFile } from '@mui/icons-material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import PropTypes from 'prop-types'
-
+import PropTypes from 'prop-types';
 
 /**
 @returns {JSX.Element} The File Component for Employee creation page to display uploaded Files.
@@ -14,13 +13,13 @@ function UploadedFile({ fileName, onDelete }) {
   };
 
   return (
-    <Box display="flex" alignItems="center" flexDirection="row" mb={1}>
-      <InsertDriveFile fontSize="small" style={{ marginRight: 8 }} />
-      <Typography variant="subtitle1">Selected File: {fileName}</Typography>
+    <Box display='flex' alignItems='center' flexDirection='row' mb={1}>
+      <InsertDriveFile fontSize='small' style={{ marginRight: 8 }} />
+      <Typography variant='subtitle1'>Selected File: {fileName}</Typography>
       <IconButton
-        aria-label="delete"
+        aria-label='delete'
         onClick={deleteFile}
-        sx={{ alignItems: "right" }}
+        sx={{ alignItems: 'right' }}
       >
         <DeleteIcon />
       </IconButton>
@@ -31,6 +30,11 @@ function UploadedFile({ fileName, onDelete }) {
 UploadedFile.propTypes = {
   fileName: PropTypes.string.isRequired,
   onDelete: PropTypes.func,
+};
+
+UploadedFile.defaultProps = {
+  fileName: 'No file selected',
+  onDelete: () => {},
 };
 
 export default UploadedFile;
