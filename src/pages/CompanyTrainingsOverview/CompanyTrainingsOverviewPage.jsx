@@ -1,16 +1,16 @@
 import { Button, Grid } from '@mui/material';
 import PageLayout from '../../components/PageLayout';
 import { v4 as uuidv4 } from 'uuid';
-import mockCourses from './mockCourses';
-import CourseListItem from './components/CourseListItem';
+import mockTrainings from './mockTrainings';
+import TrainingListItem from './components/TrainingListItem';
 
 /**
  * Renders the Company Trainings Overview Page.
  * @returns {JSX.Element} The company trainings overview page component.
  */
 function CompanyTrainingsOverviewPage() {
-  const handleAddCourseClick = () => {
-    console.log('Add Course button is clicked');
+  const handleAddTrainingClick = () => {
+    console.log('Add Training button is clicked');
   };
 
   return (
@@ -22,9 +22,9 @@ function CompanyTrainingsOverviewPage() {
         sx={{
           margin: '116px 0 0px 116px',
         }}
-        onClick={handleAddCourseClick}
+        onClick={handleAddTrainingClick}
       >
-        ADD COURSE
+        ADD TRAINING
       </Button>
 
       <Grid
@@ -39,12 +39,11 @@ function CompanyTrainingsOverviewPage() {
           marginBottom: '50px',
         }}
       >
-        {mockCourses.map((course) => (
-          <CourseListItem
+        {mockTrainings.map((training) => (
+          <TrainingListItem
             key={uuidv4()}
-            courseName={course.courseName}
-            courseCategory={course.courseCategory}
-            trainingNumber={course.trainingNumber}
+            trainingName={training.trainingName}
+            trainingCategory={training.trainingCategory}
           />
         ))}
       </Grid>

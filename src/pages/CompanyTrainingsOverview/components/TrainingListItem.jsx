@@ -8,38 +8,33 @@ function TrainingListItem({ trainingName, trainingCategory }) {
   return (
     <Grid item xs={6}>
       <ListItem
-        style={{
-          height: '150px',
+        sx={{
+          height: '100px',
           background: theme.palette.primary.light,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',
-          justifyContent: 'flex-start',
+          justifyContent: 'center',
         }}
       >
         <ListItemText
-          primary={trainingCategory}
-          primaryTypographyProps={{
-            variant: 'body1',
-            sx: {
-              textAlign: 'left',
-              paddingLeft: '10px',
-              paddingTop: '5px',
-              marginBottom: 'auto',
-              marginTop: '5px',
-            },
-          }}
-        />
-
-        <ListItemText
-          primary={trainingName}
-          style={{
-            textAlign: 'center',
-            marginTop: 'auto',
+          sx={{
+            textAlign: 'left',
             marginBottom: 'auto',
+            marginTop: '5px',
+          }}
+        >
+          {trainingCategory}
+        </ListItemText>
+        <ListItemText
+          sx={{
+            textAlign: 'center',
+            paddingBottom: '10px',
             width: '100%',
           }}
-        />
+        >
+          {trainingName}
+        </ListItemText>
       </ListItem>
     </Grid>
   );

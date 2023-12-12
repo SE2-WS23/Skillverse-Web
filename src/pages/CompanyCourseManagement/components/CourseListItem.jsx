@@ -8,48 +8,51 @@ function CourseListItem({ courseName, courseCategory, trainingNumber }) {
   return (
     <Grid item xs={6}>
       <ListItem
-        style={{
-          height: '150px',
+        sx={{
+          height: '100px',
           background: theme.palette.primary.light,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',
-          justifyContent: 'flex-start',
+          justifyContent: 'center',
         }}
       >
         <ListItemText
-          primary={courseCategory}
-          primaryTypographyProps={{
-            variant: 'body1',
-            sx: {
-              textAlign: 'left',
-              paddingLeft: '10px',
-              paddingTop: '5px',
-              marginBottom: 'auto',
-              marginTop: '5px',
-            },
+          variant='body2'
+          sx={{
+            textAlign: 'left',
+            paddingLeft: '10px',
+            paddingTop: '5px',
+            marginBottom: 'auto',
+            marginTop: '5px',
           }}
-        />
+        >
+          {courseCategory}
+        </ListItemText>
         <ListItemText
-          primary={`Training ${trainingNumber}`}
-          style={{
+          variant='body2'
+          sx={{
             textAlign: 'right',
             position: 'absolute',
-            top: '13px',
+            top: '8px',
             right: '15px',
             paddingRight: '10px',
             paddingTop: '5px',
           }}
-        />
+        >
+          {`Training ${trainingNumber}`}
+        </ListItemText>
         <ListItemText
-          primary={courseName}
-          style={{
+          variant='body2'
+          sx={{
             textAlign: 'center',
             marginTop: 'auto',
             marginBottom: 'auto',
             width: '100%',
           }}
-        />
+        >
+          {courseName}
+        </ListItemText>
       </ListItem>
     </Grid>
   );

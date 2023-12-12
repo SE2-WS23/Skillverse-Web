@@ -1,16 +1,16 @@
 import { Button, Grid } from '@mui/material';
 import PageLayout from '../../components/PageLayout';
 import { v4 as uuidv4 } from 'uuid';
-import mockTrainings from './mockTrainings';
-import TrainingListItem from './components/TrainingListItem';
+import mockCourses from './mockCourses';
+import CourseListItem from './components/CourseListItem';
 
 /**
  * Renders the Company Course Management Page.
  * @returns {JSX.Element} The company course management page component.
  */
 function CompanyCourseManagementPage() {
-  const handleAddTrainingClick = () => {
-    console.log('Add Training button is clicked');
+  const handleAddCourseClick = () => {
+    console.log('Add Course button is clicked');
   };
 
   return (
@@ -22,9 +22,9 @@ function CompanyCourseManagementPage() {
         sx={{
           margin: '116px 0 0px 116px',
         }}
-        onClick={handleAddTrainingClick}
+        onClick={handleAddCourseClick}
       >
-        ADD TRAINING
+        ADD COURSE
       </Button>
 
       <Grid
@@ -39,11 +39,12 @@ function CompanyCourseManagementPage() {
           marginBottom: '50px',
         }}
       >
-        {mockTrainings.map((training) => (
-          <TrainingListItem
+        {mockCourses.map((course) => (
+          <CourseListItem
             key={uuidv4()}
-            trainingName={training.trainingName}
-            trainingCategory={training.trainingCategory}
+            courseName={course.courseName}
+            courseCategory={course.courseCategory}
+            trainingNumber={course.trainingNumber}
           />
         ))}
       </Grid>
