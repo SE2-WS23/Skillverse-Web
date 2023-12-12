@@ -28,7 +28,7 @@ function UploadedFile({ fileName, onDelete }) {
 }
 
 UploadedFile.propTypes = {
-  fileName: PropTypes.string.isRequired,
+  fileName: PropTypes.string,
   onDelete: PropTypes.func,
 };
 
