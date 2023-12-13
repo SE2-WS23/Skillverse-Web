@@ -20,7 +20,7 @@ export default function FileActionItem(props) {
     setAction(event.target.value);
   };
 
-  const handleGoBtn = () => {
+  const handleGoButton = () => {
     console.log("NotImplemented file: " + file);
   };
 
@@ -46,7 +46,7 @@ export default function FileActionItem(props) {
             <MenuItem value={"view"}>View</MenuItem>
             <MenuItem value={"dload"}>Download</MenuItem>
           </Select>
-          <Button variant="contained" onClick={handleGoBtn}>
+          <Button variant="contained" onClick={handleGoButton}>
             GO
           </Button>
         </Stack>
