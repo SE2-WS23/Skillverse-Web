@@ -11,11 +11,6 @@ import {
 import { useTheme } from "@mui/material/styles";
 import { v4 as uuid } from "uuid";
 
-/**
- *renders overview component of employee profile
- * @returns {JSX.Element} Overview item for employee profile page component
- */
-
 //populate lists with prop array. secondary, primary are (1) skill and level, or (2) certificate and origin
 //el means "element" and is what is iterated through
 function renderList(list) {
@@ -47,6 +42,10 @@ function renderList(list) {
   });
 }
 
+/**
+ *renders overview component of employee profile
+ * @returns {JSX.Element} Overview item for employee profile page component
+ */
 export default function OverviewItem(props) {
   const theme = useTheme();
 
