@@ -24,7 +24,7 @@ function TrainingListItem({ trainingName, trainingCategory }) {
             marginTop: "5px",
           }}
         >
-          {trainingCategory}
+          {trainingCategory || ""}
         </ListItemText>
         <ListItemText
           sx={{
@@ -33,7 +33,7 @@ function TrainingListItem({ trainingName, trainingCategory }) {
             width: "100%",
           }}
         >
-          {trainingName}
+          {trainingName || ""}
         </ListItemText>
       </ListItem>
     </Grid>

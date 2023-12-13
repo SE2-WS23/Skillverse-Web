@@ -27,7 +27,7 @@ function CourseListItem({ courseName, courseCategory, trainingNumber }) {
             marginTop: "5px",
           }}
         >
-          {courseCategory}
+          {courseCategory || ""}
         </ListItemText>
         <ListItemText
           variant="body2"
@@ -40,7 +40,7 @@ function CourseListItem({ courseName, courseCategory, trainingNumber }) {
             paddingTop: "5px",
           }}
         >
-          {`Training ${trainingNumber}`}
+          {`Training ${trainingNumber || ""}`}
         </ListItemText>
         <ListItemText
           variant="body2"
@@ -51,7 +51,7 @@ function CourseListItem({ courseName, courseCategory, trainingNumber }) {
             width: "100%",
           }}
         >
-          {courseName}
+          {courseName || ""}
         </ListItemText>
       </ListItem>
     </Grid>
