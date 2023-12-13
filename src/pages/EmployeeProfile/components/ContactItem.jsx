@@ -24,18 +24,18 @@ export default function ContactItem(props) {
         <Typography
           variant="body1"
           component="a"
-          href={"tel:" + props.contact.phone}
+          href={"tel:" + props.contact.phone || ""}
         >
-          {props.contact.phone}
+          {props.contact.phone || ""}
         </Typography>
         <Typography
           variant="body1"
           component="a"
-          href={"mailto:" + props.contact.email}
+          href={"mailto:" + props.contact.email || ""}
         >
           {props.contact.email}
         </Typography>
-        <Typography variant="body1">{props.contact.address}</Typography>
+        <Typography variant="body1">{props.contact.address || ""}</Typography>
       </Stack>
     </Box>
   );
