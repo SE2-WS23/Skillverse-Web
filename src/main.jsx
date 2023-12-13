@@ -28,6 +28,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: ROUTES,
   },
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

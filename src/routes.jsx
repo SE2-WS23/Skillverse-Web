@@ -1,82 +1,87 @@
-import AssessmentPage from './pages/Assessment/AssessmentPage';
-import CodeChallengePage from './pages/CodeChallenge/CodeChallengePage';
-import CompanyTrainingsOverviewPage from './pages/CompanyTrainingsOverview/CompanyTrainingsOverviewPage';
-import CompanyCourseManagementPage from './pages/CompanyCourseManagement/CompanyCourseManagementPage';
-import CourseFeedbackPage from './pages/CourseFeedback/CourseFeedbackPage';
-import CreateJobProfilePage from './pages/CreateJobProfile/CreateJobProfilePage';
-import DashboardPage from './pages/Dashboard/DashboardPage';
-import EmployeeOverviewPage from './pages/EmployeeOverview/EmployeeOverviewPage';
-import HomePage from './pages/Home/HomePage';
-import JobDescriptionPage from './pages/JobDescription/JobDescriptionPage';
-import JobProfilePage from './pages/JobProfile/JobProfilePage';
-import LinkedInLearning from './pages/LinkedInLearning/LinkedInLearningPage';
-import LoginPage from './pages/Login/LoginPage';
-import QuizPage from './pages/Quiz/QuizPage';
-import SkillImportancePage from './pages/SkillImportance/SkillImportancePage';
-import TrainingPlanPage from './pages/TrainingPlan/TrainingPlanPage';
+import AssessmentPage from "./pages/Assessment/AssessmentPage";
+import CodeChallengePage from "./pages/CodeChallenge/CodeChallengePage";
+import CompanyTrainingsOverviewPage from "./pages/CompanyTrainingsOverview/CompanyTrainingsOverviewPage";
+import CompanyCourseManagementPage from "./pages/CompanyCourseManagement/CompanyCourseManagementPage";
+import CourseFeedbackPage from "./pages/CourseFeedback/CourseFeedbackPage";
+import CreateJobProfilePage from "./pages/CreateJobProfile/CreateJobProfilePage";
+import DashboardPage from "./pages/Dashboard/DashboardPage";
+import EmployeeOverviewPage from "./pages/EmployeeOverview/EmployeeOverviewPage";
+import HomePage from "./pages/Home/HomePage";
+import JobDescriptionPage from "./pages/JobDescription/JobDescriptionPage";
+import JobProfilePage from "./pages/JobProfile/JobProfilePage";
+import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
+import LoginPage from "./pages/Login/LoginPage";
+import QuizPage from "./pages/Quiz/QuizPage";
+import SkillImportancePage from "./pages/SkillImportance/SkillImportancePage";
+import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
+import ArticlePage from "./pages/Article/ArticlePage";
 const ROUTES = [
   {
-    path: '',
+    path: "",
     element: <HomePage />,
   },
   {
-    path: 'dashboard',
+    path: "dashboard",
     element: <DashboardPage />,
   },
   {
-    path: 'login',
+    path: "login",
     element: <LoginPage />,
   },
   {
-    path: 'company-course-management',
+    path: "company-course-management",
     element: <CompanyCourseManagementPage />,
   },
   {
-    path: 'company-trainings-overview',
+    path: "company-trainings-overview",
     element: <CompanyTrainingsOverviewPage />,
   },
   {
-    path: 'linked-in-learning',
+    path: "linked-in-learning",
     element: <LinkedInLearning />,
   },
   {
-    path: 'course-feedback',
+    path: "course-feedback",
     element: <CourseFeedbackPage />,
   },
   {
-    path: 'job-profile',
+    path: "job-profile",
     element: <JobProfilePage />,
   },
   {
-    path: 'training-plan',
+    path: "training-plan",
     element: <TrainingPlanPage />,
   },
   {
-    path: 'assessment',
+    path: "assessment",
     element: <AssessmentPage />,
   },
   {
-    path: 'skill-importance',
+    path: "article",
+    element: <ArticlePage />,
+  },
+  {
+    path: "skill-importance",
     element: <SkillImportancePage />,
   },
   {
-    path: 'create-job-profile',
+    path: "create-job-profile",
     element: <CreateJobProfilePage />,
   },
   {
-    path: 'employee-overview',
+    path: "employee-overview",
     element: <EmployeeOverviewPage />,
   },
   {
-    path: 'job-description',
+    path: "job-description",
     element: <JobDescriptionPage />,
   },
   {
-    path: 'code-challenge',
+    path: "code-challenge",
     element: <CodeChallengePage />,
   },
   {
-    path: 'quiz',
+    path: "quiz",
     element: <QuizPage />,
   },
 ];
