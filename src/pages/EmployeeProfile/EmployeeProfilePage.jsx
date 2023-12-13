@@ -19,32 +19,34 @@ function EmployeeProfilePage(props) {
   return (
     <Box>
       <PageLayout title="Employee Profile" viewportPage>
-        <BannerItem userHeader={empployeeProfileObject.userHeader} />
+        <BannerItem userHeader={empployeeProfileObject.userHeader || ""} />
         <Box alignItems="center" justifyContent="center" padding="5%">
           <Grid container spacing={8} rowSpacing={8}>
             <Grid xs={2.5}>
               <OverviewItem
                 title="Skills"
-                list={empployeeProfileObject.skills}
+                list={empployeeProfileObject.skills || ""}
               ></OverviewItem>
             </Grid>
             <Grid xs={2.5}>
               <OverviewItem
                 title="Certificates"
-                list={empployeeProfileObject.certificates}
+                list={empployeeProfileObject.certificates || ""}
               ></OverviewItem>
             </Grid>
             <Grid xs={7}>
-              <BioItem abouttxt={empployeeProfileObject.aboutme}></BioItem>
+              <BioItem
+                abouttxt={empployeeProfileObject.aboutme || ""}
+              ></BioItem>
             </Grid>
             <Grid xs={5}>
               <FileActionItem
-                files={empployeeProfileObject.files}
+                files={empployeeProfileObject.files || ""}
               ></FileActionItem>
             </Grid>
             <Grid xs={7}>
               <ContactItem
-                contact={empployeeProfileObject.contacts}
+                contact={empployeeProfileObject.contacts || ""}
               ></ContactItem>
             </Grid>
           </Grid>
