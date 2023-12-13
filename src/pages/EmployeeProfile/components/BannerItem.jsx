@@ -32,9 +32,11 @@ export default function BannerItem(props) {
               direction="column"
               sx={{ justifyContent: "center", marginLeft: "1%" }}
             >
-              <Typography variant="h4">{props.userHeader.username}</Typography>
+              <Typography variant="h4">
+                {props.userHeader.username || ""}
+              </Typography>
               <Typography variant="h6">
-                {props.userHeader.companyname}
+                {props.userHeader.companyname || ""}
               </Typography>
             </Stack>
           </Stack>
