@@ -6,13 +6,14 @@ import DashboardPage from "./pages/Dashboard/DashboardPage";
 import EmployeeOverviewPage from "./pages/EmployeeOverview/EmployeeOverviewPage";
 import EmployeeProfilePage from "./pages/EmployeeProfile/EmployeeProfilePage";
 import HomePage from "./pages/Home/HomePage";
+import JobDescriptionPage from "./pages/JobDescription/JobDescriptionPage";
 import JobProfilePage from "./pages/JobProfile/JobProfilePage";
 import LinkedInLearning from "./pages/LinkedInLearning/LinkedInLearningPage";
 import LoginPage from "./pages/Login/LoginPage";
 import QuizPage from "./pages/Quiz/QuizPage";
 import SkillImportancePage from "./pages/SkillImportance/SkillImportancePage";
 import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
-
+import ArticlePage from "./pages/Article/ArticlePage";
 const ROUTES = [
   {
     path: "",
@@ -47,6 +48,10 @@ const ROUTES = [
     element: <AssessmentPage />,
   },
   {
+    path: "article",
+    element: <ArticlePage />,
+  },
+  {
     path: "skill-importance",
     element: <SkillImportancePage />,
   },
@@ -61,6 +66,10 @@ const ROUTES = [
   {
     path: "employee-profile",
     element: <EmployeeProfilePage />,
+  },
+  {
+    path: "job-description",
+    element: <JobDescriptionPage />,
   },
   {
     path: "code-challenge",
