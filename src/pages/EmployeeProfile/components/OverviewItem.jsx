@@ -36,8 +36,8 @@ function renderList(list) {
           }}
         >
           <ListItemText
-            primary={el.prmry || ""}
-            secondary={el.scndry || ""}
+            primary={el.primary || ""}
+            secondary={el.secondry || ""}
             key={uuid()}
             sx={{ textAlign: "center" }}
           />

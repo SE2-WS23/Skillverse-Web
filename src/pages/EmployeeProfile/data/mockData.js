@@ -1,18 +1,18 @@
 const person1 = {
   skills: [
-    { prmry: "Skill1", scndry: "1" },
-    { prmry: "Skill2", scndry: "2" },
-    { prmry: "Skill3", scndry: "5" },
-    { prmry: "Skill4", scndry: "3" },
-    { prmry: "Skill5", scndry: "5" },
-    { prmry: "Skill6", scndry: "5" },
-    { prmry: "Skill7", scndry: "5" },
+    { primary: "Skill1", secondry: "1" },
+    { primary: "Skill2", secondry: "2" },
+    { primary: "Skill3", secondry: "5" },
+    { primary: "Skill4", secondry: "3" },
+    { primary: "Skill5", secondry: "5" },
+    { primary: "Skill6", secondry: "5" },
+    { primary: "Skill7", secondry: "5" },
   ],
 
   certificates: [
-    { prmry: "Cert1", scndry: "from school" },
-    { prmry: "Cert2", scndry: "from work" },
-    { prmry: "Cert3", scndry: "from uni" },
+    { primary: "Cert1", secondry: "from school" },
+    { primary: "Cert2", secondry: "from work" },
+    { primary: "Cert3", secondry: "from uni" },
   ],
 
   aboutme:
