@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button, Box, Input } from '@mui/material';
 import UploadedFile from './UploadedFile';
 import { v4 as uuidv4 } from 'uuid';
+import EmployeeCreationPage from '../EmployeeCreationPage';
+import { Upload } from '@mui/icons-material';
 
 function UploadBox(props) {
   const { selectedFiles: parentSelectedFiles, setSelectedFiles } = props;
@@ -47,5 +49,9 @@ function UploadBox(props) {
     </Box>
   );
 }
+UploadBox.defaultProps = {
+  selectedFiles: [],
+  setSelectedFiles: () => {},
+};
 
 export default UploadBox;
