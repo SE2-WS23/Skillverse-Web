@@ -6,7 +6,7 @@ function CourseListItem({ courseName, courseCategory, trainingNumber }) {
   const theme = useTheme();
 
   return (
-    <Grid item xs={12} md={6}>
+    <Grid item xs={12} lg={6}>
       <ListItem
         sx={{
           height: "100px",
