@@ -24,6 +24,7 @@ function EmployeeCreationPage() {
   const [employeeAddress, setEmployeeAddress] = useState('');
   const [employeeExtraInfo, setEmployeeExtraInfo] = useState('');
   const [employeeEmailError, setEmployeeEmailError] = useState(false);
+  const [selectedFiles, setSelectedFiles] = useState([]);
 
   const handleEmployeeNameChange = (event) => {
     setEmployeeName(event.target.value);
@@ -153,7 +154,11 @@ function EmployeeCreationPage() {
               />
             </Box>
             <Typography variant='h6'>Submit Files </Typography>
-            <UploadBox title='Resume' />
+            <UploadBox
+              title='Resume'
+              selectedFiles={selectedFiles}
+              setSelectedFiles={setSelectedFiles}
+            />
           </Box>
           <Button
             sx={{ marginTop: '2vh' }}

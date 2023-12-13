@@ -3,19 +3,15 @@ import { Button, Box, Input } from '@mui/material';
 import UploadedFile from './UploadedFile';
 import { v4 as uuidv4 } from 'uuid';
 
-/**
- * @returns {JSX.Element} The Box holding all uploaded files in the Employee creation page component.
- */
-
-function UploadBox() {
-  const [selectedFiles, setSelectedFiles] = useState([]);
+function UploadBox(props) {
+  const { selectedFiles: parentSelectedFiles, setSelectedFiles } = props;
 
   const handleFileSubmit = (event) => {
     const files = event.target.files;
     const newFiles = Array.from(files);
 
     setSelectedFiles((prevFiles) => [...prevFiles, ...newFiles]);
-    console.log({ selectedFiles });
+    console.log({ selectedFiles: parentSelectedFiles });
   };
 
   const handleFileUpload = () => {
@@ -30,7 +26,7 @@ function UploadBox() {
 
   return (
     <Box>
-      {selectedFiles.map((file) => (
+      {parentSelectedFiles.map((file) => (
         <Box key={uuidv4()} display='flex' alignItems='center' mb={1}>
           <UploadedFile fileName={file.name} onDelete={handleFileDelete} />
         </Box>
