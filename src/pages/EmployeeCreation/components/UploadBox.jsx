@@ -2,10 +2,14 @@ import React from 'react';
 import { Button, Box, Input } from '@mui/material';
 import UploadedFile from './UploadedFile';
 import { v4 as uuidv4 } from 'uuid';
-import EmployeeCreationPage from '../EmployeeCreationPage';
-import { Upload } from '@mui/icons-material';
+import PropTypes from 'prop-types';
 
 function UploadBox(props) {
+  UploadBox.propTypes = {
+    selectedFiles: PropTypes.array,
+    setSelectedFiles: PropTypes.func,
+  };
+
   const { selectedFiles: parentSelectedFiles, setSelectedFiles } = props;
 
   const handleFileSubmit = (event) => {
