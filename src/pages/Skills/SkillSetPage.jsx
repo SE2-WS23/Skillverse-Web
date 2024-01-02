@@ -33,7 +33,7 @@ function SkillSetPage(props) {
         }}
       >
         <Typography variant='h4' sx={{ mt: 5, mb: 5, textAlign: 'center' }}>
-          Select Relevant Skills For the Job
+          Select Relevant Skills for the Job
         </Typography>
 
         <Box
