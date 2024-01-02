@@ -11,11 +11,12 @@ import { v4 as uuidv4 } from 'uuid';
  * @returns {JSX.Element} Skill Set page component
  */
 function SkillSetPage(props) {
-  const [skillList, setSkillList] = useState([]);
+  const [skillsList, setSkillsList] = useState([]);
   const theme = useTheme();
 
   const handleSelectedSkill = (event, selectedSkill) => {
-    setSkillList(selectedSkill);
+    setSkillsList(selectedSkill);
+    console.log(selectedSkill);
   };
 
   const skillSet = Array.from(new Set(props.skills || jobSkills));
@@ -46,7 +47,7 @@ function SkillSetPage(props) {
           }}
         >
           <ToggleButtonGroup
-            value={skillList}
+            value={skillsList}
             onChange={handleSelectedSkill}
             sx={{
               display: 'grid',
@@ -62,8 +63,9 @@ function SkillSetPage(props) {
               },
             }}
           >
-            {skillSet?.map((skill, index) => (
+            {skillSet?.map((skill) => (
               <ToggleButton
+
                 key={uuidv4()}
                 value={skill || ''}
                 sx={{
@@ -75,6 +77,7 @@ function SkillSetPage(props) {
                   },
                 }}
               >
+                {window.scrollTo(0,0)}
                 {skill || ''}
               </ToggleButton>
             ))}
