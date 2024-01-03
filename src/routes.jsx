@@ -12,6 +12,8 @@ import LoginPage from "./pages/Login/LoginPage";
 import QuizPage from "./pages/Quiz/QuizPage";
 import SkillImportancePage from "./pages/SkillImportance/SkillImportancePage";
 import TrainingPlanPage from "./pages/TrainingPlan/TrainingPlanPage";
+import SkillSetPage from "./pages/Skills/SkillSetPage";
+
 import ArticlePage from "./pages/Article/ArticlePage";
 const ROUTES = [
   {
@@ -69,6 +71,10 @@ const ROUTES = [
   {
     path: "code-challenge",
     element: <CodeChallengePage />,
+  },
+  {
+    path: "skill-set",
+    element: <SkillSetPage />,
   },
   {
     path: "quiz",
