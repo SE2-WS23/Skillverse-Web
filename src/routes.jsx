@@ -3,6 +3,7 @@ import CodeChallengePage from "./pages/CodeChallenge/CodeChallengePage";
 import CourseFeedbackPage from "./pages/CourseFeedback/CourseFeedbackPage";
 import CreateJobProfilePage from "./pages/CreateJobProfile/CreateJobProfilePage";
 import DashboardPage from "./pages/Dashboard/DashboardPage";
+import EmployeeCreationPage from "./pages/EmployeeCreation/EmployeeCreationPage";
 import EmployeeOverviewPage from "./pages/EmployeeOverview/EmployeeOverviewPage";
 import HomePage from "./pages/Home/HomePage";
 import JobDescriptionPage from "./pages/JobDescription/JobDescriptionPage";
@@ -49,6 +50,10 @@ const ROUTES = [
     element: <AssessmentPage />,
   },
   {
+    path: "employee-creation",
+    element: <EmployeeCreationPage />,
+   },
+   {
     path: "article",
     element: <ArticlePage />,
   },
