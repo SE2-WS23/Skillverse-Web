@@ -1,5 +1,7 @@
 import AssessmentPage from "./pages/Assessment/AssessmentPage";
 import CodeChallengePage from "./pages/CodeChallenge/CodeChallengePage";
+import CompanyTrainingsOverviewPage from "./pages/CompanyTrainingsOverview/CompanyTrainingsOverviewPage";
+import CompanyCourseManagementPage from "./pages/CompanyCourseManagement/CompanyCourseManagementPage";
 import CourseFeedbackPage from "./pages/CourseFeedback/CourseFeedbackPage";
 import CreateJobProfilePage from "./pages/CreateJobProfile/CreateJobProfilePage";
 import DashboardPage from "./pages/Dashboard/DashboardPage";
@@ -28,6 +30,14 @@ const ROUTES = [
   {
     path: "login",
     element: <LoginPage />,
+  },
+  {
+    path: "company-course-management",
+    element: <CompanyCourseManagementPage />,
+  },
+  {
+    path: "company-trainings-overview",
+    element: <CompanyTrainingsOverviewPage />,
   },
   {
     path: "linked-in-learning",
