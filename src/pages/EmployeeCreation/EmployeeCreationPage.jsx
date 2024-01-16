@@ -71,6 +71,8 @@ function EmployeeCreationPage() {
       <FormGroup className='employeeCreationForm'>
         <Box
           sx={{
+            paddingBottom: '30px',
+            paddingTop: '30px',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -91,8 +93,8 @@ function EmployeeCreationPage() {
                 size='large'
                 variant='circular'
                 sx={{
-                  width: '1wv',
-                  height: '1wv',
+                  width: '4vw',
+                  height: '4vw',
                   alignSelf: 'end',
                   marginTop: '-5vw',
                   marginInlineStart: '6vw',
@@ -125,7 +127,7 @@ function EmployeeCreationPage() {
             </Box>
             <Box>
               <TextField
-                label='Phone number'
+                label='Phone Number'
                 margin='normal'
                 type='tel'
                 sx={{ minWidth: '20vw' }}
@@ -145,7 +147,7 @@ function EmployeeCreationPage() {
               <TextField
                 margin='normal'
                 type='submit'
-                label='Extra info'
+                label='Extra Info'
                 minRows={6}
                 value={employeeExtraInfo}
                 multiline
