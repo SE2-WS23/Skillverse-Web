@@ -104,19 +104,23 @@ function EmployeeCreationPage() {
                 +
               </Fab>
             </Box>
-            <Box>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
               <TextField
                 label='Name'
-                margin='normal'
-                sx={{ minWidth: '20vw' }}
+                sx={{ minWidth: '20vw', m: 3 }}
                 value={employeeName}
                 onChange={handleEmployeeNameChange}
               />
               <TextField
                 label='Email'
-                margin='normal'
                 type='email'
-                sx={{ minWidth: '20vw' }}
+                sx={{ minWidth: '20vw', m: 3 }}
                 value={employeeEmail}
                 onChange={handleEmployeeEmailChange}
                 error={employeeEmailError}
@@ -128,17 +132,15 @@ function EmployeeCreationPage() {
             <Box>
               <TextField
                 label='Phone Number'
-                margin='normal'
                 type='tel'
-                sx={{ minWidth: '20vw' }}
+                sx={{ minWidth: '20vw', m: 3 }}
                 value={employeePhoneNumber}
                 onChange={handleEmployeePhoneNumberChange}
               />
               <TextField
                 label='Address'
-                margin='normal'
                 type='address'
-                sx={{ minWidth: '20vw' }}
+                sx={{ minWidth: '20vw', m: 3 }}
                 value={employeeAddress}
                 onChange={handleEmployeeAddressChange}
               />
