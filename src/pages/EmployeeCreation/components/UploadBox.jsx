@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Box, Input } from '@mui/material';
+import { Button, Box } from '@mui/material';
 import UploadedFile from './UploadedFile';
 import { v4 as uuidv4 } from 'uuid';
 import PropTypes from 'prop-types';
@@ -38,7 +38,7 @@ function UploadBox(props) {
         </Box>
       ))}
       <label htmlFor='upload-file'>
-        <Input
+        <input
           style={{ display: 'none' }}
           id='upload-file'
           name='upload-file'

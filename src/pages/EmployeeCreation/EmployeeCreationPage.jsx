@@ -113,14 +113,14 @@ function EmployeeCreationPage() {
             >
               <TextField
                 label='Name'
-                sx={{ minWidth: '20vw', m: 3 }}
+                sx={{ minWidth: '20vw', m: 1.5 }}
                 value={employeeName}
                 onChange={handleEmployeeNameChange}
               />
               <TextField
                 label='Email'
                 type='email'
-                sx={{ minWidth: '20vw', m: 3 }}
+                sx={{ minWidth: '20vw', m: 1.5 }}
                 value={employeeEmail}
                 onChange={handleEmployeeEmailChange}
                 error={employeeEmailError}
@@ -133,14 +133,14 @@ function EmployeeCreationPage() {
               <TextField
                 label='Phone Number'
                 type='tel'
-                sx={{ minWidth: '20vw', m: 3 }}
+                sx={{ minWidth: '20vw', m: 1.5 }}
                 value={employeePhoneNumber}
                 onChange={handleEmployeePhoneNumberChange}
               />
               <TextField
                 label='Address'
                 type='address'
-                sx={{ minWidth: '20vw', m: 3 }}
+                sx={{ minWidth: '20vw', m: 1.5 }}
                 value={employeeAddress}
                 onChange={handleEmployeeAddressChange}
               />
