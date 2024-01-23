@@ -129,7 +129,13 @@ function EmployeeCreationPage() {
                 }
               />
             </Box>
-            <Box>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
               <TextField
                 label='Phone Number'
                 type='tel'

@@ -15,7 +15,9 @@ function UploadedFile({ fileName, onDelete }) {
   return (
     <Box display='flex' alignItems='center' flexDirection='row' mb={1}>
       <InsertDriveFile fontSize='small' style={{ marginRight: 8 }} />
-      <Typography variant='subtitle1'>Selected File: {fileName}</Typography>
+      <Typography width='30vw' variant='subtitle1'>
+        Selected File: {fileName}
+      </Typography>
       <IconButton
         aria-label='delete'
         onClick={deleteFile}
