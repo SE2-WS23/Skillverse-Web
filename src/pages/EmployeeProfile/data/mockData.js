@@ -17,6 +17,7 @@ const person1 = {
 
   aboutme:
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.",
+
   files: ["cv.pdf", "report.pdf"],
 
   contacts: {
@@ -31,4 +32,8 @@ const person1 = {
   },
 };
 
-export default person1;
+const person2 = {
+
+};
+
+export default person2;
