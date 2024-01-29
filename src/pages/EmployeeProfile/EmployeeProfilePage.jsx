@@ -15,7 +15,24 @@ import person1 from "./data/mockData";
  */
 
 function EmployeeProfilePage(props) {
-  const empployeeProfileObject = props.EmployeeObject || person1;
+  const empployeeProfileObject = props.EmployeeObject || person1 || {};
+
+  if (
+    !empployeeProfileObject.skills ||
+    !empployeeProfileObject.certificates ||
+    !empployeeProfileObject.aboutme ||
+    !empployeeProfileObject.files ||
+    !empployeeProfileObject.contacts
+  ) {
+    return (
+      <Box>
+        <PageLayout title="Employee Profile" viewportPage>
+          <p>Employee not found.</p>
+        </PageLayout>
+      </Box>
+    );
+  }
+
   return (
     <Box>
       <PageLayout title="Employee Profile" viewportPage>

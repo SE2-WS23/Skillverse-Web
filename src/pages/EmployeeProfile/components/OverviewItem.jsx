@@ -60,7 +60,7 @@ export default function OverviewItem(props) {
         {props.title || ""}
       </Typography>
 
-      <List sx={{ width: "100%", maxHeight: "80%", overflow: "auto" }}>
+      <List sx={{ width: "100%", maxHeight: "84%", overflow: "auto" }}>
         {renderList(props.list) || ""}
       </List>
     </Box>

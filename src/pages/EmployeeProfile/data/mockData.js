@@ -36,4 +36,4 @@ const person2 = {
 
 };
 
-export default person2;
+export default person1;
