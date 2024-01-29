@@ -1,0 +1,22 @@
+h2{
+    text-align: center;
+}
+.component{
+    border-radius: 5px;
+    height: 40vh;
+    position: relative;
+}
+.form-component{
+    width: 100%;
+    border-radius: 5px;
+    height: fit-content;
+    position: relative;
+}
+.form-control{
+    padding: 1%;
+    height: fit-content;
+    position: relative;
+    border-style: dashed;
+    border-radius: 10px;
+    border-color: lightgray;
+}
